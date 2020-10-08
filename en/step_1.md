@@ -1,6 +1,6 @@
 ## Introduction
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+In this project you will learn how to create a Python program game that uses LEGO motors for its controllers.
 
 ### What you will make
 
@@ -22,13 +22,15 @@ title: What you will need
 ---
 ### Hardware
 
-+ A computer or tablet capable of running Scratch 3
++ A Raspberry Pi computer
++ A Raspberry Pi Build HAT
++ At least one LEGO motor
+
 
 ### Software
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
 + Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
+
 
 ### Downloads
 
