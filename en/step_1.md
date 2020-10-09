@@ -31,7 +31,7 @@ This project can be tackled without the need for an additional power supply for 
 + A Raspberry Pi computer
 + A Raspberry Pi Build HAT
 + At least one LEGO Technic motor
-+ Assortment of LEGO, including two wheels. We used a selection from the LEGO Spike Prime kit
++ Assortment of LEGO, including two wheels. We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + A small breadboard (optional)
 + Some LEDs and 100 ohm resistors (optional)
 + Some breadboard jumper leads (optional)
@@ -45,7 +45,6 @@ This project can be tackled without the need for an additional power supply for 
 
 ### Downloads
 
-+ Download the project [starter file](http://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
 
 --- /collapse ---
 

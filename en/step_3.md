@@ -63,6 +63,7 @@ ball.color('white')
 ball.shape('circle')
 
 ball.setpos(0,0)
+
 corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
 for c in corners:
     ball.setpos(-200,-170)
@@ -74,3 +75,33 @@ for c in corners:
 --- /task ---
 
  The `turtle.setpos(x,y)` function is used to move a turtle to a given position. The screen also needs to be updated after each change.  What would happen if the `game_area.update()` line is moved outside the loop?
+
+
+--- hints ---
+--- hint ---
+The modified code would look like this:
+
+```python
+ball = Turtle()
+ball.color('white')
+ball.shape('circle')
+ball.pendown()
+
+ball.setpos(0,0)
+
+corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
+for c in corners:
+    ball.setpos(-200,-170)
+
+    sleep(1)
+game_area.update()
+```
+--- /hint ---
+--- hint ---
+Now that the screen is only update once at the end, the pattern drawn by the turtle would appear all at once rather than corner by corner. There would also be a long delay while nothing appeared to happen. 
+--- /hint ---
+--- /hints ---
+
+You won't need the code for moving the ball around the corners so you can delete or comment out those lines at this stage (but do keep the ball creation lines)
+
+Now that we have a game area and a ball, we need to keep the ball in play. 
