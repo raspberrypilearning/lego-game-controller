@@ -1,8 +1,12 @@
 ## Introduction
 
-In this project you will learn how to create a Python program game that uses LEGO motors for its controllers.
+Use LEGO and the Raspberry Pi Build HAT to build games controller for a simple version of the classic Pong arcade gamne. Add some simple electronics for external lights and sounds. 
+
+
 
 ### What you will make
+
+In this project you will learn how to create a Python program game that uses LEGO motors for its controllers.
 
 --- no-print ---
 Add instructions for interacting with the embedded content here.
@@ -22,14 +26,21 @@ title: What you will need
 ---
 ### Hardware
 
+This project can be tackled without the need for an additional power supply for the BuildHAT. Because the motors are moved by hand, an normal 5v Raspberry Pi power supply is all that it is needed. 
+
 + A Raspberry Pi computer
 + A Raspberry Pi Build HAT
-+ At least one LEGO motor
-
++ At least one LEGO Technic motor
++ Assortment of LEGO, including two wheels. We used a selection from the LEGO Spike Prime kit
++ A small breadboard (optional)
++ Some LEDs and 100 ohm resistors (optional)
++ Some breadboard jumper leads (optional)
++ A 9v power supply with a barrel jack.(optional) This can be a battery pack, but make sure that all cells are fully charged. 
 
 ### Software
 
 + Python 3
++ Build HAT Python library
 
 
 ### Downloads
