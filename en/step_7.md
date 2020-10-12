@@ -42,6 +42,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- /task ---
 
 Now you need to display the score on the game area. You can use a fourth turtle to handle this job.
+
 --- task ---
 Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
 
