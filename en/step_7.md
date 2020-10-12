@@ -78,7 +78,11 @@ You can look at the documentation for the Turtle library to see what other optio
 
 In your Python Turtle program you have used different colours for the paddles. You can customise your LEGO controllers by adding bricks and other LEGO elemnets of the same solour.
 
+![repl](images/blue_wheel.JPG)
+
 You could also design a handle for the motor to make it more comfortable to hold.
+
+![repl](images/handle.JPG)
 
 ### Adding some randomness
 

@@ -45,6 +45,8 @@ paddle_l.sety(pos_l)
 
 --- /task ---
 
+![repl](images/bounce.png)
+
 Your program should look like this:
 
 ```python

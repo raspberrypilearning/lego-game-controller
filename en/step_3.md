@@ -40,6 +40,8 @@ However being clever about how coordinates are assigned to the game area will ma
 
 A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
 
+![repl](images/sidebyside.png)
+
 The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program
 
 --- task ---
@@ -50,6 +52,9 @@ game_area.setworldcoordinates(-200,-170, 200, 170)
 --- /task ---
 
 This creates a rectangular window 400 pixels wide and 340 high, with 0 being at the midpoint of each axis. 
+
+
+![repl](images/coords.png)
 
 --- task ---
 

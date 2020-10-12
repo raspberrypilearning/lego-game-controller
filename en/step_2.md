@@ -8,17 +8,22 @@ If a motor has an encoder, that means you can very accurately set the position o
 
 The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
 
+![encoder](images/zero.JPG)
+
 Let’s see that in action with some code.
 
 --- task ---
 
-Connect a motor to port A on the BuildHAT. Attach a wheel to the motor. 
+Connect a motor to port A on the BuildHAT. Attach a wheel to the motor.
+
+![wheel](images/wheel.JPG)
 
 --- /task ---
 
 --- task ---
 
 Once the Raspberry Pi has booted, open Thonny from the Raspberry Pi OS Desktop and click onto the REPL box at the bottom. 
+
 
 --- /task ---
 
@@ -37,6 +42,9 @@ bh = BuildHAT()
 ```
 
 --- /task ---
+
+
+![repl](images/thonny_repl.png)
 
 --- task ---
 
