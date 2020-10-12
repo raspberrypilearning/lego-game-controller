@@ -10,6 +10,7 @@ ball.dx = 1
 ball.dy = 1
 ```
 --- /task ---
+
 You can check where a turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the x and y coordinates respectively. 
 
 So to make the ball move you can combine the position and speed. 
@@ -27,7 +28,7 @@ while True:
 
 Instead of using `ball.setpos()`, this approach sets the x and y coordinates indivdually to make the program more readable.  Run the program. What happens?
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! 
+The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging you can increase the dx and dy values to make the ball move more quickly. 
 
 Now that you know how to move a ball/turtle, you need to constrain that motion to the game area. The top and bottom of the area will have invisible walls that the ball will bounce off.
 

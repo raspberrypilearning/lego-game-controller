@@ -2,9 +2,9 @@
 
 The turtle is the building block of the game.  It is already being used as the ball, now it can be used to create a paddle. 
 
-### Creating a colour paddle
+### Creating a coloured paddle
 
-Add the code below to your program, before the `while True` loop. This should look similar to the way we created a ball. One new function is`turtle.shapesize(x,y,c)` which is used to stretch the size of a turtle's shape. Experiment with different values to see how this works.
+Add the code below to your program, before the `while True` loop. This should look similar to the way we created a ball. One new function is`turtle.shapesize(x,y,c)` which is used to stretch the size of a turtle's shape. Experiment with different values to see how this works and pick ones that meet your idea for a pong game. If you have a fast moving ball then you might want a bigger paddle to make the game easier. 
 
 --- task ---
 
@@ -23,7 +23,7 @@ Run the code. You should see a green paddle on the left of the game area. Now to
 
 ### Moving the paddle
 
-We can now integrate the code we wrote back in teh first step, to constantly read the position of a motor. 
+We can now integrate the code we wrote back in the first step, to constantly read the position of a motor. 
 
 --- task ---
 First, add the line that imports the build_hat library to the top of your program. 
@@ -93,3 +93,4 @@ while True:
     if ball.xcor() > 195: # or ball.ycor() < -165: # bottom
         ball.dx *= -1
 ```
+

@@ -1,4 +1,4 @@
-title: lego-game-controller
+title: Build a LEGO Game Controller
 hero_image: images/banner.png
 description: lego-game-controller description
 version: 4
@@ -12,5 +12,6 @@ steps:
   - title: Keepimg the ball in play
   - title: Adding paddles
   - title: Collisions
+  - title: Finishing touches
   - title: What next
   
