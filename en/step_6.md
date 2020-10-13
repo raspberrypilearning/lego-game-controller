@@ -1,6 +1,6 @@
 ## Collisions
 
-You should find that the paddle moves up and down as you turn the wheel on your LEGO Technic motor.  The game is nearlt complete - but first you need to add some extra colision detection that covers the ball hitting the paddle. In the Scratch programming environment there are dedicated functions such as the `touching?`{:class="block3events"} and in game development libraries like pygame there are similar functiuons to handle collisions.
+You should find that the paddle moves up and down as you turn the wheel on your LEGO Technic motor.  The game is nearly complete - but first you need to add some extra collision detection that covers the ball hitting the paddle. In the Scratch programming environment there are dedicated functions such as the `touching?`{:class="block3events"} and in game development libraries like pygame there are similar functiuons to handle collisions.
 
 
 ```blocks3
@@ -111,3 +111,5 @@ ddle_r.ycor() + 20 and ball.ycor() > paddle_r.ycor() - 20):
 --- /task ---
 
 You should now be able to enjoy a basic 2 player game of pong.
+
+![repl](images/game.png)

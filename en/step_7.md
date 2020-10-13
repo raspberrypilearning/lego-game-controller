@@ -73,6 +73,55 @@ Find the two conditionals for each of the scoring sitautions - whnen ball is mis
 
 You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
 
+### Adding a buzzer
+
+To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+
+[[[rpi-connect-buzzer]]]
+
+
+Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO elements to mount the buzzer so that it doesn't flop around and become disconected during frantic gaming sessions.
+
+
+
+--- task ---
+
+Now add the `gpiozero` library to the list of imports at the start of you program:
+
+```python
+from gpiozero import Buzzer
+```
+
+Then make the buzzer availble for the programn to use to by setting which pin you have connected the positive (+) leg to.
+
+```python
+buzz = Buzzer(17)
+```
+If you didn't use pin 17, change the value to reflect the correct pin.
+
+
+--- /task ---
+
+Now whenever the paddle and ball make contact, you can play a short tone.
+
+--- task ---
+
+Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+
+```python
+buzz.beep(0.1,0.1,background=True)
+```
+
+Then add a  line to play a lonegr tone whenever the player misses the ball
+
+```python
+buzz.beep(0.5,0.5,background=True)
+```
+
+--- /task ---
+
+
+You can read moer about the options available with buzzers in the [GPIO Zero documenation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)
 
 ### Customising your controllers
 
