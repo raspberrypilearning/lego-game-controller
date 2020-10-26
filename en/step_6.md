@@ -2,15 +2,6 @@
 
 You should find that the paddle moves up and down as you turn the wheel on your LEGO Technic motor.  The game is nearly complete - but first you need to add some extra collision detection that covers the ball hitting the paddle. In the Scratch programming environment there are dedicated functions such as the `touching?`{:class="block3events"} and in game development libraries like pygame there are similar functiuons to handle collisions.
 
-
-```blocks3
-when button (2 v) is [pressed v] ::hat extension
-change size by (50) %
-change [color v] effect by (10)
-change [whirl v] effect by (50)
-
-```
-
 Using the Turtle library you can easily replicate this by checking if the two objects - the paddle and the ball - are in the same location at the same time. 
 
 --- task ---

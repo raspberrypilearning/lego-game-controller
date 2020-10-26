@@ -4,9 +4,9 @@
 
 Add even more randomness to the speed and trajectory fo the ball.
 
-Have the ball go faster as the game progresses.
+Have the ball moves faster as the game progresses.
 
-Right now the game carries on forever - have a target score that a player must achieve innorder to win and then start a new set of rounds. 
+Right now the game carries on forever - have a target score that a player must achieve inn order to win and then start a new set of rounds. 
 
 Introduce some haptic feedback, so that the motors turn a small amlount when a point is lost.
 
@@ -20,4 +20,4 @@ If you are following the [PathwayName](https://projects.raspberrypi.org/en/raspb
 
 ![ProjectName project](images/projectname-project.png)
 
-If you want to have more fun exploring Scratch, then you could try out any of [these projects](https://projects.raspberrypi.org/en/projects?software%5B%5D=scratch&curriculum%5B%5D=%201).
+If you want to have more fun with the Build HAT, then you could try out any of [these projects](https://projects.raspberrypi.org/en/projects?software%5B%5D=scratch&curriculum%5B%5D=%201).

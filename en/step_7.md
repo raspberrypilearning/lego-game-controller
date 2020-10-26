@@ -73,6 +73,8 @@ Find the two conditionals for each of the scoring sitautions - whnen ball is mis
 
 You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
 
+![bounce](images/score.png)
+
 ### Adding a buzzer
 
 To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
