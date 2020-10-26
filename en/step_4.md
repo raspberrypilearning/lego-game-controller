@@ -100,3 +100,5 @@ if ball.xcor() > 195:
 Test you program and make sure that the ball bounces off all walls except for the one on the left hand side. 
 
 The next step is to add paddles and link them to the LEGO motors.
+
+--- save ---
