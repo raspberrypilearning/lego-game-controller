@@ -125,6 +125,11 @@ buzz.beep(0.5,0.5,background=True)
 
 You can read moer about the options available with buzzers in the [GPIO Zero documenation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)
 
+Finally, use some more LEGO elements to mount your buzzer near the Raspberry Pi. 
+
+
+![buzzer mount](images/buzzer.JPG)
+
 ### Customising your controllers
 
 In your Python Turtle program you have used different colours for the paddles. You can customise your LEGO controllers by adding bricks and other LEGO elemnets of the same solour.
