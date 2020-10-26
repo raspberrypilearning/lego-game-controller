@@ -8,16 +8,9 @@ Use LEGO and the Raspberry Pi Build HAT to build games controller for a simple v
 
 In this project you will learn how to create a Python program game that uses LEGO motors for its controllers.
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
-
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
 
 --- print-only ---
-![Complete project](images/showcase_static.png)
+![Complete project](images/finished.JPG)
 --- /print-only ---
 
 --- collapse ---
