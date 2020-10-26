@@ -34,7 +34,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
-        score_r+=1
+        score_l+=1
 ```
 --- /hint ---
 
@@ -85,6 +85,7 @@ To include some simple sound effects, connect a buzzer to the GPIO pins on the R
 Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO elements to mount the buzzer so that it doesn't flop around and become disconected during frantic gaming sessions.
 
 
+![buzzer mount](images/buzzer.JPG)
 
 --- task ---
 
@@ -125,10 +126,7 @@ buzz.beep(0.5,0.5,background=True)
 
 You can read moer about the options available with buzzers in the [GPIO Zero documenation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)
 
-Finally, use some more LEGO elements to mount your buzzer near the Raspberry Pi. 
 
-
-![buzzer mount](images/buzzer.JPG)
 
 ### Customising your controllers
 

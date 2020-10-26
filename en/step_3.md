@@ -107,12 +107,12 @@ game_area.update()
 ```
 --- /hint ---
 --- hint ---
-Now that the screen is only update once at the end, the pattern drawn by the turtle would appear all at once rather than corner by corner. There would also be a long delay while nothing appeared to happen. 
+Now that the screen is only updated once at the end, the pattern drawn by the turtle would appear all at once rather than corner by corner. There would also be a long delay while nothing appeared to happen. 
 --- /hint ---
 --- /hints ---
 
 You won't need the code for moving the ball around the corners so you can delete or comment out those lines at this stage (but do keep the ball creation lines)
 
-Now that we have a game area and a ball, we need to keep the ball in play. 
+Now that you have a game area and a ball, you need to keep the ball in play. 
 
 --- save ---

@@ -81,7 +81,7 @@ To use the LEGO motors as a controller for a game, you'll ned to be able to cons
 
 --- task ---
 
-In the main Thonny window above the REPL, use the code we've already seen within a loop so that the position value is contantly displayed.
+In the main Thonny window above the REPL, write a program that uses the code you've already seen within a loop so that the position value is contantly displayed.
 
 --- hints ---
 --- hint ---
@@ -93,11 +93,11 @@ bh = BuildHAT()
 ```
 --- /hint ---
 --- hint ---
-The you need to read the status of the motor.  We're only interested in teh third value in the list that is returned so we can use [2] (remember we start counting list items at 0).
+You need to read the status of the motor.  You're only interested in teh third value in the list that is returned so you can use [2] to select that (remember you start counting list items at 0). Beacuse you're running this as a priogram rather than line by line in the REPL, you'll need to use the `print()` function to display the values. 
 
 ```python
 m1 = bh.port.A.motor
-m1.get()[2]
+print(m1.get()[2])
 ```
 --- /hint ---
 
@@ -110,7 +110,7 @@ bh = BuildHAT()
 
 m1 = bh.port.A.motor
 while True:
-    m1.get()[2]
+    print(m1.get()[2])
 ```
 --- /hint ---
 
