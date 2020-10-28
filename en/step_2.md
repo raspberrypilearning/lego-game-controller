@@ -14,6 +14,14 @@ Let’s see that in action with some code.
 
 --- task ---
 
+Connect a monitor, keyboard and mouse to your Raspberry Pi.
+
+Attach the Build HAT to your Raspberry Pi and *either* connect a 7.5v power supply to the barrel jack of the BuildHAT *or* use the stnadrd USB-C power socket on the Raspberry Pi to power up the computer. ]
+
+--- /task ---
+
+--- task ---
+
 Connect a motor to port A on the BuildHAT. Attach a wheel to the motor.
 
 ![wheel](images/wheel.JPG)
