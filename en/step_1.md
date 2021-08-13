@@ -1,8 +1,8 @@
 ## Introduction
 
-Use LEGO and the Raspberry Pi Build HAT to build games controller for a simple version of the classic Pong arcade gamne. Add some simple electronics for external lights and sounds. 
+Use LEGO and the Raspberry Pi Build HAT to build games controller for a simple version of the classic Pong arcade game. Add some simple electronics for external lights and sounds. 
 
-![finished](images/pong_gif.gif)
+![A movie showing a pong game being controlled by two LEGO motors with large blue wheels](images/pong_gif.gif)
 
 ### What you will make
 

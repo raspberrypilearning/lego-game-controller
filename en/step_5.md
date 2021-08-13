@@ -1,99 +1,104 @@
-## Adding paddles
+## Keeping the ball in play
 
-The turtle is the building block of the game.  It is already being used as the ball, now it can be used to create a paddle. 
-
-### Creating a coloured paddle
-
-Add the code below to your program, before the `while True` loop. This should look similar to the way we created a ball. One new function is`turtle.shapesize(x,y,c)` which is used to stretch the size of a turtle's shape. Experiment with different values to see how this works and pick ones that meet your idea for a pong game. If you have a fast moving ball then you might want a bigger paddle to make the game easier. 
+Let's keep track of the ball's speed in both the x and y direction using a couple of variables:
 
 --- task ---
+Add the following code to your program:
 
 ```python
-paddle_l = Turtle()
-paddle_l.color('green')
-paddle_l.shape('square')
-paddle_l.shapesize(4,1,1)
-paddle.penup()
-paddle.setpos(-190,0)
+ball.dx = 1
+ball.dy = 1
 ```
-
 --- /task ---
 
-Run the code. You should see a green paddle on the left of the game area. Now to make this move using the LEGO technic motor.
+You can check where a turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the x and y coordinates respectively. 
 
-### Moving the paddle
-
-We can now integrate the code we wrote back in the first step, to constantly read the position of a motor. 
+So to make the ball move you can combine the position and speed. 
 
 --- task ---
-First, add the line that imports the build_hat library to the top of your program. 
-
---- /task ---
-
---- task ---
-Then add the Build Hat initialisation line and the motor variable creation line after the import lines. To help make the program easier to understand, use the variable name `motor_l` to indicate it s being used for the left hand paddle. 
-
---- /task ---
-
---- task ---
-Now within the `while True` loop, add these lines which read the motor position into a variable and then use that to set the paddle's position. Because we chose our game area dimensions wisely there is no need for any conversion. 
+Add the lines below to your program:
 
 ```python
-pos_l = motor_l.get()[2]
-paddle_l.sety(pos_l)
-```
-
---- /task ---
-
-![bounce](images/bounce.png)
-
-Your program should look like this:
-
-```python
-from turtle import *
-from time import sleep
-from build_hat import BuildHAT
-
-bh = BuildHAT()
-
-motor_l = bh.port.A.motor
-
-game_area = Screen()
-game_area.title('PONG')
-game_area.setworldcoordinates(-200,-170,200,170)
-game_area.tracer(0)
-game_area.bgcolor('black')
-
-ball = Turtle()
-ball.color('white')
-ball.shape('circle')
-ball.pendown()
-ball.setpos(0,0)
-
-ball.speed(0)
-ball.dx = 0.7
-ball.dy = 0.7
-
-paddle_l = Turtle()
-paddle_l.color('green')
-paddle_l.shape("square")
-paddle_l.shapesize(4,1,1)
-paddle_l.penup()
-paddle_l.setpos(-190,0)
-
-
 while True:
     game_area.update()
-    pos_l = motor_l.get()[2]
-    paddle_l.sety(pos_l)
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
-    if ball.ycor() > 160: # or ball.ycor() < -165: # bottom
-        ball.dy *= -1
-    if ball.ycor() < -160: # or ball.ycor() < -165: # bottom
-        ball.dy *= -1
-    if ball.xcor() > 195: # or ball.ycor() < -165: # bottom
-        ball.dx *= -1
 ```
+--- /task ---
+
+Instead of using `ball.setpos()`, this approach sets the x and y coordinates individually to make the program more readable.  Run the program. What happens?
+
+The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging you can increase the dx and dy values to make the ball move more quickly. 
+
+Now that you know how to move a ball/turtle, you need to constrain that motion to the game area. The top and bottom of the area will have invisible walls that the ball will bounce off.
+
+
+--- task ---
+Add the following code to your program and run it. 
+
+```python
+if ball.ycor() > 160:
+    ball.dy *= -1
+```
+--- /task ---
+
+Now the ball should bounce off the top wall because once its y position exceeds 160, its speed is reversed - so it will travel in the opposite direction. 
+
+--- task ---
+
+Duplicate the added in the step above and modify it to add the same effect to the wall at the bottom of the game area.
+
+--- hints ---
+--- hint ---
+The bottom wall will have a y-axis boundary value of -160
+--- /hint ---
+--- hint ---
+In order for the ball to remain in play, its y coordinate needs to be greater than this boundary value.  So, reversing that logic, the ball should change direction if its y coordinate gets smaller than -160.
+
+--- /hint ---
+
+--- hint ---
+So your conditional test should look like this:
+
+```python
+if ball.ycor() < -160:
+    ball.dy *= -1
+```
+--- /hint ---
+
+--- /hints ---
+--- /task ---
+
+While you're testing the game, it will be easier to also have one side wall be bouncy, so that you can test out a paddle on the opposite end, like you are playing squash. 
+
+--- task ---
+
+Duplicate the added in the step above and modify it to add the same effect to the wall at the right hand side of the game area.
+
+--- hints ---
+--- hint ---
+The right wall will have an x-axis boundary value of 195.
+
+--- /hint ---
+--- hint ---
+In order for the ball to  in play, its x coordinate needs to be less than this boundary value.  So, reversing that logic, the ball should change direction if its x coordinate gets greater than 195.
+
+--- /hint ---
+
+--- hint ---
+So your conditional test should look like this:
+
+```python
+if ball.xcor() > 195:
+    ball.dx *= -1
+```
+--- /hint ---
+
+--- /hints ---
+--- /task ---
+
+Test you program and make sure that the ball bounces off all walls except for the one on the left hand side. 
+
+The next step is to add paddles and link them to the LEGO motors.
 
 --- save ---

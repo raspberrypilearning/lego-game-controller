@@ -8,7 +8,7 @@ If a motor has an encoder, that means you can very accurately set the position o
 
 The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
 
-![encoder](images/zero.JPG)
+![A photo of a large LEGO motor showing the lollipop marking on the blue encoder aligned with the zero mark on the white part of the motor](images/zero.JPG)
 
 Let’s see that in action with some code.
 
@@ -16,15 +16,15 @@ Let’s see that in action with some code.
 
 Connect a monitor, keyboard and mouse to your Raspberry Pi.
 
-Attach the Build HAT to your Raspberry Pi and *either* connect a 7.5v power supply to the barrel jack of the BuildHAT *or* use the stnadrd USB-C power socket on the Raspberry Pi to power up the computer. ]
+Attach the Build HAT to your Raspberry Pi and *either* connect a 7.5v power supply to the barrel jack of the BuildHAT *or* use the standard USB-C power socket on the Raspberry Pi to power up the computer. ]
 
 --- /task ---
 
 --- task ---
 
-Connect a motor to port A on the BuildHAT. Attach a wheel to the motor.
+Connect a motor to port A on the BuildHAT. Attach a wheel to the motor and turn teh wheel so tha the lollipop mark is in line with the zero, as shown in the picture above.
 
-![wheel](images/wheel.JPG)
+![A photo of a large LEGO motor with a black wheel with a blue tyre attached.](images/wheel.JPG)
 
 --- /task ---
 
@@ -40,91 +40,86 @@ Once the Raspberry Pi has booted, open Thonny from the Raspberry Pi OS Desktop a
 First import the BuildHAT library
 
 ```python
-from build_hat import BuildHAT
+from buildhat import Motor
 ```
 
-Then initialise a connection to the HAT
+Then create a motor object that refers to the specific port on the HAT to which you have connected a motor. 
 
 ```python
-bh = BuildHAT()
+m1 = Motor('A')
 ```
 
 --- /task ---
 
 
-![repl](images/thonny_repl.png)
+![A screenshot of the Thonny Python IDE showing code being run in the REPL](images/thonny_repl.png)
 
 --- task ---
 
-Create a shortcut variable for the motor to abstract away the motor details such as which port it is connected to. Then ask the motor to report its status:
+Now you can ask the motor to report its *absolute* position:
 
 ```python
-m1 = bh.port.A.motor
-m1.get()
+m1.get_aposition()
 ```
-You should see a Python list with 4 items returned and displayed:
+which should produce a signed integer as the output:
 
-[0, 68, 60, 0]
+4
 
---- /task ---
---- task ---
-
-Now move the by motor by rotating the wheel to any random position. Ask the motor's position again and you should see that two of the values in the list have changed.
-
-[0, 143, 131, 0]
-
+Depending on how accurately you aligned the lollipop mark with the zero, the number you see should be close to 0.
 
 --- /task ---
 
 --- task ---
 
-Now rotate the wheel again and set the motor to its zero degrees position, so that the lollipop markers is aligned with the 0.  Ask the motor's position again and you should see that the third value will be close to or equal to zero, depending on how accurately you were able to line up the two markers. 
+You can also keep track of the motor's *relative* position:
 
-[0, 11, 2, 0]
+```python
+m1.get_position()
+```
+which, as long as you have not moved the motor encode, should display zero as an output.
+
+0
+
+--- /task ---
+--- task ---
+
+Now move the by motor by rotating the wheel by roughly 90 degrees in the clockwise direction. Ask the motor's absolute position again and you should see that the output has changed.
+
+87
+
+Checking the relative position should a similar value:
+
+83
+
+(in fact it should be the difference between the original and latest absolute positions)
 
 
 --- /task ---
-
-To use the LEGO motors as a controller for a game, you'll ned to be able to constantly read their position so that the gameplay feels responsive and isn't too laggy. Let's a write a Python program to do that. 
 
 --- task ---
 
-In the main Thonny window above the REPL, write a program that uses the code you've already seen within a loop so that the position value is contantly displayed.
+Now rotate the wheel by a further 180 degrees clockwise. Check the absolute position again:
 
---- hints ---
---- hint ---
-First of all, import the BuildHAT library and set up a connection to the HAT
+-83
 
-```python
-from build_hat import BuildHAT
-bh = BuildHAT()
-```
---- /hint ---
---- hint ---
-You need to read the status of the motor.  You're only interested in teh third value in the list that is returned so you can use [2] to select that (remember you start counting list items at 0). Beacuse you're running this as a priogram rather than line by line in the REPL, you'll need to use the `print()` function to display the values. 
+This will be quite different from the relative position, which should be something like:
 
-```python
-m1 = bh.port.A.motor
-print(m1.get()[2])
-```
---- /hint ---
-
---- hint ---
-Finally wrap the last line within a while loop so that the whole program looks like:
-
-```python
-from build_hat import BuildHAT
-bh = BuildHAT()
-
-m1 = bh.port.A.motor
-while True:
-    print(m1.get()[2])
-```
---- /hint ---
-
---- /hints ---
-
+271
 --- /task ---
-Next you can start thinking about your game and how to integrate this code so that the motors can be used as controllers. 
 
---- save ---
+--- task ---
+
+Now rotate the wheel one more time, by 180 degrees clockwise again. The absolute position should be close to:
+
+79
+
+But the relative position will be something like:
+
+435
+--- /task ---
+
+From that motor wiggling you may have already worked out the difference between `get_aposition()` and `get_position()`. Asking for the absolute position will always return an integer between -180 and 180 degrees which corresponds to the lollipop mark's position with respect to the zero mark. Multiple rotations make no difference. If the lollipop is 3 degrees to the left of the zero mark, its absolute position will be -3 even if the motor had been spun round and round 100 times.
+
+The relative position is different as it records how many degrees the motor has been turned through since you created the motor object. Multiple rotations are counted so if you spin the motor encoder all the way around 10 times, it should report a value of 3600.
+
+

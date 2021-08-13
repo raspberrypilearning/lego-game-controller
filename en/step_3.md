@@ -1,118 +1,69 @@
-## The legendary game of Pong
+## Reacting to motor encoder movement
 
-[Pong](https://en.wikipedia.org/wiki/Pong) was one of the earliest arcade video games, originally released in 1972 by Atari . It is a table tennis game featuring simple two-dimensional graphics.  The player controls an in-game paddle by moving it vertically across the left or right side of the screen. They can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth and the first player earns a point if the second player fails to return the ball.
-
-You can read more about the history of Pong and look at a another Python version of the game in the boom [Code the Classics](https://wireframe.raspberrypi.org/books/code-the-classics1/pdf)
-
-### Creating a simple version of Pong with Python
-
-There are lots of ways to create a Pong-style game with Python. One approach is to use the pygame or pg-zero libraries, but this project is goimng to use the turtle library. 
-
-Turtle is a versatile drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race). 
-
-### Creating a game area
-
-First let's create a window where the game will be played. 
+To use the LEGO motors as a controller for a game, you'll ned to be able to constantly read their absolute positions so that the gameplay feels responsive and isn't too laggy. Let's a write a Python program to do that. 
 
 --- task ---
 
-Open a new file in Thonny and add the follwoing code to import the turtle and time libraries and then set up a screen. Run the file and you should see a black window with the title "PONG" open. 
-
-```python
-from turtle import *
-from time import sleep
-
-game_area = Screen()
-game_area.title("PONG")
-game_area.bgcolor('black')
-game_area.tracer(0)
-```
-
---- /task ---
-
-### Designing the controls
-
-The LEGO Technic motor is going to be used to control the position of a paddle and there are few ways this could work. 
-
-One approach is to have the zero position of the motor correspond to the midpoint of the vertical axis of the game area. The motor's axle can move through 360 degrees and we could let our paddle drop off the bottom of the game area and re-appear at the top, like Pac Man does in that other classic game.
-
-However being clever about how coordinates are assigned to the game area will make it easier  easy to map motor position onto the paddle's position.  If the motion of the motor and wheel is limited to less than 180 degrees in either direction (clockwise or anti-clockwise) then the game area could have a corresponding height of less than 360 pixels. 
-
-A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
-
-![motor block](images/motor_block.gif)
-
---- print-only ---
-![motor block](images/sidebyside.png)
---- /print-only ---
-
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program
-
---- task ---
-
-```python
-game_area.setworldcoordinates(-200,-170, 200, 170)
-```
---- /task ---
-
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being at the midpoint of each axis. 
-
-
-![window](images/coords.png)
-
---- task ---
-
-### Moving turtles
-
-To verify that the coordinates of the game area are set correctly, use a turtle "ball" to move from the centre to each corner in turn. Add this code to your program and then run it.
-
-```python
-ball = Turtle()
-ball.color('white')
-ball.shape('circle')
-
-ball.setpos(0,0)
-
-corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
-for c in corners:
-    ball.setpos(-200,-170)
-    game_area.update()
-    sleep(1)
-
-```
-
---- /task ---
-
- The `turtle.setpos(x,y)` function is used to move a turtle to a given position. The screen also needs to be updated after each change.  What would happen if the `game_area.update()` line is moved outside the loop?
-
+In the main Thonny window above the REPL, write a program that uses the code you've already seen within a loop so that the position value is constantly displayed.
 
 --- hints ---
 --- hint ---
-The modified code would look like this:
+First of all, import the BuildHAT library and create a motor object.
 
 ```python
-ball = Turtle()
-ball.color('white')
-ball.shape('circle')
-ball.pendown()
-
-ball.setpos(0,0)
-
-corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
-for c in corners:
-    ball.setpos(-200,-170)
-
-    sleep(1)
-game_area.update()
+from buildhat import Motor
+m1 = Motor('A')
 ```
 --- /hint ---
 --- hint ---
-Now that the screen is only updated once at the end, the pattern drawn by the turtle would appear all at once rather than corner by corner. There would also be a long delay while nothing appeared to happen. 
+You need to read the absolute position of the motor.   Because you're running this as a program rather than line by line in the REPL, you'll need to use the `print()` function to display the values. 
+
+```python
+
+print(m1.get_aposition())
+```
 --- /hint ---
+
+--- hint ---
+Finally wrap the last line within a while loop so that the whole program looks like:
+
+```python
+from buildhat import Motor
+motor = Motor('A')
+
+while True:
+    print(m1.get_aposition())
+```
+--- /hint ---
+
 --- /hints ---
 
-You won't need the code for moving the ball around the corners so you can delete or comment out those lines at this stage (but do keep the ball creation lines)
+--- /task ---
 
-Now that you have a game area and a ball, you need to keep the ball in play. 
+You should see that your program continually prints the position of the motor. If you rotate the encode, these values should change. You could use this for your game controller as a way of having a character or object respond to movement. However, constantly checking for changes isn't the most efficient way to do this: the computer;s resources will be used even when the motor isn't being touched. Luckily we can make use of a *callback* to tell the program when the motor has been moved so they only need to take action when needed.
+
+--- task ---
+
+Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor.
+
+```python
+def moved(motor_speed, motor_pos, motor_apos):
+    print(motor_apos)
+```
+
+--- /task ---
+
+--- task ---
+
+Now set this function to run when the motor's encoder is moved:
+
+```python
+m1.when_rotated = moved
+```
+
+--- /task ---
+
+
+Next you can start thinking about your game and how to integrate this code so that the motors can be used as controllers. 
 
 --- save ---

@@ -1,104 +1,118 @@
-## Keepimg the ball in play
+## The legendary game of Pong
 
-Let's keep track of the ball's speed in both the x and y direction using a couple of variables:
+[Pong](https://en.wikipedia.org/wiki/Pong) was one of the earliest arcade video games, originally released in 1972 by Atari . It is a table tennis game featuring simple two-dimensional graphics.  The player controls an in-game paddle by moving it vertically across the left or right side of the screen. They can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth and the first player earns a point if the second player fails to return the ball.
+
+You can read more about the history of Pong and look at a another Python version of the game in the boom [Code the Classics](https://wireframe.raspberrypi.org/books/code-the-classics1/pdf)
+
+### Creating a simple version of Pong with Python
+
+There are lots of ways to create a Pong-style game with Python. One approach is to use the pygame or pg-zero libraries, but this project is going to use the turtle library. 
+
+Turtle is a versatile drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race). 
+
+### Creating a game area
+
+First let's create a window where the game will be played. 
 
 --- task ---
-Add the following code to your program:
+
+Open a new file in Thonny and add the following code to import the turtle and time libraries and then set up a screen. Run the file and you should see a black window with the title "PONG" open. 
 
 ```python
-ball.dx = 1
-ball.dy = 1
+from turtle import *
+from time import sleep
+
+game_area = Screen()
+game_area.title("PONG")
+game_area.bgcolor('black')
+game_area.tracer(0)
+```
+
+--- /task ---
+
+### Designing the controls
+
+The LEGO Technic motor is going to be used to control the position of a paddle and there are few ways this could work. 
+
+One approach is to have the zero position of the motor correspond to the midpoint of the vertical axis of the game area. The motor's axle can move through 360 degrees and we could let our paddle drop off the bottom of the game area and re-appear at the top, like Pac Man does in that other classic game.
+
+However being clever about how coordinates are assigned to the game area will make it easier  easy to map motor position onto the paddle's position.  If the motion of the motor and wheel is limited to less than 180 degrees in either direction (clockwise or anti-clockwise) then the game area could have a corresponding height of less than 360 pixels. 
+
+A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
+
+![An animation showing a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+
+--- print-only ---
+![Two photos of a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated](images/sidebyside.png)
+--- /print-only ---
+
+The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program
+
+--- task ---
+
+```python
+game_area.setworldcoordinates(-200,-170, 200, 170)
 ```
 --- /task ---
 
-You can check where a turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the x and y coordinates respectively. 
+This creates a rectangular window 400 pixels wide and 340 high, with 0 being at the midpoint of each axis. 
 
-So to make the ball move you can combine the position and speed. 
+
+![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,17, top right is 200,17, bottom left is -200,-17 and bottom right is 200,-17. The centre is 0,0](images/coords.png)
 
 --- task ---
-Add the lines below to your program:
+
+### Moving turtles
+
+To verify that the coordinates of the game area are set correctly, use a turtle "ball" to move from the centre to each corner in turn. Add this code to your program and then run it.
 
 ```python
-while True:
+ball = Turtle()
+ball.color('white')
+ball.shape('circle')
+
+ball.setpos(0,0)
+
+corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
+for c in corners:
+    ball.setpos(-200,-170)
     game_area.update()
-    ball.setx(ball.xcor() + ball.dx)
-    ball.sety(ball.ycor() + ball.dy)
+    sleep(1)
+
 ```
+
 --- /task ---
 
-Instead of using `ball.setpos()`, this approach sets the x and y coordinates indivdually to make the program more readable.  Run the program. What happens?
+ The `turtle.setpos(x,y)` function is used to move a turtle to a given position. The screen also needs to be updated after each change.  What would happen if the `game_area.update()` line is moved outside the loop?
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging you can increase the dx and dy values to make the ball move more quickly. 
-
-Now that you know how to move a ball/turtle, you need to constrain that motion to the game area. The top and bottom of the area will have invisible walls that the ball will bounce off.
-
-
---- task ---
-Add the following code to your program and run it. 
-
-```python
-if ball.ycor() > 160:
-    ball.dy *= -1
-```
---- /task ---
-
-Now the ball should bounce off the top wall because once its y position exceeds 160, its speed is reveresed - so it will travel in the opposite direction. 
-
---- task ---
-
-Duplicate the added in the step above and modify it to add the same effect to the wall at the bottom of the game area.
 
 --- hints ---
 --- hint ---
-The bottom wall will have a y-axis boundary value of -160
---- /hint ---
---- hint ---
-In order for the ball to remaion in play, its y coordinate needs to be greater than this boundary value.  So, reversing that logic, the ball should change direction if its y coordinate gets smaller than -160.
-
---- /hint ---
-
---- hint ---
-So your conditional test should look like this:
+The modified code would look like this:
 
 ```python
-if ball.ycor() < -160:
-    ball.dy *= -1
+ball = Turtle()
+ball.color('white')
+ball.shape('circle')
+ball.pendown()
+
+ball.setpos(0,0)
+
+corners = [(-200,-170), (-200,170), (200,170), (200,-170)]
+for c in corners:
+    ball.setpos(-200,-170)
+
+    sleep(1)
+game_area.update()
 ```
 --- /hint ---
-
+--- hint ---
+Now that the screen is only updated once at the end, the pattern drawn by the turtle would appear all at once rather than corner by corner. There would also be a long delay while nothing appeared to happen. 
+--- /hint ---
 --- /hints ---
---- /task ---
 
-While you're testing the game, it will be easier to also have one side wall be bonucy, so that you can test out a paddle on the opposite end, like you are playing squash. 
+You won't need the code for moving the ball around the corners so you can delete or comment out those lines at this stage (but do keep the ball creation lines)
 
---- task ---
-
-Duplicate the added in the step above and modify it to add the same effect to the wall at the right hand side of the game area.
-
---- hints ---
---- hint ---
-The right wall will have an x-axis boundary value of 195.
-
---- /hint ---
---- hint ---
-In order for the ball to remaion in play, its x coordinate needs to be less than this boundary value.  So, reversing that logic, the ball should change direction if its x coordinate gets greater than 195.
-
---- /hint ---
-
---- hint ---
-So your conditional test should look like this:
-
-```python
-if ball.xcor() > 195:
-    ball.dx *= -1
-```
---- /hint ---
-
---- /hints ---
---- /task ---
-
-Test you program and make sure that the ball bounces off all walls except for the one on the left hand side. 
-
-The next step is to add paddles and link them to the LEGO motors.
+Now that you have a game area and a ball, you need to keep the ball in play. 
 
 --- save ---
