@@ -50,10 +50,10 @@ Once you're happy with the various settings, it's time to add in the second padd
 
 --- hints ---
 --- hint ---
-First of all, connect a second motor to the Build HAT and set it up in the program 
+First of all, connect a second motor to the Build HAT (port B) and set it up in the program 
 
 ```python
-motor_r = bh.port.B.motor
+motor_r = Motor('B')
 ```
 
 Now duplicate the code for creating a paddle and change its colour and starting position.

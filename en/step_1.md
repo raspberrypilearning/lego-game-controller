@@ -28,7 +28,7 @@ This project can be tackled without the need for an additional power supply for 
 + A small breadboard (optional)
 + Some LEDs and 100 ohm resistors (optional)
 + Some breadboard jumper leads (optional)
-+ A 9v power supply with a barrel jack.(optional) This can be a battery pack, but make sure that all cells are fully charged. 
++ A 7.5v power supply with a barrel jack.(optional) This can be a battery pack, but make sure that all cells are fully charged. 
 
 ### Software
 

@@ -32,7 +32,7 @@ First, add the line that imports the build_hat library to the top of your progra
 --- /task ---
 
 --- task ---
-Then add the Build Hat initialisation line and the motor object creation line after the import lines. To help make the program easier to understand, use the variable name `motor_l` to indicate it s being used for the left hand paddle. 
+Then add the motor object creation line after the import lines. To help make the program easier to understand, use the variable name `motor_l` to indicate it s being used for the left hand paddle. 
 
 --- /task ---
 
