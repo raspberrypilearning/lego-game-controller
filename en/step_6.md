@@ -1,5 +1,17 @@
 ## Adding paddles
 
+### Designing the controls
+
+The LEGO Technic motor is going to be used to control the position of a paddle but you don't want to be able to make full turns. 
+
+A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
+
+![An animation showing a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+
+--- print-only ---
+![Two photos of a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated](images/sidebyside.png)
+--- /print-only ---
+
 The turtle is the building block of the game.  It is already being used as the ball, now it can be used to create a paddle. 
 
 ### Creating a coloured paddle

@@ -3,7 +3,7 @@
 Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race). 
 
 
-First let's create a window where the game will be played. 
+First create a window where the game will be played. 
 
 --- task ---
 
@@ -28,18 +28,6 @@ game_area.tracer(0) #give smoother animations
 --- /code ---
 
 --- /task ---
-
-### Designing the controls
-
-The LEGO Technic motor is going to be used to control the position of a paddle but you don't want to be able to make full turns. 
-
-A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
-
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
-
---- print-only ---
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated](images/sidebyside.png)
---- /print-only ---
 
 The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program
 
