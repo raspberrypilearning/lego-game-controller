@@ -1,37 +1,51 @@
-## Motor encoders
+## Using Spike motor encoders
 
-Let's look at how motor encoders work.
+![A photo of a large LEGO motor showing the lollipop marking on the blue encoder aligned with the zero mark on the white part of the motor](images/zero.JPG)
+
+Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+
+The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+
+--- collapse ---
+---
+title: How motor encoders work
+---
 
 A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analog or digital output. 
 
 If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program. 
 
-The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
-
-![A photo of a large LEGO motor showing the lollipop marking on the blue encoder aligned with the zero mark on the white part of the motor](images/zero.JPG)
-
-Let’s see that in action with some code.
+--- /collapse ---
 
 --- task ---
+
+Connect your BuildHAT to your Raspberry Pi, and then connect the power, either though the BuildHAT barrel jack or the USB-C port on the Raspberry Pi.
 
 Connect a monitor, keyboard and mouse to your Raspberry Pi.
 
-Attach the Build HAT to your Raspberry Pi and *either* connect a 7.5v power supply to the barrel jack of the BuildHAT *or* use the standard USB-C power socket on the Raspberry Pi to power up the computer. ]
+--- /task ---
+
+--- task ---
+
+Connect a motor to port A on the BuildHAT.
+
+![motor attached via a ribbon cable to port A on the buildHAT](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-Connect a motor to port A on the BuildHAT. Attach a wheel to the motor and turn teh wheel so tha the lollipop mark is in line with the zero, as shown in the picture above.
+ Attach a large wheel to the motor using 4 connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
 
-![A photo of a large LEGO motor with a black wheel with a blue tyre attached.](images/wheel.JPG)
+ ![motor with connector pegs attached](images/motor_with_pegs.jpg)
+ ![motor with a large wheel attached](images/motor_with_wheel.jpg)
+![motor with the lollipop mark in line with a circle](images/aligned)symbols.jpg)
 
 --- /task ---
 
 --- task ---
 
-Once the Raspberry Pi has booted, open Thonny from the Raspberry Pi OS Desktop and click onto the REPL box at the bottom. 
-
+Open Thonny from the Raspberry Pi **Programming** menu and click onto the REPL box at the bottom. 
 
 --- /task ---
 

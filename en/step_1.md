@@ -1,56 +1,45 @@
 ## Introduction
 
-Use LEGO and the Raspberry Pi Build HAT to build games controller for a simple version of the classic Pong arcade game. Add some simple electronics for external lights and sounds. 
+In this project you will use the Raspberry Pi BuildHAT, a LEGO Spike motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play pong.
+
+<p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
+<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> was one of the earliest arcade video games, originally released in 1972 by Atari . It is a table tennis game featuring simple two-dimensional graphics.  The player controls a paddle by moving it vertically on the screen. They can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth and the first player earns a point if the second player fails to return the ball.
+</p>
+
+You will:
+- learn how to read the degrees of rotation from LEGO Spike motor encoders
+- learn to draw and move Turtle graphics using LEGO Spike motor encoders
+- learn to detect collisions between graphics using `x` and `y` coordinates
+
+--- no-print ---
 
 ![A movie showing a pong game being controlled by two LEGO motors with large blue wheels](images/pong_gif.gif)
 
-### What you will make
-
-In this project you will learn how to create a Python program game that uses LEGO motors for its controllers.
-
+--- /no-print ---
 
 --- print-only ---
+
 ![Complete project](images/finished.JPG)
+
 --- /print-only ---
 
---- collapse ---
----
-title: What you will need
----
-### Hardware
-
-This project can be tackled without the need for an additional power supply for the BuildHAT. Because the motors are moved by hand, an normal 5v Raspberry Pi power supply is all that it is needed. 
+### You will need
 
 + A Raspberry Pi computer
 + A Raspberry Pi Build HAT
-+ At least one LEGO Technic motor
-+ Assortment of LEGO, including two wheels. We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
++ At least one LEGO Spike motor
++ Assortment of LEGO, including wheels. We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
 + A small breadboard (optional)
-+ Some LEDs and 100 ohm resistors (optional)
++ A Buzzer (optional)
 + Some breadboard jumper leads (optional)
-+ A 7.5v power supply with a barrel jack.(optional) This can be a battery pack, but make sure that all cells are fully charged. 
++ A 7.5v power supply with a barrel jack (optional). You can use an official Raspberry Pi power supply for this project, as the motor encoders will not be using any power.
 
 ### Software
 
 + Python 3
 + Build HAT Python library
 
-
 ### Downloads
-
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
----
-
-- How to read position values from LEGO Technic motor encoders
-- How to create a simple game using the Python Turtle library
-- How to add am electronic buzzer to your project
-
---- /collapse ---
 
 --- collapse ---
 ---
