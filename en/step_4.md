@@ -1,4 +1,4 @@
-## Making a ball move in pong
+## Making your pong screen
 
 Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race). 
 
@@ -62,8 +62,6 @@ game_area.setworldcoordinates(-200,-170, 200, 170)
 This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre. 
 
 ![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,17, top right is 200,17, bottom left is -200,-17 and bottom right is 200,-17. The centre is 0,0](images/coords.png)
-
---- task ---
 
 --- task ---
 
