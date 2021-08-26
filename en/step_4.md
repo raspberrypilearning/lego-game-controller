@@ -98,7 +98,7 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Lastly you need to update your game area, to see the paddle and ball. Add a `while True` loop to the bottom of your code, and call the `update()` method.
+Lastly you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
 
 --- code ---
 ---

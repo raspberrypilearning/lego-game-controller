@@ -1,14 +1,25 @@
-## Keeping the ball in play
+## Moving the ball
 
-Let's keep track of the ball's speed in both the x and y direction using a couple of variables:
+The ball is going to be bouncing around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` coordinates. This number can be larger to make the game harder, or smaller to make the game easier.
 
 --- task ---
+
 Add the following code to your program:
 
-```python
-ball.dx = 1
-ball.dy = 1
-```
+--- code ---
+---
+language: python
+filename: pong.py
+line_numbers: true
+line_number_start: 23
+line_highlights: 
+---
+
+ball.speed_x = 1
+ball.speed_y = 1
+
+--- /code ---
+
 --- /task ---
 
 You can check where a turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the x and y coordinates respectively. 
@@ -18,87 +29,86 @@ So to make the ball move you can combine the position and speed.
 --- task ---
 Add the lines below to your program:
 
-```python
+--- code ---
+---
+language: python
+filename: pong.py
+line_numbers: true
+line_number_start: 27
+line_highlights: 30, 31
+---
+
 while True:
     game_area.update()
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
-```
+
+--- /code ---
+
 --- /task ---
 
-Instead of using `ball.setpos()`, this approach sets the x and y coordinates individually to make the program more readable.  Run the program. What happens?
+Run the program and see what happens?
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging you can increase the dx and dy values to make the ball move more quickly. 
+![pong screen with the ball travelling off to the top right corner](images/ball_diagonal.gif)
 
-Now that you know how to move a ball/turtle, you need to constrain that motion to the game area. The top and bottom of the area will have invisible walls that the ball will bounce off.
+The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging you can increase the `speed_x` and `speed_y` values to make the ball move more quickly. 
 
-
---- task ---
-Add the following code to your program and run it. 
-
-```python
-if ball.ycor() > 160:
-    ball.dy *= -1
-```
---- /task ---
-
-Now the ball should bounce off the top wall because once its y position exceeds 160, its speed is reversed - so it will travel in the opposite direction. 
+The ball should bounce off the top wall. To do this if its `y` position is greater than 160, the speed can be reversed, making the ball travel in the opposite direction. 
 
 --- task ---
 
-Duplicate the added in the step above and modify it to add the same effect to the wall at the bottom of the game area.
+Add the following code into your game loop and run it. 
 
---- hints ---
---- hint ---
-The bottom wall will have a y-axis boundary value of -160
---- /hint ---
---- hint ---
-In order for the ball to remain in play, its y coordinate needs to be greater than this boundary value.  So, reversing that logic, the ball should change direction if its y coordinate gets smaller than -160.
+--- code ---
+---
+language: python
+filename: pong.py
+line_numbers: true
+line_number_start: 27
+line_highlights: 32, 33
+---
 
---- /hint ---
+while True:
+    game_area.update()
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+    if ball.ycor() > 160:
+        ball.speed_y *= -1
 
---- hint ---
-So your conditional test should look like this:
+--- /code ---
 
-```python
-if ball.ycor() < -160:
-    ball.dy *= -1
-```
---- /hint ---
-
---- /hints ---
 --- /task ---
-
-While you're testing the game, it will be easier to also have one side wall be bouncy, so that you can test out a paddle on the opposite end, like you are playing squash. 
 
 --- task ---
 
-Duplicate the added in the step above and modify it to add the same effect to the wall at the right hand side of the game area.
+Run your code again, and the ball should bounce off the top of the screen, but disappear of the right of the screen.
 
---- hints ---
---- hint ---
-The right wall will have an x-axis boundary value of 195.
-
---- /hint ---
---- hint ---
-In order for the ball to  in play, its x coordinate needs to be less than this boundary value.  So, reversing that logic, the ball should change direction if its x coordinate gets greater than 195.
-
---- /hint ---
-
---- hint ---
-So your conditional test should look like this:
-
-```python
-if ball.xcor() > 195:
-    ball.dx *= -1
-```
---- /hint ---
-
---- /hints ---
 --- /task ---
 
-Test you program and make sure that the ball bounces off all walls except for the one on the left hand side. 
+In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, into your game loop.
 
-The next step is to add paddles and link them to the LEGO motors.
+--- task ---
+
+Add these checks on the ball's position.
+
+--- code ---
+---
+language: python
+filename: pong.py
+line_numbers: true
+line_number_start: 32
+line_highlights: 
+---
+    if ball.ycor() > 160:
+        ball.speed_y *= -1
+    if ball.xcor() > 195:
+        ball.speed_x *= -1
+    if ball.ycor() < -160:
+        ball.speed_y *= -1
+--- /code ---
+
+--- /task ---
+
+The ball should now bounce around the screen, and fly off the left edge. Next you can control your paddle to reflect the ball back from the left edge.
 
 --- save ---
