@@ -35,17 +35,17 @@ Connect a motor to port A on the BuildHAT.
 
 --- task ---
 
- Attach a large wheel to the motor using 4 connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+Attach a large wheel to the motor using 4 connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
 
- ![motor with connector pegs attached](images/motor_with_pegs.jpg)
- ![motor with a large wheel attached](images/motor_with_wheel.jpg)
+![motor with connector pegs attached](images/motor_with_pegs.jpg)
+![motor with a large wheel attached](images/motor_with_wheel.jpg)
 ![motor with the lollipop mark in line with a circle](images/aligned)symbols.jpg)
 
 --- /task ---
 
 --- task ---
 
-Open Thonny from the Raspberry Pi **Programming** menu and click onto the REPL box at the bottom. 
+Open Thonny from the Raspberry Pi **Programming** menu and click onto the **Shell** box at the bottom of the window. 
 
 --- /task ---
 
@@ -57,83 +57,43 @@ First import the BuildHAT library
 from buildhat import Motor
 ```
 
-Then create a motor object that refers to the specific port on the HAT to which you have connected a motor. 
+Then create a motor object that that tells Python the motor is connected to port `A`
 
 ```python
-m1 = Motor('A')
+motor_1eft = Motor('A')
 ```
+
+![A screenshot of the Thonny Python IDE showing code being run in the shell](images/thonny_shell_2.png)
 
 --- /task ---
 
-
-![A screenshot of the Thonny Python IDE showing code being run in the REPL](images/thonny_repl.png)
-
 --- task ---
 
-Now you can ask the motor to report its *absolute* position:
+Now you can ask the motor to report its *absolute* position. This will always be between `-180` and `180`.
 
 ```python
-m1.get_aposition()
+motor_1eft.get_aposition()
 ```
-which should produce a signed integer as the output:
 
-4
+Depending on how well you positioned the motor at the start, you should get a value close to `0`.
 
-Depending on how accurately you aligned the lollipop mark with the zero, the number you see should be close to 0.
+Move the motor and type the line a second time, and see how the value changes
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's *relative* position:
+You can also keep track of the motor's *relative* position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
 
 ```python
-m1.get_position()
+motor_1eft.get_position()
 ```
-which, as long as you have not moved the motor encode, should display zero as an output.
-
-0
-
---- /task ---
---- task ---
-
-Now move the by motor by rotating the wheel by roughly 90 degrees in the clockwise direction. Ask the motor's absolute position again and you should see that the output has changed.
-
-87
-
-Checking the relative position should a similar value:
-
-83
-
-(in fact it should be the difference between the original and latest absolute positions)
-
-
 --- /task ---
 
 --- task ---
 
-Now rotate the wheel by a further 180 degrees clockwise. Check the absolute position again:
+Move the motor around an check it's absolute and relative positions, so that you understand how the values change.
 
--83
-
-This will be quite different from the relative position, which should be something like:
-
-271
 --- /task ---
-
---- task ---
-
-Now rotate the wheel one more time, by 180 degrees clockwise again. The absolute position should be close to:
-
-79
-
-But the relative position will be something like:
-
-435
---- /task ---
-
-From that motor wiggling you may have already worked out the difference between `get_aposition()` and `get_position()`. Asking for the absolute position will always return an integer between -180 and 180 degrees which corresponds to the lollipop mark's position with respect to the zero mark. Multiple rotations make no difference. If the lollipop is 3 degrees to the left of the zero mark, its absolute position will be -3 even if the motor had been spun round and round 100 times.
-
-The relative position is different as it records how many degrees the motor has been turned through since you created the motor object. Multiple rotations are counted so if you spin the motor encoder all the way around 10 times, it should report a value of 3600.
 
 
