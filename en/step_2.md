@@ -1,8 +1,8 @@
 ## Using Spike motor encoders
 
-![A photo of a large LEGO motor showing the lollipop marking on the blue encoder aligned with the zero mark on the white part of the motor](images/zero.JPG)
-
 Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+
+![motor with the lollipop mark in line with a circle](images/aligned_symbols.jpg)
 
 The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
 
@@ -39,7 +39,6 @@ Attach a large wheel to the motor using 4 connector pegs. Turn the wheel so that
 
 ![motor with connector pegs attached](images/motor_with_pegs.jpg)
 ![motor with a large wheel attached](images/motor_with_wheel.jpg)
-![motor with the lollipop mark in line with a circle](images/aligned)symbols.jpg)
 
 --- /task ---
 
