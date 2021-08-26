@@ -71,7 +71,7 @@ motor_1eft = Motor('A')
 Now you can ask the motor to report its *absolute* position. This will always be between `-180` and `180`.
 
 ```python
-motor_1eft.get_aposition()
+motor_left.get_aposition()
 ```
 
 Depending on how well you positioned the motor at the start, you should get a value close to `0`.
