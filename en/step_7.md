@@ -3,6 +3,7 @@
 The game is nearly complete - but first you need to add some extra collision detection that covers the ball hitting the paddle. 
 
 --- task ---
+
 Within the `while True` loop, check if the balls y position is in the vertical line in which the paddle moves. Also use an `and` because to check ball's x position is within the horizontal area covered by the paddle. 
 
 --- code ---
@@ -49,7 +50,6 @@ line_highlights: 53-56
 
 Once you're happy with the various settings, it's time to add in the second paddle.
 
---- task ---
 Using what you've created for the left hand paddle as a starting point, add a second paddle on the right hand side of the game area. 
 
 --- task ---
@@ -67,6 +67,7 @@ line_highlights: 6
 motor_left = Motor('A')
 motor_right = Motor('B')
 --- /code ---
+
 --- /task ---
 
 --- task ---
