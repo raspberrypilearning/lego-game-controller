@@ -65,6 +65,8 @@ def moved_left(motor_speed, motor_rpos, motor_apos):
     pos_left = motor_apos
 --- /code ---
 
+--- /task---
+
 --- task ---
 
 Now add a single line that will use that function, each time the motor is moved. It can be just before your `while` loop.
@@ -79,12 +81,11 @@ line_highlights:
 ---
 motor_left.when_rotated = moved_left
 --- /code ---
---- /task ---
-
 
 --- /task ---
 
 --- task ---
+
 Then add a line to the `while True` loop to update the paddle object on the screen to the new position. 
 
 --- code ---
@@ -100,11 +101,11 @@ line_highlights: 49
     paddle_left.sety(pos_left)
 --- /code ---
 
+--- /task ---
+
 --- task ---
 
 Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
-
---- /task ---
 
 --- /task ---
 
