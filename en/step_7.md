@@ -29,6 +29,7 @@ Now you have a way of preventing the ball from disappearing off-screen, it's tim
 For now let's just reset the ball back to start.
 
 --- task ---
+
 Add this code within the `while True` loop:
 
 --- code ---
@@ -78,7 +79,7 @@ You can copy and past your code for setting up your left paddle, and change the 
 
 --- task ---
 
-Create your right paddle
+Create your right paddle.
 
 --- code ---
 ---
