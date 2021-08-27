@@ -12,6 +12,7 @@ steps:
   - title: Making your pong screen
   - title: Moving the ball
   - title: Control the paddle
+  - title: Paddle collisions
   - title: Finishing touches
   - title: What next
   
