@@ -188,7 +188,7 @@ Now add a similar condition for the right paddle as you did with the left, to ha
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start:68 
+line_number_start: 68 
 line_highlights: 71-73
 ---
     if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
