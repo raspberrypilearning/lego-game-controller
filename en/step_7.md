@@ -203,6 +203,6 @@ line_highlights: 71-73
 
 You should now be able to enjoy a basic 2 player game of pong.
 
-![A view of the game window showing a 2 player game. There is a green paddle on the left and a blue one on the right](images/game.png)
+![A view of the game window showing a 2 player game. There is a green paddle on the left and a blue one on the right and the ball bouncing between them](images/2_player_pong.gif)
 
 --- save ---
