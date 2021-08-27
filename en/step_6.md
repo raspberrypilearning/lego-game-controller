@@ -109,7 +109,7 @@ Run your code and then turn the wheel on your motor encoder. You should see your
 
 --- /task ---
 
-![A view of the game window showing the trajectory of the ball and a green paddle on the left](images/bounce.png)
+![A view of the game window showing the bouncing ball and moving paddle](images/moving_paddle.gif)
 
 Incase there are errors, your code should currently look like this:
 
