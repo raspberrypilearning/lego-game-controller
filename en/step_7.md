@@ -15,9 +15,9 @@ line_number_start: 49
 line_highlights: 50
 ---
 paddle_left.sety(pos_left)
-if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_l.ycor() + 20 and ball.ycor() > paddle_l.ycor() - 20):
+if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
     ball.setx(-180)
-    ball.dx *= -1
+    ball.speed_x *= -1
 --- /code ---
 
 --- /task ---
@@ -39,7 +39,7 @@ line_numbers: true
 line_number_start: 52
 line_highlights: 53-56
 ---
-        ball.dx *= -1
+        ball.speed_x *= -1
     if ball.xcor() < -195: # left
         ball.hideturtle()
         ball.goto(0,0)
@@ -190,12 +190,12 @@ line_numbers: true
 line_number_start:68 
 line_highlights: 71-73
 ---
-    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_l.ycor() + 20 and ball.ycor() > paddle_l.ycor() - 20):
+    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
         ball.setx(-180)
-        ball.dx *= -1
+        ball.speed_x *= -1
     if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):
         ball.setx(180)
-        ball.dx *= -1
+        ball.speed_x *= -1
 --- /code ---
 
 --- /task ---
