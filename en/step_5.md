@@ -47,7 +47,7 @@ while True:
 
 --- /task ---
 
-Run the program and see what happens?
+Run the program and see what happens!
 
 ![pong screen with the ball travelling off to the top right corner](images/ball_diagonal.gif)
 

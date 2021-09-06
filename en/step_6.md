@@ -4,7 +4,13 @@
 
 The LEGO Technic motor is going to be used to control the position of a paddle but you don't want to be able to make full turns. 
 
-A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.  
+A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.
+
+--- task ---
+
+Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+
+--- /task ---
 
 ![An animation showing a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
 
@@ -57,7 +63,7 @@ Create a function for the paddle that will be run when the motor encoder moves. 
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 32
+line_number_start: 31
 line_highlights: 
 ---
 def moved_left(motor_speed, motor_rpos, motor_apos):
@@ -76,7 +82,7 @@ Now add a single line that will use that function, each time the motor is moved.
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 37 
+line_number_start: 35 
 line_highlights: 
 ---
 motor_left.when_rotated = moved_left
