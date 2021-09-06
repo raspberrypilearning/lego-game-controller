@@ -40,8 +40,8 @@ line_highlights: 30, 31
 
 while True:
     game_area.update()
-    ball.setx(ball.xcor() + ball.dx)
-    ball.sety(ball.ycor() + ball.dy)
+    ball.setx(ball.xcor() + ball.speed_x)
+    ball.sety(ball.ycor() + ball.speed_y)
 
 --- /code ---
 
