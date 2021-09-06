@@ -99,8 +99,8 @@ Then add a line to the `while True` loop to update the paddle object on the scre
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 47 
-line_highlights: 49
+line_number_start: 45 
+line_highlights: 47
 ---
     if ball.ycor() < -160:
         ball.speed_y *= -1
