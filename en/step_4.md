@@ -18,10 +18,9 @@ line_number_start:
 line_highlights: 
 ---
 from turtle import *
-from time import sleep
-from buildhat import Motor
+from time import sleep from buildhat import Motor
 
-game_area = Screen() #create a scteen
+game_area = Screen() #create a screen
 game_area.title("PONG") #give the screen a title
 game_area.bgcolor('black') #set the background color
 game_area.tracer(0) #give smoother animations
@@ -60,7 +59,7 @@ Next you can make a ball. It should be a white circle, start in the middle of th
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 10
+line_number_start: 11
 line_highlights: 
 ---
 
@@ -82,7 +81,7 @@ Next you can set up the paddle. It will be a green rectangle, and positioned on 
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 16
+line_number_start: 17
 line_highlights: 
 ---
 
@@ -105,7 +104,7 @@ Lastly you need to update your game area, to see the paddle and ball. Add a **ga
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 23
+line_number_start: 24
 line_highlights: 
 ---
 

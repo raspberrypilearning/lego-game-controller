@@ -19,9 +19,11 @@ If a motor has an encoder, that means you can very accurately set the position o
 
 --- task ---
 
-Connect your BuildHAT to your Raspberry Pi, and then connect the power, either though the BuildHAT barrel jack or the USB-C port on the Raspberry Pi.
-
 Connect a monitor, keyboard and mouse to your Raspberry Pi.
+
+Connect your BuildHAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins. 
+
+Lastly, connect the power; either though the BuildHAT barrel jack or the USB-C port on the Raspberry Pi.
 
 --- /task ---
 

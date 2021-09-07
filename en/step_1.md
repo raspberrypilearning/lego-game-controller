@@ -3,7 +3,7 @@
 In this project you will use the Raspberry Pi BuildHAT, a LEGO Spike motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play pong.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> was one of the earliest arcade video games, originally released in 1972 by Atari . It is a table tennis game featuring simple two-dimensional graphics.  The player controls a paddle by moving it vertically on the screen. They can compete against another player controlling a second paddle on the opposing side. Players use the paddles to hit a ball back and forth and the first player earns a point if the second player fails to return the ball.
+<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. It is a table tennis game featuring simple two-dimensional graphics. Players control paddles on each side of the screen, which they use to hit a ball back and forth.
 </p>
 
 You will:
