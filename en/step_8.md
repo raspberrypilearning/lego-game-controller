@@ -82,7 +82,7 @@ To include some simple sound effects, connect a buzzer to the GPIO pins on the R
 [[[rpi-connect-buzzer]]]
 
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO elements to mount the buzzer so that it doesn't flop around and become disconected during frantic gaming sessions.
+Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
 
 
 ![A photo of a Raspberry Pi mounted on a LEGO Maker Plate, with a buzzer attached using LEGO elements](images/buzzer.JPG)
@@ -95,17 +95,17 @@ Now add the `gpiozero` library to the list of imports at the start of you progra
 from gpiozero import Buzzer
 ```
 
-Then make the buzzer availble for the programn to use to by setting which pin you have connected the positive (+) leg to.
+Then make the buzzer available for the program to use to by setting which pin you have connected the positive (+) leg to. In this example we used Pin 17.
 
 ```python
 buzz = Buzzer(17)
 ```
-If you didn't use pin 17, change the value to reflect the correct pin.
+If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
 
 
 --- /task ---
 
-Now whenever the paddle and ball make contact, you can play a short tone.
+Now whenever the paddle and ball make contact, the game will play a short tone.
 
 --- task ---
 
@@ -115,7 +115,7 @@ Add this line to each action part of the collision detection `if` conditionals f
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a lonegr tone whenever the player misses the ball
+Then add a  line to play a longer tone whenever the player misses the ball
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,13 +124,13 @@ buzz.beep(0.5,0.5,background=True)
 --- /task ---
 
 
-You can read moer about the options available with buzzers in the [GPIO Zero documenation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)
+You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)
 
 
 
 ### Customising your controllers
 
-In your Python Turtle program you have used different colours for the paddles. You can customise your LEGO controllers by adding bricks and other LEGO elemnets of the same solour.
+In your Python Turtle program you have used different colours for the paddles. You can customise your LEGO controllers by adding bricks and other LEGO elements of the same colour.
 
 ![A photo of coloured blocks on a LEGO wheel](images/blue_wheel.JPG)
 
@@ -140,16 +140,16 @@ You could also design a handle for the motor to make it more comfortable to hold
 
 ### Adding some randomness
 
-At the moment, the motion of ther ball will always start exactly the same way each time. let's add some randomness to make the game more interesting.
+At the moment, the motion of the ball will always start exactly the same way each time. let's add some randomness to make the game more interesting.
 
 --- task ---
-First of all, add the rndom library to the imports section at the start of the program.
+First of all, add the random library to the imports section at the start of the program.
 
 ```python
 import random
 ```
 
-Then fimd the line where you set the ball's initial position and  speed so that the x and y components of the motion both incorporate an inital random offset. Then this is multiplied either by 1 or -1 (chosen at random) so that the ball's initial trajectory can be anywhere in the game area and not just diagonally towards the top right corner. Let's wrap this up as a function so we can call it whenevr we need to restart the game without duplicating all these lines. 
+Then find the line where you set the ball's initial position and  speed so that the x and y components of the motion both incorporate an initial random offset. Then this is multiplied either by 1 or -1 (chosen at random) so that the ball's initial trajectory can be anywhere in the game area and not just diagonally towards the top right corner. Let's wrap this up as a function so we can call it whenever we need to restart the game without duplicating all these lines. 
  
 ```python
 def ball_start(start_value):
@@ -158,7 +158,7 @@ def ball_start(start_value):
     ball.dx = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
     ball.dy = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
 ```
-You can monify the range for which the first random numbers can cover to tweak the feel of the game. 
+You can modify the range for which the first random numbers can cover to tweak the feel of the game. 
  
 --- /task ---
 
