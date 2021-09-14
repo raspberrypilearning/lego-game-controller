@@ -11,8 +11,8 @@ Within the `while True` loop, check if the balls y position is in the vertical l
 language: python
 filename: pong.py
 line_numbers: true
-line_number_start: 49
-line_highlights: 50
+line_number_start: 47
+line_highlights: 48
 ---
 paddle_left.sety(pos_left)
 if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
@@ -22,11 +22,11 @@ if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.yc
 
 --- /task ---
 
-Try the program out. You should be able to bounce the ball off you paddle and play a solo game of squash.
+Try the program out. You should be able to bounce the ball off your paddle and play a solo game of 'squash'!
 
 Now you have a way of preventing the ball from disappearing off-screen, it's time to think about what happens if you fail to make a save. 
 
-For now let's just reset the ball back to start.
+For now, let's just reset the ball back to start.
 
 --- task ---
 

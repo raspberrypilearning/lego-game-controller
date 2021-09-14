@@ -62,7 +62,7 @@ You can look at the documentation for the Turtle library to see what other optio
 If you run your program now, the score and Pong legend should appear, but the scores themsleves won't get updated.  
 
 --- task ---
-Find the two conditionals for each of the scoring sitautions - whnen ball is missed by a paddle and disappears to the left or right - and update the scrore by re-writing the new value. 
+Find the two conditionals for each of the scoring situations - when ball is missed by a paddle and disappears to the left or right - and update the score by re-writing the new value. 
 
 ```python
      writer.clear()
