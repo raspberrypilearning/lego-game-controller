@@ -4,7 +4,7 @@ To use the LEGO motors as a controller for a game, you'll ned to be able to cons
 
 --- task ---
 
-In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then in a `while True:` loop you can print the value of the position.
+In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then, in a `while True:` loop you can print the value of the position.
 
 --- code ---
 ---
@@ -25,7 +25,7 @@ while True:
 
 You should see that your program continually prints the position of the motor. If you rotate the motor, these values should change.
 
-There better way of doing this though. You only need to read the motor position, if it is moved.
+There is a better way of doing this though. You only need to read the motor position if it is moved.
 
 --- task ---
 
