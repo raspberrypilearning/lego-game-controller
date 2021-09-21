@@ -1,4 +1,4 @@
-## Making your pong screen
+## Making your Pong screen
 
 Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race). 
 
@@ -11,19 +11,19 @@ Open a new file in Thonny and add the following code to import the Turtle, time,
 
 --- code ---
 ---
-language: python
-filename: pong.py
-line_numbers: true
-line_number_start: 
-line_highlights: 
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start:   
+line_highlights:   
 ---
-from turtle import *
-from time import sleep from buildhat import Motor
+from turtle import *   
+from time import sleep from buildhat import Motor   
 
-game_area = Screen() #Create a screen
-game_area.title("PONG") #Give the screen a title
-game_area.bgcolor('black') #Set the background color
-game_area.tracer(0) #Give smoother animations
+game_area = Screen() #Create a screen   
+game_area.title("PONG") #Give the screen a title   
+game_area.bgcolor('black') #Set the background colour   
+game_area.tracer(0) #Give smoother animations   
 --- /code ---
 
 --- /task ---
@@ -34,14 +34,14 @@ The Turtle library also has a useful way of setting the coordinates for a screen
 
 --- code ---
 ---
-language: python
-filename: pong.py
-line_numbers: true
-line_number_start: 8
-line_highlights: 9
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start: 8   
+line_highlights: 9   
 ---
-game_area.tracer(0)
-game_area.setworldcoordinates(-200, -170, 200, 170)
+game_area.tracer(0)   
+game_area.setworldcoordinates(-200, -170, 200, 170)   
 --- /code ---
 
 --- /task ---
@@ -56,18 +56,18 @@ Next, you can make a ball. It should be a white circle, start in the middle of t
 
 --- code ---
 ---
-language: python
-filename: pong.py
-line_numbers: true
-line_number_start: 11
-line_highlights: 
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start: 11   
+line_highlights:   
 ---
 
-ball = Turtle()
-ball.color('white')
-ball.shape('circle')
-ball.penup()
-ball.setpos(0,0)
+ball = Turtle()   
+ball.color('white')   
+ball.shape('circle')   
+ball.penup()   
+ball.setpos(0,0)   
 --- /code ---
 
 --- /task ---
@@ -78,19 +78,19 @@ Next, you can set up the paddle. It will be a green rectangle, and positioned on
 
 --- code ---
 ---
-language: python
-filename: pong.py
-line_numbers: true
-line_number_start: 17
-line_highlights: 
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start: 17   
+line_highlights:    
 ---
 
-paddle_left = Turtle()
-paddle_left.color('green')
-paddle_left.shape('square')
-paddle_left.shapesize(4, 1, 1)
-paddle_left.penup()
-paddle_left.setpos(-190, 0)
+paddle_left = Turtle()   
+paddle_left.color('green')   
+paddle_left.shape('square')   
+paddle_left.shapesize(4, 1, 1)   
+paddle_left.penup()   
+paddle_left.setpos(-190, 0)   
 --- /code ---
 
 --- /task ---
@@ -101,15 +101,15 @@ Lastly, you need to update your game area, to see the paddle and ball. Add a **g
 
 --- code ---
 ---
-language: python
-filename: pong.py
-line_numbers: true
-line_number_start: 24
-line_highlights: 
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start: 24   
+line_highlights:   
 ---
 
-while True:
-    game_area.update()
+while True:   
+    game_area.update()   
 --- /code ---
 
 Run your code and you should see your ball and paddle.
