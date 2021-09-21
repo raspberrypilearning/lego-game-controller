@@ -4,17 +4,17 @@
 
 Add even more randomness to the speed and trajectory of the ball.
 
-Have the ball moves faster as the game progresses.
+Have the ball move faster as the game progresses.
 
-Right now the game carries on forever - have a target score that a player must achieve in order to win and then start a new set of rounds. 
+Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds. 
 
 Change the scoring method to count how many times the players return the ball to one another, and reset when someone misses.
 
 Introduce some haptic feedback, so that the motors turn a small amount when a point is lost.
 
-At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle  as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle. 
+At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle. 
 
-### Create more games that use the LEGO motors as controllers.
+### Create more games that use the LEGO motors as controllers
 
 How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
 
