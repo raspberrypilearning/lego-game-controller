@@ -9,7 +9,7 @@ steps:
   - title: Introduction
   - title: Using Spike motor encoders
   - title: Reacting to motor encoder movement
-  - title: Making your pong screen
+  - title: Making your Pong screen
   - title: Moving the ball
   - title: Control the paddle
   - title: Paddle collisions
