@@ -7,7 +7,7 @@ First, create a window where the game will be played.
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
 
 --- code ---
 ---
