@@ -73,7 +73,7 @@ motor_right = Motor('B')
 
 --- task ---
 
-You can copy and past your code for setting up your left paddle, and change the name and values for your right paddle.
+You can copy and paste your code for setting up your left paddle, and change the name and values for your right paddle.
 
 --- /task ---
 
