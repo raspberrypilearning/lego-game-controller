@@ -56,7 +56,7 @@ pos_left = 0
 
 --- task ---
 
-Create a function for the paddle that will be run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
 
 --- code ---
 ---
