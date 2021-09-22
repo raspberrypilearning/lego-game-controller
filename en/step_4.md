@@ -52,7 +52,7 @@ This creates a rectangular window 400 pixels wide and 340 high, with 0 being in 
 
 --- task ---
 
-Next, you can make a ball. It should be a white circle, start in the middle of the screen, and shouldn't draw a line when it moves.
+Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
 
 --- code ---
 ---
@@ -74,7 +74,7 @@ ball.setpos(0,0)
 
 --- task ---
 
-Next, you can set up the paddle. It will be a green rectangle, and positioned on the far left of the screen.
+Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
 
 --- code ---
 ---
