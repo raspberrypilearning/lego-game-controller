@@ -1,6 +1,6 @@
 ## Reacting to motor encoder movement
 
-To use the LEGO motors as a controller for a game, you'll ned to be able to constantly read their absolute positions.
+To use the LEGO motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
 
 --- task ---
 
@@ -8,17 +8,17 @@ In the main Thonny window above the shell you can use the commands you already k
 
 --- code ---
 ---
-language: python
-filename: game_controller.py
-line_numbers: true
-line_number_start: 
-line_highlights: 
+language: python   
+filename: game_controller.py   
+line_numbers: true   
+line_number_start:   
+line_highlights:    
 ---
-from buildhat import Motor
-motor_left = Motor('A')
+from buildhat import Motor   
+motor_left = Motor('A')   
 
-while True:
-    print(motor_left.get_aposition())
+while True:   
+    print(motor_left.get_aposition())   
 --- /code ---
 
 --- /task ---
@@ -33,18 +33,18 @@ Delete the `while True` loop from your program and create this simple function t
 
 --- code ---
 ---
-language: python
-filename: game_controller.py
-line_numbers: true
-line_number_start: 
-line_highlights: 
+language: python   
+filename: game_controller.py   
+line_numbers: true   
+line_number_start:   
+line_highlights:   
 ---
-from buildhat import Motor
-motor_left = Motor('A')
+from buildhat import Motor   
+motor_left = Motor('A')   
 
 
-def moved_left(motor_speed, motor_pos, motor_apos):
-    print(motor_apos)
+def moved_left(motor_speed, motor_pos, motor_apos):   
+    print(motor_apos)   
 --- /code ---
 
 --- /task ---
@@ -55,11 +55,11 @@ Now set this function to run when the motor's encoder is moved:
 
 --- code ---
 ---
-language: python
-filename: game_controller.py
-line_numbers: true
-line_number_start: 7
-line_highlights: 
+language: python   
+filename: game_controller.py   
+line_numbers: true   
+line_number_start: 7   
+line_highlights:    
 ---
 
 
