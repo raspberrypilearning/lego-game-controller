@@ -22,7 +22,7 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively. 
+You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively. 
 
 So to make the ball move, you can combine the position and speed. 
 
@@ -53,7 +53,7 @@ Run the program and see what happens!
 
 The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly. 
 
-The ball should bounce off the top wall. To do this if its `y` position is greater than 160, the speed can be reversed, making the ball travel in the opposite direction. 
+The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160. 
 
 --- task ---
 
