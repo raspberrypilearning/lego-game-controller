@@ -2,7 +2,7 @@
 
 ### Designing the controls
 
-The LEGO Technic motor is going to be used to control the position of a paddle but you don't want to be able to make full turns. 
+The LEGO Technic motor is going to be used to control the position of the paddle but you don't want to be able to make full turns. 
 
 A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.
 
