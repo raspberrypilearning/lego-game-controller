@@ -58,10 +58,10 @@ First, import the Build HAT library.
 from buildhat import Motor
 ```
 
-Then, create a motor object that that tells Python the motor is connected to port `A`.
+Then, create a motor object that tells Python the motor is connected to port `A`.
 
 ```python
-motor_1eft = Motor('A')
+motor_left = Motor('A')
 ```
 
 ![A screenshot of the Thonny Python IDE showing code being run in the shell.](images/thonny_shell_2.png)
@@ -87,13 +87,13 @@ Move the motor and type the line a second time, and see how the value changes.
 You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
 
 ```python
-motor_1eft.get_position()
+motor_left.get_position()
 ```
 --- /task ---
 
 --- task ---
 
-Move the motor around an check its absolute and relative positions, so that you understand how the values change.
+Move the motor around and check its absolute and relative positions, so that you understand how the values change.
 
 --- /task ---
 
