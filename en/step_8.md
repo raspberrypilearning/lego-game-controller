@@ -5,7 +5,7 @@ There are few additional features you can add to finish off your game.
 ### Adding a score
 
 --- task ---
-Keep tack of the score by using two variables (one for each player) and update them whenever a round is lost.
+Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
 
 --- hints ---
 --- hint ---
@@ -41,7 +41,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- /hints ---
 --- /task ---
 
-Now you need to display the score on the game area. You can use a fourth turtle to do this.
+Now you need to display the score on the game area. You can use a fourth Turtle to do this.
 
 --- task ---
 Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
@@ -95,7 +95,7 @@ Now add the `gpiozero` library to the list of imports at the start of you progra
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use to by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
 
 ```python
 buzz = Buzzer(17)
@@ -105,7 +105,7 @@ If you didn't use Pin 17, change the value to reflect the pin your buzzer is con
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, the game will play a short tone.
+Now, whenever the paddle and ball make contact, you want the game to play a short tone.
 
 --- task ---
 
@@ -149,7 +149,7 @@ First of all, add the random library to the imports section at the start of the 
 import random
 ```
 
-Then find the line where you set the ball's initial position and speed so that the `x` and `y` components of the motion both incorporate an initial random offset. This is then multiplied either by 1 or -1 (chosen at random) so that the ball's initial trajectory can be anywhere in the game area and not just diagonally towards the top right corner. Let's wrap this up as a function so you can call it whenever you need to restart the game without duplicating all these lines. 
+Then find the line where you set the ball's initial position and speed so that the `x` and `y` components of the motion both incorporate an initial random offset. This is then multiplied either by 1 or -1 (chosen at random) so that the ball's initial trajectory can be anywhere in the game area and not just diagonally towards the top right corner. Set this as a function so you can call it whenever you need to restart the game without duplicating all these lines. 
  
 ```python
 def ball_start(start_value):
@@ -158,7 +158,7 @@ def ball_start(start_value):
     ball.dx = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
     ball.dy = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
 ```
-You can modify the value range that the first random numbers can be to tweak the feel of the game. 
+To tweak the feel of the game, you can modify the range of values that the first random numbers take. 
  
 --- /task ---
 
