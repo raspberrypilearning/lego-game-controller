@@ -1,10 +1,10 @@
-## Using Spike motor encoders
+## Using LEGO® Technic™ motor encoders
 
 Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
 
 ![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
 
-The LEGO motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+The LEGO® Technic™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
 
 --- collapse ---
 ---
