@@ -55,7 +55,7 @@ Using what you've created for the left-hand paddle as a starting point, add a se
 
 --- task ---
 
-First of all, connect a second motor to the Build HAT (port B) and set it up in the program. 
+First of all, connect a second LEGO® Technic™ motor to the Build HAT (port B) and set it up in the program. 
 
 --- code ---
 ---
