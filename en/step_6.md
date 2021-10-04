@@ -2,9 +2,9 @@
 
 ### Designing the controls
 
-The LEGO Technic motor is going to be used to control the position of the paddle but you don't want to be able to make full turns. 
+The LEGO® Technic™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns. 
 
-A simple way to limit the motion of the wheel is to add a LEGO element to prevent the wheel turning through a complete rotation.
+A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
 
 --- task ---
 
@@ -12,10 +12,10 @@ Line up the encoder marks on your motor using the wheel, like before. Insert a p
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
 
 --- print-only ---
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
 --- /print-only ---
 
 
