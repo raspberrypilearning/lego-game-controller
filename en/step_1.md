@@ -1,19 +1,19 @@
 ## Introduction
 
-In this project, you will use the Raspberry Pi Build HAT, a LEGO Spike motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play Pong.
+In this project, you will use the Raspberry Pi Build HAT, a LEGO® Technic™ motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play Pong.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
 <span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. It is a table tennis game featuring simple two-dimensional graphics. Players control paddles on each side of the screen, which they use to hit a ball back and forth.
 </p>
 
 You will:
-- Learn how to read the degrees of rotation from LEGO Spike motor encoders
-- Learn to draw and move Turtle graphics using LEGO Spike motor encoders
+- Learn how to read the degrees of rotation from LEGO® Technic™ motor encoders
+- Learn to draw and move Turtle graphics using LEGO® Technic™ motor encoders
 - Learn to detect collisions between graphics using `x` and `y` coordinates
 
 --- no-print ---
 
-![A movie showing a pong game being controlled by two LEGO motors with large blue wheels.](images/pong_gif.gif)
+![A movie showing a pong game being controlled by two LEGO® Technic™ motors with large blue wheels.](images/pong_gif.gif)
 
 --- /no-print ---
 
@@ -27,8 +27,8 @@ You will:
 
 + A Raspberry Pi computer
 + A Raspberry Pi Build HAT
-+ At least one LEGO Spike motor
-+ Assortment of LEGO, including wheels. We used a selection from the [LEGO Spike Prime kit](https://education.lego.com/en-gb/product/spike-prime)
++ At least one LEGO® Technic™ motor
++ Assortment of LEGO®, including wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
 + A small breadboard (optional)
 + A buzzer (optional)
 + Some breadboard jumper leads (optional)
