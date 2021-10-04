@@ -14,7 +14,7 @@ Introduce some haptic feedback, so that the motors turn a small amount when a po
 
 At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle. 
 
-### Create more games that use the LEGO motors as controllers
+### Create more games that use the LEGO® Technic™ motors as controllers
 
 How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
 
