@@ -7,7 +7,7 @@ copyedit: false
 last_tested: "2020-10-08"
 steps:
   - title: Introduction
-  - title: Using Spike motor encoders
+  - title: Using LEGO® Technic™ motor encoders
   - title: Reacting to motor encoder movement
   - title: Making your Pong screen
   - title: Moving the ball
