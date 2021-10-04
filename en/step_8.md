@@ -82,10 +82,10 @@ To include some simple sound effects, connect a buzzer to the GPIO pins on the R
 [[[rpi-connect-buzzer]]]
 
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
 
 
-![A photo of a Raspberry Pi mounted on a LEGO Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
 
 --- task ---
 
@@ -130,13 +130,13 @@ You can read more about the options available with buzzers in the [GPIO Zero doc
 
 ### Customising your controllers
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO controllers by adding bricks and other LEGO elements of the same colour.
+In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
 
-![A photo of coloured blocks on a LEGO wheel.](images/blue_wheel.JPG)
+![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
 
 You could also design a handle for the motor to make it more comfortable to hold.
 
-![A photo of a LEGO handle added to the motor controller.](images/handle.JPG)
+![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
 
 ### Adding some randomness
 
