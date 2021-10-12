@@ -1,10 +1,10 @@
-## Using LEGO® Technic™ motor encoders
+## Using LEGO® Spike™ motor encoders
 
 Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
 
 ![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
 
-The LEGO® Technic™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
 
 --- collapse ---
 ---
@@ -57,12 +57,19 @@ First, import the Build HAT library.
 ```python
 from buildhat import Motor
 ```
+Press Enter.
 
-Then, create a motor object that tells Python the motor is connected to port `A`.
+--- /task ---
+
+--- task ---
+
+Then, create a motor object that tells Python the motor is connected to port `A`. 
+Type: 
 
 ```python
 motor_left = Motor('A')
 ```
+Press Enter. (There will be a slight delay, be patient!)
 
 ![A screenshot of the Thonny Python IDE showing code being run in the shell.](images/thonny_shell_2.png)
 

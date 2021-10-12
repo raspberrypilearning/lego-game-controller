@@ -7,8 +7,8 @@ In this project, you will use the Raspberry Pi Build HAT, a LEGO® Technic™ mo
 </p>
 
 You will:
-- Learn how to read the degrees of rotation from LEGO® Technic™ motor encoders
-- Learn to draw and move Turtle graphics using LEGO® Technic™ motor encoders
+- Learn how to read the degrees of rotation from LEGO® Technic™ motors
+- Learn to draw and move Turtle graphics using LEGO® Technic™ motors
 - Learn to detect collisions between graphics using `x` and `y` coordinates
 
 --- no-print ---
