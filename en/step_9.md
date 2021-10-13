@@ -18,8 +18,7 @@ At the moment it doesn't matter what part of the paddle connects with the ball, 
 
 How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
 
-If you are following the [PathwayName](https://projects.raspberrypi.org/en/raspberrypi/pathway-name) pathway, you can move on to the [ProjectName](https://projects.raspberrypi.org/en/projects/project-name) project. In this project, you will make a (add description here).
+If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
 
-![ProjectName project](images/projectname-project.png)
+![Lego Robot Car Project](images/robotcar.png)
 
-If you want to have more fun with the Build HAT, then you could try out any of [these projects](https://projects.raspberrypi.org/en/projects?software%5B%5D=scratch&curriculum%5B%5D=%201).
