@@ -53,7 +53,7 @@ writer.color('grey')
 writer.penup()
 style = ("Courier",30,'bold')
 writer.setposition(0,150)
-writer.write(str(score_l) +" PONG " + str(score_r), font=style, align='center')
+writer.write(f'{score_1} PONG {score_r}', font=style, align='center')
 ```
 
 You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
@@ -66,7 +66,7 @@ Find the two conditionals for each of the scoring situations — when ball is mi
 
 ```python
      writer.clear()
-     writer.write(str(score_l) +" PONG " + str(score_r), font=style, align='center')
+     writer.write(f'{score_1} PONG {score_r}', font=style, align='center')
 ```
 
 --- /task ---

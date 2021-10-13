@@ -14,11 +14,12 @@ Open a new file in Thonny and add the following code to import the Turtle, time,
 language: python   
 filename: pong.py   
 line_numbers: true   
-line_number_start:   
+line_number_start: 1  
 line_highlights:   
 ---
-from turtle import *   
-from time import sleep from buildhat import Motor   
+from turtle import Screen, Turtle
+from time import sleep 
+from buildhat import Motor   
 
 game_area = Screen() #Create a screen   
 game_area.title("PONG") #Give the screen a title   
@@ -52,14 +53,37 @@ This creates a rectangular window 400 pixels wide and 340 high, with 0 being in 
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
 
 --- code ---
 ---
 language: python   
 filename: pong.py   
 line_numbers: true   
-line_number_start: 11   
+line_number_start: 10   
+line_highlights:   
+---
+
+while True:   
+    game_area.update()   
+--- /code ---
+
+Run your code and you should see a black window appear.
+
+--- /task ---
+
+--- task ---
+
+Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+
+**Above** your `while True` loop, add the following code:
+
+--- code ---
+---
+language: python   
+filename: pong.py   
+line_numbers: true   
+line_number_start: 10   
 line_highlights:   
 ---
 
@@ -68,7 +92,15 @@ ball.color('white')
 ball.shape('circle')   
 ball.penup()   
 ball.setpos(0,0)   
+
+while True:
 --- /code ---
+
+--- /task ---
+
+--- task ---
+
+Run your code again. You should see a white ball appear in your window.
 
 --- /task ---
 
@@ -96,21 +128,6 @@ paddle_left.setpos(-190, 0)
 --- /task ---
 
 --- task ---
-
-Lastly, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
-
---- code ---
----
-language: python   
-filename: pong.py   
-line_numbers: true   
-line_number_start: 24   
-line_highlights:   
----
-
-while True:   
-    game_area.update()   
---- /code ---
 
 Run your code and you should see your ball and paddle.
 

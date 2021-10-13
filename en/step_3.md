@@ -11,7 +11,7 @@ In the main Thonny window above the shell you can use the commands you already k
 language: python   
 filename: game_controller.py   
 line_numbers: true   
-line_number_start:   
+line_number_start: 1 
 line_highlights:    
 ---
 from buildhat import Motor   
@@ -29,17 +29,18 @@ There is a better way of doing this though. You only need to read the motor posi
 
 --- task ---
 
-Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor.
+Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor. You will also need to add another import line to use the `pause()` function.
 
 --- code ---
 ---
 language: python   
 filename: game_controller.py   
 line_numbers: true   
-line_number_start:   
-line_highlights:   
+line_number_start: 1   
+line_highlights: 2,6,7  
 ---
-from buildhat import Motor   
+from buildhat import Motor  
+from signal import pause 
 motor_left = Motor('A')   
 
 
@@ -58,12 +59,19 @@ Now set this function to run when the motor's encoder is moved:
 language: python   
 filename: game_controller.py   
 line_numbers: true   
-line_number_start: 7   
-line_highlights:    
+line_number_start: 1   
+line_highlights: 9,10 
 ---
+from buildhat import Motor  
+from signal import pause 
+motor_left = Motor('A')   
 
+
+def moved_left(motor_speed, motor_pos, motor_apos):   
+    print(motor_apos) 
 
 motor_left.when_rotated = moved_left
+pause()
 --- /code ---
 
 Run your code and you should see the values printed out in the shell change when the motor is moved.

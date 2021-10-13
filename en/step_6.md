@@ -2,7 +2,7 @@
 
 ### Designing the controls
 
-The LEGO® Technic™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns. 
+The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns. 
 
 A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
 
@@ -48,8 +48,8 @@ line_numbers: true
 line_number_start: 26   
 line_highlights: 29   
 ---
-ball_speed_x = 0.4   
-ball_speed_y = 0.4   
+ball.speed_x = 0.4   
+ball.speed_y = 0.4   
 
 pos_left = 0
 --- /code ---
