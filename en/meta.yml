@@ -1,0 +1,18 @@
+title: Build a LEGO Game Controller
+hero_image: images/banner.png
+description: lego-game-controller description
+version: 4
+listed: false
+copyedit: false
+last_tested: "2020-10-08"
+steps:
+  - title: Introduction
+  - title: Using LEGO® Spike™ motor encoders
+  - title: Reacting to motor encoder movement
+  - title: Making your Pong screen
+  - title: Control the paddle
+  - title: Moving the ball
+  - title: Paddle collisions
+  - title: Finishing touches
+  - title: What next
+  
