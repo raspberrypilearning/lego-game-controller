@@ -67,6 +67,7 @@ Mounting the Raspberry Pi this way round enables easy access to the ports as wel
 Line up the Build HAT with the Raspberry Pi, ensuring you can see the `This way up` label. Make sure all the GPIO pins are covered by the HAT, and press down firmly. (The example uses a [stacking header](https://www.adafruit.com/product/2223){:target="_blank"}, which makes the pins longer.)
 
 ![Image of GPIO pins poking through the top of the Build HAT.](images/build_15.jpg)
+![Animation showing Buildhat fitting to Raspberry Pi](images/haton.gif)
 
 --- /task ---
 
@@ -81,6 +82,17 @@ If you have not already done so, set up your Raspberry Pi by following these ins
 --- /task ---
 
 --- task ---
+
+Once the Raspberry Pi has booted, open the Raspberry Pi Configuration tool by clicking on the Raspberry Menu button and then selecting “Preferences” and then “Raspberry Pi Configuration”.
+
+Click on the “interfaces” tab and adjust the Serial settings as shown below:
+
+![Image showing Raspberry Pi OS config screen with serial port enabled and serial console disabled](images/configshot.jpg)
+
+--- /task ---
+
+--- task ---
+
 You will also need to install the buildhat python library by following these instructions: 
 
 --- collapse ---
