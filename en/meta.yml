@@ -10,8 +10,8 @@ steps:
   - title: Using LEGO® Spike™ motor encoders
   - title: Reacting to motor encoder movement
   - title: Making your Pong screen
-  - title: Control the paddle
   - title: Moving the ball
+  - title: Control the paddle
   - title: Paddle collisions
   - title: Finishing touches
   - title: What next
