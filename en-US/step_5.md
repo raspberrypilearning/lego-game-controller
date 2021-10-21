@@ -26,7 +26,9 @@ You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to 
 
 So to make the ball move, you can combine the position and speed.
 
---- task --- Add the lines below to your program:
+--- task ---
+
+Add the lines below to your program:
 
 --- code ---
 ---
@@ -104,6 +106,7 @@ line_highlights:
         ball.speed_x *= -1   
     if ball.ycor() < -160:   
         ball.speed_y *= -1
+
 --- /code ---
 
 --- /task ---
