@@ -14,11 +14,13 @@ line_numbers: true
 line_number_start: 1 
 line_highlights:    
 ---
+
 from buildhat import Motor   
 motor_left = Motor('A')   
 
 while True:   
     print(motor_left.get_aposition())   
+
 --- /code ---
 
 --- /task ---
@@ -39,13 +41,15 @@ line_numbers: true
 line_number_start: 1   
 line_highlights: 2,6,7  
 ---
+
 from buildhat import Motor  
 from signal import pause 
 motor_left = Motor('A')   
 
 
 def moved_left(motor_speed, motor_pos, motor_apos):   
-    print(motor_apos)   
+    print(motor_apos) 
+
 --- /code ---
 
 --- /task ---
@@ -62,6 +66,7 @@ line_numbers: true
 line_number_start: 1   
 line_highlights: 9,10 
 ---
+
 from buildhat import Motor  
 from signal import pause 
 motor_left = Motor('A')   
@@ -72,6 +77,7 @@ def moved_left(motor_speed, motor_pos, motor_apos):
 
 motor_left.when_rotated = moved_left
 pause()
+
 --- /code ---
 
 Run your code and you should see the values printed out in the shell change when the motor is moved.
