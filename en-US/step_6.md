@@ -14,7 +14,11 @@ Line up the encoder marks on your motor using the wheel, like before. Insert a p
 
 ![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
 
---- print-only --- ![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png) --- /print-only ---
+--- print-only ---
+
+![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+
+--- /print-only ---
 
 
 --- task ---
@@ -29,9 +33,12 @@ line_numbers: true
 line_number_start: 3
 line_highlights: 5
 ---
+
 from buildhat import Motor
 
-motor_left = Motor('A') --- /code ---
+motor_left = Motor('A')
+
+--- /code ---
 
 --- /task ---
 
@@ -45,10 +52,13 @@ line_numbers: true
 line_number_start: 26
 line_highlights: 29
 ---
+
 ball.speed_x = 0.4   
 ball.speed_y = 0.4
 
-pos_left = 0 --- /code ---
+pos_left = 0
+
+--- /code ---
 
 --- task ---
 
@@ -62,9 +72,11 @@ line_numbers: true
 line_number_start: 31
 line_highlights:
 ---
+
 def moved_left(motor_speed, motor_rpos, motor_apos):   
 global pos_left   
-pos_left = motor_apos   
+pos_left = motor_apos
+
 --- /code ---
 
 --- /task---
@@ -81,7 +93,10 @@ line_numbers: true
 line_number_start: 35
 line_highlights:
 ---
-motor_left.when_rotated = moved_left --- /code ---
+
+motor_left.when_rotated = moved_left
+
+--- /code ---
 
 --- /task ---
 
@@ -101,6 +116,7 @@ line_highlights: 47
     if ball.ycor() < -160:   
         ball.speed_y *= -1   
     paddle_left.sety(pos_left)
+
 --- /code ---
 
 --- /task ---
@@ -123,6 +139,7 @@ line_numbers: true
 line_number_start:
 line_highlights:
 ---
+
 from turtle import *   
 from time import sleep   
 from buildhat import Motor
@@ -169,7 +186,8 @@ if ball.ycor() > 160: ball.speed_y *= -1
 if ball.xcor() > 195: ball.speed_x *= -1   
 if ball.ycor() < -160:   
 ball.speed_y *= -1   
-paddle_left.sety(pos_left)   
+paddle_left.sety(pos_left)
+
 --- /code ---
 
 --- save ---
