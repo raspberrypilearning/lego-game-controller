@@ -14,9 +14,11 @@ line_numbers: true
 line_number_start: 47
 line_highlights: 48
 ---
+
 paddle_left.sety(pos_left)   
 if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20): ball.setx(-180)  
-ball.speed_x *= -1   
+ball.speed_x *= -1
+
 --- /code ---
 
 --- /task ---
@@ -45,6 +47,7 @@ line_highlights: 53-56
         ball.hideturtle()   
         ball.goto(0,0)   
         ball.showturtle()
+
 --- /code ---
 
 --- /task ---
@@ -65,8 +68,11 @@ line_numbers: true
 line_number_start: 5
 line_highlights: 6
 ---
+
 motor_left = Motor('A')   
-motor_right = Motor('B') --- /code ---
+motor_right = Motor('B')
+
+--- /code ---
 
 --- /task ---
 
@@ -88,6 +94,7 @@ line_numbers: true
 line_number_start: 20
 line_highlights: 27-32
 ---
+
 paddle_left = Turtle()   
 paddle_left.color('green')   
 paddle_left.shape("square")   
@@ -100,7 +107,8 @@ paddle_right.color('blue')
 paddle_right.shape("square")   
 paddle_right.shapesize(4,1,1)   
 paddle_right.penup()   
-paddle_right.setpos(190,0)   
+paddle_right.setpos(190,0)
+
 --- /code ---
 
 --- /task ---
@@ -117,6 +125,7 @@ line_numbers: true
 line_number_start: 37
 line_highlights: 38, 46-48, 52
 ---
+
 pos_left = 0   
 pos_right = 0
 
@@ -132,7 +141,8 @@ pos_right = motor_apos
 
 
 motor_left.when_rotated = moved_left   
-motor_right.when_rotated = moved_right   
+motor_right.when_rotated = moved_right
+
 --- /code ---
 
 --- /task ---
@@ -152,6 +162,7 @@ line_highlights: 65
 
     paddle_left.sety(pos_left)   
     paddle_right.sety(pos_right)
+
 --- /code ---
 
 --- /task ---
@@ -176,6 +187,7 @@ line_highlights:
         ball.hideturtle()   
         ball.goto(0,0)   
         ball.showturtle()
+
 --- /code ---
 
 --- /task ---
@@ -199,6 +211,7 @@ line_highlights: 71-73
     if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):   
         ball.setx(180)   
         ball.speed_x *= -1
+
 --- /code ---
 
 --- /task ---
