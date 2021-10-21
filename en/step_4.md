@@ -17,6 +17,7 @@ line_numbers: true
 line_number_start: 1  
 line_highlights:   
 ---
+
 from turtle import Screen, Turtle
 from time import sleep 
 from buildhat import Motor   
@@ -25,6 +26,7 @@ game_area = Screen() #Create a screen
 game_area.title("PONG") #Give the screen a title   
 game_area.bgcolor('black') #Set the background colour   
 game_area.tracer(0) #Give smoother animations   
+
 --- /code ---
 
 --- /task ---
@@ -41,8 +43,10 @@ line_numbers: true
 line_number_start: 8   
 line_highlights: 9   
 ---
+
 game_area.tracer(0)   
 game_area.setworldcoordinates(-200, -170, 200, 170)   
+
 --- /code ---
 
 --- /task ---
@@ -65,7 +69,8 @@ line_highlights:
 ---
 
 while True:   
-    game_area.update()   
+    game_area.update()  
+
 --- /code ---
 
 Run your code and you should see a black window appear.
@@ -94,6 +99,7 @@ ball.penup()
 ball.setpos(0,0)   
 
 while True:
+
 --- /code ---
 
 --- /task ---
@@ -123,6 +129,7 @@ paddle_left.shape('square')
 paddle_left.shapesize(4, 1, 1)   
 paddle_left.penup()   
 paddle_left.setpos(-190, 0)   
+
 --- /code ---
 
 --- /task ---

@@ -5,16 +5,19 @@ There are few additional features you can add to finish off your game.
 ### Adding a score
 
 --- task ---
+
 Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
 
 --- hints ---
 --- hint ---
+
 First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
 
 ```python   
 score_r = 0   
 score_l = 0   
 ```
+
 --- /hint ---
 --- hint ---
 
@@ -24,6 +27,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- /hint ---
 
 --- hint ---
+
 ```python
     if ball.xcor() > 195: #Right
         ball.hideturtle()
@@ -36,6 +40,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
         ball.showturtle()
         score_l+=1
 ```
+
 --- /hint ---
 
 --- /hints ---
@@ -44,6 +49,7 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 Now you need to display the score on the game area. You can use a fourth Turtle to do this.
 
 --- task ---
+
 Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
 
 ```python
@@ -57,11 +63,13 @@ writer.write(f'{score_1} PONG {score_r}', font=style, align='center')
 ```
 
 You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
+
 --- /task ---
 
 If you run your program now, the score and Pong legend should appear, but the scores themsleves won't get updated.  
 
 --- task ---
+
 Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value. 
 
 ```python
@@ -143,6 +151,7 @@ You could also design a handle for the motor to make it more comfortable to hold
 At the moment, the motion of the ball will always start exactly the same way each time. Add some randomness to make the game more interesting.
 
 --- task ---
+
 First of all, add the random library to the imports section at the start of the program.
 
 ```python
@@ -158,11 +167,13 @@ def ball_start(start_value):
     ball.dx = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
     ball.dy = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
 ```
+
 To tweak the feel of the game, you can modify the range of values that the first random numbers take. 
  
 --- /task ---
 
 --- task ---
+
 Now add a call to this function at the start of the game (just before the `while True` loop and at both points where the ball is reset to the centre after a miss.
 
 ```python
