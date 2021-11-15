@@ -37,7 +37,6 @@ ball.speed_y = 0.4
 pos_left = 0
 pos_right = 0
 
-
 def moved_left(motor_speed, motor_rpos, motor_apos):
     global pos_left
     pos_left = motor_apos
