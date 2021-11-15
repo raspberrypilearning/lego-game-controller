@@ -1,4 +1,4 @@
-## Using LEGO® Spike™ motor encoders
+## Use LEGO® Spike™ motor encoders
 
 Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
 
