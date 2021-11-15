@@ -59,14 +59,14 @@ writer.color('grey')
 writer.penup()
 style = ("Courier",30,'bold')
 writer.setposition(0,150)
-writer.write(f'{score_1} PONG {score_r}', font=style, align='center')
+writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
 You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themsleves won't get updated.  
+If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.  
 
 --- task ---
 
@@ -74,12 +74,10 @@ Find the two conditionals for each of the scoring situations — when ball is mi
 
 ```python
      writer.clear()
-     writer.write(f'{score_1} PONG {score_r}', font=style, align='center')
+     writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
 --- /task ---
-
-You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed. 
 
 ![A view of the game window with the score displayed at the top.](images/score.png)
 
@@ -89,9 +87,7 @@ To include some simple sound effects, connect a buzzer to the GPIO pins on the R
 
 [[[rpi-connect-buzzer]]]
 
-
 Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
-
 
 ![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
 
@@ -108,8 +104,8 @@ Then, make the buzzer available for the program to use by setting which pin you 
 ```python
 buzz = Buzzer(17)
 ```
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
 
+If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
 
 --- /task ---
 
@@ -131,10 +127,7 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-
 You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
-
-
 
 ### Customising your controllers
 
@@ -146,41 +139,6 @@ You could also design a handle for the motor to make it more comfortable to hold
 
 ![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
 
-### Adding some randomness
-
-At the moment, the motion of the ball will always start exactly the same way each time. Add some randomness to make the game more interesting.
-
---- task ---
-
-First of all, add the random library to the imports section at the start of the program.
-
-```python
-import random
-```
-
-Then find the line where you set the ball's initial position and speed so that the `x` and `y` components of the motion both incorporate an initial random offset. This is then multiplied either by 1 or -1 (chosen at random) so that the ball's initial trajectory can be anywhere in the game area and not just diagonally towards the top right corner. Set this as a function so you can call it whenever you need to restart the game without duplicating all these lines. 
- 
-```python
-def ball_start(start_value):
-    ball.setpos(0,0)
-    ball.speed(0)
-    ball.dx = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
-    ball.dy = start_value * random.uniform(0.8,1.5) * random.choice([-1,1])
-```
-
-To tweak the feel of the game, you can modify the range of values that the first random numbers take. 
- 
---- /task ---
-
---- task ---
-
-Now add a call to this function at the start of the game (just before the `while True` loop and at both points where the ball is reset to the centre after a miss.
-
-```python
-
-ball_start(0.7)
-```
---- /task ---
 
 Your game should now be playable. Have some fun with it before seeing what else you can do next. 
 
