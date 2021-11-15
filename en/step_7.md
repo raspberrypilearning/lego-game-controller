@@ -4,11 +4,11 @@ The game is nearly complete — but first you need to add some extra collision d
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `y` position is in the vertical line in which the paddle moves. Also use an `and` to check the ball's `x` position is within the horizontal area covered by the paddle. 
+Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves 
 
 --- code ---
 ---
-language: python   
+language: python
 filename: pong.py   
 line_numbers: true   
 line_number_start: 47   
