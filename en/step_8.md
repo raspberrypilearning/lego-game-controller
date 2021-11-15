@@ -1,4 +1,4 @@
-## Finishing touches
+## Improve your project
 
 There are few additional features you can add to finish off your game.
 
