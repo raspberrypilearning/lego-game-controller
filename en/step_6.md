@@ -23,7 +23,7 @@ Line up the encoder marks on your motor using the wheel, like before. Insert a p
 
 --- task ---
 
-Add the motor object creation line after your imports.
+Add a line to create the `motor_left` object after the import line.
 
 --- code ---
 ---
