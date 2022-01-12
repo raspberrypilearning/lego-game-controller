@@ -1,4 +1,4 @@
-## Move the ball
+## Den Ball bewegen
 
 Der Ball wird auf dem Bildschirm herumspringen. Daher sind zwei Variablen erforderlich, um seine Geschwindigkeit sowohl in der `x-` als auch in der `y-`Richtung festzulegen. Diese Zahlen können größer sein, um das Spiel schwieriger zu machen, oder kleiner, um das Spiel zu vereinfachen.
 
