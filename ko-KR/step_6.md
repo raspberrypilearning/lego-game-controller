@@ -1,29 +1,29 @@
-## Control the paddle
+## 패들 제어하기
 
-### Designing the controls
+### 컨트롤 디자인하기
 
-The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns.
+LEGO® Spike™ 모터는 패들의 위치를 제어하는 데 사용되지만 모터를 완전히 회전하는 것은 원하지 않습니다.
 
-A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
+바퀴의 움직임을 제한하는 간단한 방법은 바퀴가 완전히 회전하는 것을 방지하기 위해 LEGO® element를 추가하는 것입니다.
 
 --- task ---
 
-Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+이전과 같이 휠을 사용하여 모터의 인코더 표시를 정렬하도록 합니다. 가능한 한 마커와 수평에 가깝게 못이나 축을 삽입하세요.
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![모터와 휠 조합이 손으로 회전하는 모습을 보여주는 애니메이션 바퀴가 완전히 회전할 수 없도록 바퀴에 부착되어 있는 LEGO® 실린더](images/motor_block.gif)
 
 --- print-only ---
 
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![모터와 휠 조합이 손으로 회전하는 모습을 보여주는 두 장의 사진 바퀴가 완전히 회전할 수 없도록 바퀴에 부착되어 있는 LEGO® 실린더](images/sidebyside.png)
 
 --- /print-only ---
 
 
 --- task ---
 
-Add the motor object creation line after your imports.
+Add a line to create the `motor_left` object after the import line.
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ motor_left = Motor('A')
 
 --- /task ---
 
-Now a new variable is needed to keep track of the location of the paddle. This will be called `pos_left` and set to `0`.
+이제 패들의 위치를 추적하기 위해 새로운 변수가 필요합니다. 이것은 `pos_left`로, `0` 으로 설정됩니다.
 
 --- code ---
 ---
@@ -62,7 +62,7 @@ pos_left = 0
 
 --- task ---
 
-Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+모터 인코더가 움직일 때 실행할 패들에 대한 함수를 만드세요. 주의할 점은 이 변수는 `전역`변수이며, `pos_left`라는 이름을 가지며, 아래와 같이 변수값을 변경할 수 있습니다.
 
 --- code ---
 ---
@@ -83,7 +83,7 @@ pos_left = motor_apos
 
 --- task ---
 
-Now add a single line that will use that function each time the motor is moved. It can be just before your `while` loop.
+이제 모터가 움직일 때마다 해당 기능을 사용할 단일 라인을 추가하세요. `while` 루프 바로 앞에 올 수 있습니다.
 
 --- code ---
 ---
@@ -102,7 +102,7 @@ motor_left.when_rotated = moved_left
 
 --- task ---
 
-Then, add a line to the `while True` loop to update the paddle object on the screen to the new position.
+`while True` 루프에 라인을 추가하여 화면의 패들 객체를 새 위치로 업데이트합니다.
 
 --- code ---
 ---
@@ -123,13 +123,13 @@ line_highlights: 47
 
 --- task ---
 
-Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
+코드를 실행한 다음 모터 인코더의 휠을 돌리세요. 패들이 화면 위 아래로 움직이는 것을 볼 수 있습니다.
 
 --- /task ---
 
-![A view of the game window showing the bouncing ball and moving paddle.](images/moving_paddle.gif)
+![튀는 공과 움직이는 패들을 보여주는 게임 창](images/moving_paddle.gif)
 
-In case there are errors, your code should currently look like this:
+오류가 난 경우에는, 코드는 현재 다음과 같아야 합니다:
 
 --- code ---
 ---
