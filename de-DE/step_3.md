@@ -1,4 +1,4 @@
-## React to motor encoder movement
+## Reaktion auf Bewegungen des Motorgebers
 
 Um die LEGO® Technic™ Motoren als Controller für ein Spiel zu verwenden, musst du ihre absolute Position ständig ablesen können.
 
