@@ -1,10 +1,10 @@
-## Moving the ball
+## Move the ball
 
-The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
+Der Ball wird auf dem Bildschirm herumspringen. Daher sind zwei Variablen erforderlich, um seine Geschwindigkeit sowohl in der `x-` als auch in der `y-`Richtung festzulegen. Diese Zahlen können größer sein, um das Spiel schwieriger zu machen, oder kleiner, um das Spiel zu vereinfachen.
 
 --- task ---
 
-Add the following code to your program:
+Füge deinem Code die folgenden Zeilen hinzu:
 
 --- code ---
 ---
@@ -22,13 +22,13 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+Du kannst überprüfen, wo sich eine Turtle befindet, indem du `turtle.xcor()` und `turtle.ycor()` verwendest, um die `x-` bzw. `y-`Koordinaten zu finden.
 
-So to make the ball move, you can combine the position and speed.
+Um den Ball in Bewegung zu setzen, kannst du Position und Geschwindigkeit kombinieren.
 
 --- task ---
 
-Add the lines below to your program:
+Füge diesen Code deinem Programm hinzu:
 
 --- code ---
 ---
@@ -40,7 +40,7 @@ line_highlights: 30, 31
 ---
 
 while True:   
-game_area.update()   
+spielflaeche.update()   
 ball.setx(ball.xcor() + ball.speed_x)   
 ball.sety(ball.ycor() + ball.speed_y)
 
@@ -48,17 +48,17 @@ ball.sety(ball.ycor() + ball.speed_y)
 
 --- /task ---
 
-Run the program and see what happens!
+Führe das Programm aus und schau, was passiert!
 
-![Pong screen with the ball travelling off to the top right corner.](images/ball_diagonal.gif)
+![Pong-Bildschirm mit dem Ball, der in die obere rechte Ecke fliegt.](images/ball_diagonal.gif)
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly.
+Der Ball sollte sich schräg nach oben in Richtung obere rechte Ecke der Spielfläche bewegen... und dann weiterfliegen! Wenn du möchtest, dass dein Spiel schnell und herausfordernd ist, kannst du die `speed_x` und `speed_y` Werte erhöhen, damit sich der Ball schneller bewegt.
 
-The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160.
+Der Ball sollte aber von der oberen Wand abprallen und nicht vom Bildschirm verschwinden. Dazu kann die Geschwindigkeit umgekehrt werden, so dass sich der Ball in die entgegengesetzte Richtung bewegt, wenn seine `y-`Position größer als 160 ist.
 
 --- task ---
 
-Add the following code into your game loop and run it.
+Füge den folgenden Code in deine Spielschleife ein und führe ihn aus.
 
 --- code ---
 ---
@@ -70,7 +70,7 @@ line_highlights: 32, 33
 ---
 
 while True:   
-game_area.update()   
+spielflaeche.update()   
 ball.setx(ball.xcor() + ball.speed_x)   
 ball.sety(ball.ycor() + ball.speed_y)   
 if ball.ycor() > 160: ball.speed_y *= -1
@@ -81,15 +81,15 @@ if ball.ycor() > 160: ball.speed_y *= -1
 
 --- task ---
 
-Run your code again, and the ball should bounce off the top of the screen, but disappear off the right of the screen.
+Führe deinen Code erneut aus, und der Ball sollte vom oberen Bildschirmrand abprallen und rechts vom Bildschirm verschwinden.
 
 --- /task ---
 
-In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, in your game loop.
+Auf die gleiche Weise, wie der Code die obere `y-`Position des Balls überprüft, kann er die rechte `x-`Position und die untere `y-`Position in deiner Spielschleife überprüfen, damit er springt.
 
 --- task ---
 
-Add these checks on the ball's position.
+Füge diese Kontrollen der Ball-Position hinzu.
 
 --- code ---
 ---
@@ -111,6 +111,6 @@ line_highlights:
 
 --- /task ---
 
-The ball should now bounce around the screen, and fly off the left edge. Next, you will control your paddle to reflect the ball back from the left edge.
+Der Ball sollte nun um den Bildschirm herumspringen und über den linken Rand hinausfliegen. Als nächstes steuerst du deinen Schläger, um den Ball von der linken Kante zurück zu reflektieren.
 
 --- save ---
