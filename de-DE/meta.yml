@@ -10,13 +10,13 @@ steps:
   - 
     title: Einleitung
   - 
-    title: Use LEGO® Spike™ motor encoders
+    title: Verwendung von LEGO® Spike™ Motor-Encodern
   - 
-    title: React to motor encoder movement
+    title: Reaktion auf Bewegungen des Motorgebers
   - 
-    title: Make your Pong screen
+    title: Erstelle deinen Pong-Bildschirm
   - 
-    title: Move the ball
+    title: Den Ball bewegen
   - 
     title: Steuere den Schläger
   - 
@@ -24,4 +24,4 @@ steps:
   - 
     title: Improve your project
   - 
-    title: What next?
+    title: Wie geht es weiter?
