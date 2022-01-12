@@ -1,13 +1,13 @@
-## Making your Pong screen
+## Make your Pong screen
 
-Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
+Turtle ist eine Zeichen- und Animationsbibliothek und du kannst mit diesem [ausgezeichneten Projekt](https://projects.raspberrypi.org/en/projects/turtle-race) mehr darüber lernen.
 
 
-First, create a window where the game will be played.
+Erstelle zunächst ein Fenster, in dem das Spiel gespielt wird.
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+Öffne eine neue Datei in Thonny und füge den folgenden Code hinzu, um die turtle-, time- und buildhat-Bibliotheken zu importieren und dann einen Bildschirm einzurichten. Führe die Datei aus und du solltest ein schwarzes Fenster mit dem Titel "PONG" sehen. Die `#` Kommentare musst du nicht einfügen.
 
 --- code ---
 ---
@@ -20,16 +20,16 @@ line_highlights:
 
 from turtle import Screen, Turtle from time import sleep from buildhat import Motor
 
-game_area = Screen() #Create a screen   
-game_area.title("PONG") #Give the screen a title   
-game_area.bgcolor('black') #Set the background colour   
-game_area.tracer(0) #Give smoother animations
+spielflaeche = Screen() #erstelle einen Bildschirm   
+spielflaeche.title("PONG") #gib dem Bildschirm einen Titel   
+spielflaeche.bgcolor('black') #setze die Hintergrundfarbe   
+spielflaeche.tracer(0) #aktiviere flüssigere Animationen
 
 --- /code ---
 
 --- /task ---
 
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program:
+Die Turtle-Bibliothek bietet auch eine nützliche Möglichkeit, die Koordinaten für einen Bildschirmbereich festzulegen. Füge diesen Code deinem Programm hinzu:
 
 --- task ---
 
@@ -42,20 +42,20 @@ line_number_start: 8
 line_highlights: 9
 ---
 
-game_area.tracer(0)   
-game_area.setworldcoordinates(-200, -170, 200, 170)
+spielflaeche.tracer(0)   
+spielflaeche.setworldcoordinates(-200, -170, 200, 170)
 
 --- /code ---
 
 --- /task ---
 
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre.
+Dadurch entsteht ein rechteckiges Fenster mit einer Breite von 400 Pixeln und einer Höhe von 340 Pixeln, wobei der 0-Punkt in der Mitte liegt.
 
-![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,170, top right is 200,170, bottom left is -200,-170, and bottom right is 200,-170. The centre is 0,0.](images/coords.png)
+![Ein Screenshot des Spielfensters, der die Koordinaten jeder Ecke und des Zentrums zeigt. Oben links ist -200,170, oben rechts ist 200,170, unten links ist -200,-170 und unten rechts ist 200,-170. Das Zentrum ist 0,0.](images/coords.png)
 
 --- task ---
 
-Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
+Jetzt musst du deinen Spielbereich aktualisieren, um das Paddel und den Ball zu sehen. Füge am Ende deines Codes die **Spielschleife** hinzu und rufe die Methode `update()` auf.
 
 --- code ---
 ---
@@ -67,19 +67,19 @@ line_highlights:
 ---
 
 while True:   
-game_area.update()
+spielflaeche.update()
 
 --- /code ---
 
-Run your code and you should see a black window appear.
+Führe deinen Code aus und du solltest ein schwarzes Fenster sehen.
 
 --- /task ---
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+Als nächstes kannst du einen Ball machen, indem du eine Turtle verwendest, die als weißer Kreis festgelegt ist. Der Ball sollte in der Mitte des Bildschirms beginnen und keine Linie ziehen, wenn er sich bewegt.
 
-**Above** your `while True` loop, add the following code:
+Füge den folgenden Code **vor** deiner `while True` Schleife, hinzu:
 
 --- code ---
 ---
@@ -104,13 +104,13 @@ while True:
 
 --- task ---
 
-Run your code again. You should see a white ball appear in your window.
+Teste deinen Code nochmals. Du solltest einen weißen Ball in deinem Fenster sehen.
 
 --- /task ---
 
 --- task ---
 
-Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
+Als nächstes kannst du auf die gleiche Weise einen Schläger einrichten. Es ist ein grünes Rechteck und wird ganz links auf dem Bildschirm positioniert.
 
 --- code ---
 ---
@@ -121,12 +121,12 @@ line_number_start: 17
 line_highlights:
 ---
 
-paddle_left = Turtle()   
-paddle_left.color('green')   
-paddle_left.shape('square')   
-paddle_left.shapesize(4, 1, 1)   
-paddle_left.penup()   
-paddle_left.setpos(-190, 0)
+schlaeger_links = Turtle()   
+schlaeger_links.color('green')   
+schlaeger_links.shape('square')   
+schlaeger_links.shapesize(4, 1, 1)   
+schlaeger_links.penup()   
+schlaeger_links.setpos(-190, 0)
 
 --- /code ---
 
@@ -134,8 +134,8 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Run your code and you should see your ball and paddle.
+Führe deinen Code aus und du solltest deinen Ball und deinen Schläger sehen.
 
-![A white ball in the centre of a black window, with a green paddle on the far left.](images/pong_static.png)
+![Ein weißer Ball in der Mitte eines schwarzen Fensters mit einem grünen Schläger ganz links.](images/pong_static.png)
 
 --- /task ---
