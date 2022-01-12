@@ -50,73 +50,73 @@ Jetzt musst du noch den Spielstand auf der Spielfläche anzeigen. Um das zu tun,
 Füge deinem Programm nach der Erstellung der Schläger- und Ball-Turtles, jedoch noch vor der `while True-` Schleife, Folgendes hinzu.
 
 ```python
-writer = Turtle()
-writer.hideturtle()
-writer.color('grey')
-writer.penup()
-style = ("Courier",30,'bold')
-writer.setposition(0,150)
-writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
+stift = Turtle()
+stift.hideturtle()
+stift.color('grey')
+stift.penup()
+schrift = ("Courier",30,'bold')
+stift.setposition(0,150)
+stift.write(f'{punkte_l} PONG {punkte_r}', font=schrift, align='center')
 ```
 
 Du kannst in der Dokumentation der Turtle-Bibliothek nachsehen, welche anderen Optionen es für die Anzeige des Textes gibt.
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+Wenn du dein Programm jetzt ausführst, sollten die Punktestände und der Pong-Titel erscheinen. Die Punktestände selbst werden aber nicht aktualisiert.
 
 --- task ---
 
 Finde die beiden Bedingungen für jede der Scoring-Situationen – wenn also der Ball von einem Schläger verfehlt wird und nach links oder rechts verschwindet – und aktualisiere die Punktzahl, indem du den neuen Wert neu schreibst.
 
 ```python
-     writer.clear()
-     writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
+     stift.clear()
+     stift.write(f'{punkte_l} PONG {punkte_r}', font=schrift, align='center')
 ```
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![Eine Ansicht des Spielfensters mit den Punktzahlen am oberen Rand.](images/score.png)
 
 ### Hinzufügen eines Summers
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+Um einige einfache Soundeffekte hinzuzufügen, schließe einen Summer an die GPIO-Pins des Raspberry Pi an.
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+Anstatt ein Steckbrett zu verwenden, kannst du Überbrückungskabel mit Buchsen an beiden Enden verwenden und die Beine des Summers in die Buchsen stecken. Verwende dann einige LEGO®-Elemente, um den Summer zu montieren, damit er nicht während hektischer Spielsitzungen herumflattert und getrennt wird.
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![Ein Foto eines Raspberry Pi, der auf einer LEGO® Maker Plate montiert ist, mit einem Summer, der mit LEGO-Elementen befestigt ist.](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+Füge nun beim Start deines Programms die `gpiozero` Bibliothek zur Liste der Importe hinzu:
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+Stelle dann den Summer dem Programm zur Verfügung, indem du einstellst, an welchen Pin du das positive (+) Bein angeschlossen hast. In diesem Beispiel haben wir Pin 17 verwendet.
 
 ```python
 summer = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+Wenn du nicht Pin 17 verwendet hast, ändere den Wert so, dass er den Pin angibt, mit dem dein Summer verbunden ist.
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+Der Summer soll einen kurzen Ton abspielen, wenn Schläger und Ball Kontakt haben.
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+Füge diese Zeile zu jedem Aktionsteil der `if` Bedingungen der Berührungserkennung zwischen Ball und den Schlägern hinzu:
 
 ```python
 summer.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+Füge dann eine Zeile hinzu, um einen längeren Ton zu spielen, wenn der Spieler den Ball verfehlt
 
 ```python
 summer.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ summer.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+Weitere Informationen zu den mit Summern verfügbaren Optionen findest du in der [GPIO Zero-Dokumentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
 
 ### Anpassen deiner Controller
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+In deinem Python Turtle-Programm hast du verschiedene Farben für die Schläger verwendet. Du kannst deine LEGO® Controller anpassen, indem du Steine und andere LEGO® Elemente derselben Farbe hinzufügst.
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![Ein Foto mit einem farbigen Baustein auf einem LEGO® Rad.](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+Du kannst auch einen Griff für den Motor entwerfen, um ihn bequemer zu halten.
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![Ein Foto eines LEGO®-Griffs, der der Motorsteuerung hinzugefügt wurde.](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+Dein Spiel sollte jetzt spielbar sein. Viel Spaß damit, bevor du schaust, was du als nächstes tun könntest.
 
 --- save ---
