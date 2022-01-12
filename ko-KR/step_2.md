@@ -1,35 +1,35 @@
-## Using LEGO® Spike™ motor encoders
+## Use LEGO® Spike™ motor encoders
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+모터 인코더는 회전할 수 있을 뿐만 아니라 회전이 이루어진 각도를 정확하게 감지할 수도 있습니다.
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![원과 일치하는 롤리팝 마크가 있는 모터](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+LEGO® Spike™ 모터에는 전부 인코더가 있습니다. 모터의 회전하는 디스크 부분을 보면, 모터 자체의 흰색 몸체에 0 표시와 일직선이 될 수 있는 막대 사탕 모양의 표시가 있는 것을 볼 수 있습니다. 이것은 0도로 설정된 인코더이며 이 지점을 기준으로 모터 샤프트의 모든 각도 움직임을 측정할 수 있습니다.
 
 --- collapse ---
 ---
-title: How motor encoders work
+title: 어떻게 동작하나요?
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+로터리 또는 샤프트 인코더 라고도 하는 모터 인코더는 축의 각도 위치 또는 동작을 기록할 수 있는 장치입니다. 일반적으로 각도를 아날로그 또는 디지털 출력으로 변환하는 작업을 수행합니다.
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+모터에 인코더가 있으면 액슬의 위치를 매우 정확하게 설정할 수 있습니다. 또한 모터를 입력 장치로 사용할 수 있으므로 액슬의 위치가 변경된 경우 등록하여 컴퓨터 프로그램에서 다른 작업을 트리거하는 데 사용할 수 있습니다.
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+모니터, 키보드, 마우스를 Raspberry Pi 장치에 연결합니다.
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+Build HAT 내 인쇄된 로고가 위를 향하도록 하여 Raspberry Pi에 연결하고 모든 핀을 제대로 덮었는지 확인합니다.
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
+마지막으로 Build HAT 배럴 잭 또는 Raspberry Pi의 USB-C 포트를 통해 전원을 연결합니다.
 
 --- /task ---
 
 --- task ---
 
-Connect a motor to port A on the Build HAT.
+Build HAT의 포트 A에 모터를 연결하세요.
 
 ![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
 
@@ -37,9 +37,9 @@ Connect a motor to port A on the Build HAT.
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+4개의 커넥터 페그를 사용하여 모터에 큰 바퀴를 부착하세요. 롤리팝 표시가 0과 일치하도록 바퀴를 돌리세요.
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
+![커넥터 페그가 부착된 모터](images/motor_with_pegs.jpg) ![큰 바퀴가 달린 모터](images/motor_with_wheel.jpg)
 
 --- /task ---
 
@@ -51,25 +51,23 @@ Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell*
 
 --- task ---
 
-First, import the Build HAT library.
+먼저, Build HAT 라이브러리를 import하세요.
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+Enter 키를 누르세요.
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+그런 다음 Python에 모터가 포트 `A`에 연결되었음을 알리는 모터 객체를 만듭니다. 유형:
 
 ```python
 motor_left = Motor('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
-
-![A screenshot of the Thonny Python IDE showing code being run in the shell.](images/thonny_shell_2.png)
+Enter 키를 누르세요. (약간 시간이 걸릴 수 있으니 조금만 기다려주세요!)
 
 --- /task ---
 
