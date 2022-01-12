@@ -1,10 +1,10 @@
-## Reacting to motor encoder movement
+## React to motor encoder movement
 
-To use the LEGO® Technic™ motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
+Um die LEGO® Technic™ Motoren als Controller für ein Spiel zu verwenden, musst du ihre absolute Position ständig ablesen können.
 
 --- task ---
 
-In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then, in a `while True:` loop you can print the value of the position.
+Im Thonny-Hauptfenster über der Shell kannst du die bereits bekannten Befehle verwenden, um die absolute Position des Motors zu ermitteln. Dann kannst du in einer `while True:` Schleife den Wert der Position ausgeben.
 
 --- code ---
 ---
@@ -16,22 +16,22 @@ line_highlights:
 ---
 
 from buildhat import Motor   
-motor_left = Motor('A')
+motor_links = Motor('A')
 
 while True:   
-print(motor_left.get_aposition())
+print(motor_links.get_aposition())
 
 --- /code ---
 
 --- /task ---
 
-You should see that your program continually prints the position of the motor. If you rotate the motor, these values should change.
+Du solltest sehen, dass dein Programm ständig die Position des Motors ausgibt. Wenn du den Motor drehst, sollten sich diese Werte ändern.
 
-There is a better way of doing this though. You only need to read the motor position if it is moved.
+Es gibt jedoch einen besseren Weg, dies zu tun. Du musst die Motorposition nur ablesen, wenn das Rad bewegt wird.
 
 --- task ---
 
-Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor. You will also need to add another import line to use the `pause()` function.
+Lösche die `while True` Schleife aus deinem Programm und erstelle diese einfache Funktion, die die absolute Position des Motors ausgibt. Du musst noch eine weitere Importzeile hinzufügen, um die Funktion `pause()` verwenden zu können.
 
 --- code ---
 ---
@@ -43,10 +43,10 @@ line_highlights: 2,6,7
 ---
 
 from buildhat import Motor  
-from signal import pause motor_left = Motor('A')
+from signal import pause motor_links = Motor('A')
 
 
-def moved_left(motor_speed, motor_pos, motor_apos):   
+def links_bewegt(motor_speed, motor_pos, motor_apos):   
 print(motor_apos)
 
 --- /code ---
@@ -55,7 +55,7 @@ print(motor_apos)
 
 --- task ---
 
-Now set this function to run when the motor's encoder is moved:
+Diese Funktion soll ausgeführt werden, wenn der Encoder des Motors bewegt wird:
 
 --- code ---
 ---
@@ -67,17 +67,17 @@ line_highlights: 9,10
 ---
 
 from buildhat import Motor  
-from signal import pause motor_left = Motor('A')
+from signal import pause motor_links = Motor('A')
 
 
-def moved_left(motor_speed, motor_pos, motor_apos):   
+def links_bewegt(motor_speed, motor_pos, motor_apos):   
 print(motor_apos)
 
-motor_left.when_rotated = moved_left pause()
+motor_left.when_rotated = links_bewegt pause()
 
 --- /code ---
 
-Run your code and you should see the values printed out in the shell change when the motor is moved.
+Führe deinen Code aus und du solltest sehen, dass sich die in der Shell angezeigten Werte ändern, wenn der Motor bewegt wird.
 
 --- /task ---
 
