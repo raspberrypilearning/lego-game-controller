@@ -1,4 +1,4 @@
-## Making your Pong screen
+## Make your Pong screen
 
 Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
 
