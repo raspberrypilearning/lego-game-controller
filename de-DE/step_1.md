@@ -54,7 +54,7 @@ Bevor du beginnst, musst du deinen Raspberry Pi-Computer eingerichtet und deinen
 
 --- task ---
 
-Mount your Raspberry Pi on to the LEGO Maker Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
+Montiere deinen Raspberry Pi mit M2-Schrauben und Muttern auf der LEGO Maker Plate und stelle sicher, dass sich der Raspberry Pi auf der flachen Seite befindet:
 
  ![Raspberry Pi mit einer magentafarbenen LEGO Bauplatte verschraubt.](images/build_11.jpg)
 
