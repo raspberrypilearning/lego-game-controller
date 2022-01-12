@@ -1,4 +1,4 @@
-## Using LEGO® Spike™ motor encoders
+## Use LEGO® Spike™ motor encoders
 
 Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
 
@@ -68,8 +68,6 @@ Then, create a motor object that tells Python the motor is connected to port `A`
 motor_left = Motor('A')
 ```
 Press Enter. (There will be a slight delay, be patient!)
-
-![A screenshot of the Thonny Python IDE showing code being run in the shell.](images/thonny_shell_2.png)
 
 --- /task ---
 
