@@ -1,4 +1,4 @@
-## Make your Pong screen
+## Erstelle deinen Pong-Bildschirm
 
 Turtle ist eine Zeichen- und Animationsbibliothek und du kannst mit diesem [ausgezeichneten Projekt](https://projects.raspberrypi.org/en/projects/turtle-race) mehr darüber lernen.
 
