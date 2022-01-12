@@ -1,13 +1,13 @@
-## Making your Pong screen
+## Make your Pong screen
 
-Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
+Turtle은 그림 및 애니메이션 라이브러리이며 이 [우수한 프로젝트](https://projects.raspberrypi.org/en/projects/turtle-race)를 통해 더 자세히 알아볼 수 있습니다.
 
 
-First, create a window where the game will be played.
+먼저 게임이 실행될 창을 만드세요.
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. 파일을 실행하면 "PONG" 이라는 제목의 검은색 창이 열려 있어야 합니다. 아래에 기재된 `#` 주석은 포함할 필요가 없습니다.
 
 --- code ---
 ---
@@ -29,7 +29,7 @@ game_area.tracer(0) #Give smoother animations
 
 --- /task ---
 
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program:
+Turtle 라이브러리에는 화면 영역의 좌표를 설정하는 유용한 방법도 있습니다. 다음 코드를 당신의 프로그램에 추가해 보세요:
 
 --- task ---
 
@@ -49,13 +49,13 @@ game_area.setworldcoordinates(-200, -170, 200, 170)
 
 --- /task ---
 
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre.
+이렇게 하면 너비가 400픽셀, 높이가 340픽셀인 직사각형 창 중앙에 0이 생성됩니다.
 
-![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,170, top right is 200,170, bottom left is -200,-170, and bottom right is 200,-170. The centre is 0,0.](images/coords.png)
+![각 모서리와 중앙의 좌표를 보여주는 게임 창의 스크린샷 왼쪽 위는 -200,170, 오른쪽 위는 200,170, 왼쪽 아래는 -200,-170, 오른쪽 아래는 200,-170 입니다. 중심은 0,0 입니다.](images/coords.png)
 
 --- task ---
 
-Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
+이제 패들과 공을 보기 위해서는, 게임 영역을 업데이트해야 합니다. 코드 맨 아래에 **game loop** 를 추가하고, `update()` 메서드를 호출합니다.
 
 --- code ---
 ---
@@ -71,15 +71,15 @@ game_area.update()
 
 --- /code ---
 
-Run your code and you should see a black window appear.
+코드를 실행하고 검은색 창이 나타나는 것을 확인하세요.
 
 --- /task ---
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+Next, you can make a ball by using a Turtle that is set to be a white circle. 공은 화면 중앙에서 시작해야 하며 움직일 때 선을 그리지 않도록 설정해야 합니다.
 
-**Above** your `while True` loop, add the following code:
+`while True` 루프 **위**에 다음 코드를 추가하세요:
 
 --- code ---
 ---
@@ -104,13 +104,13 @@ while True:
 
 --- task ---
 
-Run your code again. You should see a white ball appear in your window.
+코드를 다시 테스트 해 보세요. 프로그램 창에 흰색 공이 표시되어야 합니다.
 
 --- /task ---
 
 --- task ---
 
-Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
+다음으로 동일한 방법으로 패들을 설정할 수 있습니다. 녹색 사각형이며 화면의 가장 왼쪽에 위치할 것입니다.
 
 --- code ---
 ---
@@ -134,8 +134,8 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Run your code and you should see your ball and paddle.
+코드를 실행하면, 공과 패들이 보일 것입니다.
 
-![A white ball in the centre of a black window, with a green paddle on the far left.](images/pong_static.png)
+![검은 창 중앙에 흰색 공이 있고 맨 왼쪽에 녹색 패들이 있습니다.](images/pong_static.png)
 
 --- /task ---
