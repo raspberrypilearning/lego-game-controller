@@ -4,7 +4,7 @@
 
 Füge der Geschwindigkeit und Flugbahn des Balls noch mehr Zufälligkeit hinzu.
 
-Make the ball move faster as the game progresses.
+Lass den Ball im Verlauf des Spiels schneller werden.
 
 Im Moment geht das Spiel ewig weiter – lege eine Punktezahl fest, die ein Spieler erreichen muss, um zu gewinnen, und starte dann eine neue Runde.
 
