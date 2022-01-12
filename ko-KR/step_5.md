@@ -22,13 +22,13 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+거북이가 어디에 있는지 `turtle.xcor()` 및 `turtle.ycor()` 을 사용하여 확인할 수 있습니다. 각각 `x` 및 `y` 좌표를 찾습니다.
 
 따라서 공을 움직이게 하려면 위치와 속도를 결합할 수 있습니다.
 
 --- task ---
 
-Add the lines below to your program:
+다음 코드를 당신의 프로그램에 추가해 보세요:
 
 --- code ---
 ---
