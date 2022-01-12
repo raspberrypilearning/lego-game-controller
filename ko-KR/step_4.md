@@ -7,7 +7,7 @@ Turtle은 그림 및 애니메이션 라이브러리이며 이 [우수한 프로
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. 파일을 실행하면 "PONG" 이라는 제목의 검은색 창이 열려 있어야 합니다. 아래에 기재된 `#` 주석은 포함할 필요가 없습니다.
+Thonny에서 새 파일을 열고 다음 코드를 추가하여 Turtle, 시간, Build HAT 라이브러리를 가져온 후 화면 설정합니다. 파일을 실행하면 "PONG" 이라는 제목의 검은색 창이 열려 있어야 합니다. 아래에 기재된 `#` 주석은 포함할 필요가 없습니다.
 
 --- code ---
 ---
