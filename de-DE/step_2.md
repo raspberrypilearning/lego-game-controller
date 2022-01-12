@@ -1,75 +1,73 @@
-## Using LEGO® Spike™ motor encoders
+## Use LEGO® Spike™ motor encoders
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+Motor-Encoder können sich nicht nur drehen, sondern auch genau erkennen, um wie viel Grad sie gedreht wurden.
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![Motor mit der Lollipop-Markierung in einer Linie mit einem Kreis.](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+Alle LEGO® Spike™ Motoren haben Encoder. Wenn du dir die rotierende Scheibe am Motor ansiehst, siehst du eine Markierung in Form eines Lutschers, die mit der 0-Markierung auf dem weißen Gehäuse des Motors selbst ausgerichtet werden kann. Das ist die null Grad Position des Encoders und jede Winkelbewegung der Motorwelle kann relativ zu diesem Punkt gemessen werden.
 
 --- collapse ---
 ---
-title: How motor encoders work
+title: Wie Motor-Encoder funktionieren
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+Ein Motorgeber, auch Dreh- oder Winkelgeber genannt, ist ein elektromechanisches Gerät, mit dem du die Winkelposition oder Bewegung der Achse erfassen kannst. Dies geschieht normalerweise durch die Umwandlung der Winkelposition in einen analogen oder digitalen Wert.
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+Wenn ein Motor einen Encoder hat, kannst du die Position der Achse sehr genau einstellen. Es ermöglicht dir, den Motor auch als Eingabegerät zu verwenden, so dass wenn sich die Position der Achse ändert, dies erkannt wird und zum Auslösen anderer Aktionen in einem Computerprogramm verwendet werden kann.
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+Schließe einen Monitor, eine Tastatur und eine Maus an deinen Raspberry Pi an.
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+Verbinde deinen Build HAT, mit dem gedruckten Logo nach oben, mit deinem Raspberry Pi und stelle sicher, dass du alle Pins richtig bedeckt hast.
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
-
---- /task ---
-
---- task ---
-
-Connect a motor to port A on the Build HAT.
-
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+Schließe nun die Stromversorgung an; entweder über die Build HAT Hohlstecker-Buchse oder den USB-C-Port am Raspberry Pi.
 
 --- /task ---
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+Schließe einen Motor an Port A des Build HAT an.
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
-
---- /task ---
-
---- task ---
-
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+![Motor über ein Flachbandkabel an Port A des Build-HAT angeschlossen.](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-First, import the Build HAT library.
+Befestige ein großes Rad mit vier Verbindungsstiften am Motor. Drehe das Rad so, dass die Lollipop-Markierung mit der Null-Position übereinstimmt.
+
+![Motor mit angebrachten Verbindungsstiften.](images/motor_with_pegs.jpg) ![Motor mit angebautem großen Rad.](images/motor_with_wheel.jpg)
+
+--- /task ---
+
+--- task ---
+
+Öffne Thonny aus dem **Entwicklung**-Menü und klicke auf den Reiter **Shell** im unteren Teil des Fensters.
+
+--- /task ---
+
+--- task ---
+
+Importiere zuerst die Build HAT-Bibliothek.
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+Drücke Enter.
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+Erstelle dann ein Motorobjekt, das Python mitteilt, dass der Motor mit Port `A` verbunden ist. Tippe:
 
 ```python
-motor_left = Motor('A')
+motor_links = Motor('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
-
-![A screenshot of the Thonny Python IDE showing code being run in the shell.](images/thonny_shell_2.png)
+Drücke Enter. (Es wird eine leichte Verzögerung geben, hab etwas Geduld!)
 
 --- /task ---
 
@@ -78,7 +76,7 @@ Press Enter. (There will be a slight delay, be patient!)
 Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
 
 ```python
-motor_left.get_aposition()
+motor_links.get_aposition()
 ```
 
 Depending on how well you positioned the motor at the start, you should get a value close to `0`.
@@ -92,7 +90,7 @@ Move the motor and type the line a second time, and see how the value changes.
 You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
 
 ```python
-motor_left.get_position()
+motor_links.get_position()
 ```
 --- /task ---
 
