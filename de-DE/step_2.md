@@ -73,21 +73,21 @@ Drücke Enter. (Es wird eine leichte Verzögerung geben, hab etwas Geduld!)
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+Jetzt kannst du den Motor anweisen, seine **absolute** Position zu melden. Diese liegt immer zwischen `-180` und `180`.
 
 ```python
 motor_links.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+Je nachdem, wie gut du den Motor beim Start positioniert hast, solltest du einen Wert nahe `0` bekommen.
 
-Move the motor and type the line a second time, and see how the value changes.
+Bewege den Motor und gib die Zeile ein zweites Mal ein, und schau, wie sich der Wert ändert.
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+Du kannst auch die **relative** Position abfragen. Das zeigt an, wie viel es sich seit dem Programmstarts gedreht hat, so dass es bei jeder Umdrehung des Rades um `360` mehr oder weniger anzeigt.
 
 ```python
 motor_links.get_position()
@@ -96,7 +96,7 @@ motor_links.get_position()
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+Bewege den Motor hin und her und überprüfe seine absolute und relative Position, damit du verstehst, wie sich die Werte ändern.
 
 --- /task ---
 
