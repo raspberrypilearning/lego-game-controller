@@ -1,4 +1,4 @@
-## Moving the ball
+## Move the ball
 
 The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
 
