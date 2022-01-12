@@ -1,4 +1,4 @@
-## Reacting to motor encoder movement
+## React to motor encoder movement
 
 To use the LEGO® Technic™ motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
 
