@@ -63,7 +63,7 @@ Turtle 라이브러리 문서를 보면 텍스트가 표시되는 방식에 대�
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+지금 프로그램을 실행하면 점수와 Pong 범례가 나타나야 하지만 점수는 업데이트되지 않습니다.
 
 --- task ---
 
@@ -76,47 +76,47 @@ If you run your program now, the score and Pong legend should appear, but the sc
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![상단에 점수가 표시된 게임 창의 보기](images/score.png)
 
 ### 타이머 추가하기
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+몇 가지 간단한 음향 효과가 나오도록 하려면 버저를 Raspberry Pi의 GPIO 핀에 연결합니다.
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+브레드보드를 사용하는 대신 양쪽 끝에 암 소켓이 있는 점퍼 리드를 사용하고 버저 다리를 소켓에 넣을 수 있습니다. 그런 다음 몇 가지 LEGO® element를 사용하여 부저를 장착하여 게임 세션 중에 부저가 흔들리거나 연결이 끊어지지 않도록 합니다.
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![LEGO® Maker Plate에 장착된 Raspberry Pi의 사진으로, LEGO 부품을 사용하였고, 부저가 장착되어 있습니다.](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+이제 프로그램 시작 시 가져오기 목록에 `gpiozero` 라이브러리를 추가합니다.
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+그런 다음 플러스(+) 다리를 연결한 핀을 설정하여 프로그램에서 부저를 사용할 수 있도록 합니다. 이 예시에서는 핀 17을 사용했습니다.
 
 ```python
 buzz = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+핀 17을 사용하지 않은 경우 부저가 연결된 핀을 반영하도록 값을 변경하세요.
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+이제 패들과 공이 접촉할 때마다 게임이 짧은 톤으로 재생되도록 하세요.
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+볼과 패들에 대한 조건을 `if`문에 다음과 같이 추가하세요.
 
 ```python
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+그런 다음 플레이어가 공을 놓칠 때마다 더 긴 톤을 재생하도록 라인을 추가하도록 합니다.
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+[GPIO Zero 문서](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)에서 버저와 함께 사용할 수 있는 다른 옵션에 대해 자세히 알아볼 수 있습니다.
 
-### Customising your controllers
+### 컨트롤러 사용자 정의하기
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+Python Turtle 프로그램에서는, 패들에 다른 색상을 사용했습니다. 같은 색상의 브릭과 기타 LEGO® 요소를 추가하여 LEGO® 컨트롤러를 사용자 정의할 수 있습니다.
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![LEGO® 휠의 컬러 블록 사진](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+모터를 더 편안하게 잡을 수 있도록 손잡이를 새롭게 디자인할 수도 있습니다.
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![모터 컨트롤러에 추가된 LEGO® 핸들 사진](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+이제 게임을 플레이할 수 있습니다. 다음에 할 수 있는 다른 프로젝트를 해 보기 전에 재미있게 즐기세요.
 
 --- save ---
