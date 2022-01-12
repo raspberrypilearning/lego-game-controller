@@ -1,24 +1,24 @@
-## What next?
+## Wie geht es weiter?
 
-### Improve the Pong game
+### Verbessere das Pong-Spiel
 
-Add even more randomness to the speed and trajectory of the ball.
+Füge der Geschwindigkeit und Flugbahn des Balls noch mehr Zufälligkeit hinzu.
 
-Have the ball move faster as the game progresses.
+Make the ball move faster as the game progresses.
 
-Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds.
+Im Moment geht das Spiel ewig weiter – lege eine Punktezahl fest, die ein Spieler erreichen muss, um zu gewinnen, und starte dann eine neue Runde.
 
-Change the scoring method to count how many times the players return the ball to one another, and reset when someone misses.
+Ändere die Wertungsmethode und zähle, wie oft die Spieler den Ball einander zurückgeben, und setze zurück, wenn jemand verfehlt.
 
-Introduce some haptic feedback, so that the motors turn a small amount when a point is lost.
+Führe etwas haptisches Feedback ein, indem sich die Motoren ein wenig drehen, wenn ein Punkt verloren geht.
 
-At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle.
+Im Moment spielt es keine Rolle, welcher Teil des Schlägers mit dem Ball verbunden ist, er prallt immer im gleichen Winkel ab, in dem er auftrifft. Ändere den Berührungscode so, dass der Winkel stumpfer wird, wenn der Ball nahe dem Ende des Schlägers Kontakt hat.
 
-### Create more games that use the LEGO® Technic™ motors as controllers
+### Erstelle andere Spiele, die LEGO® Technic™ Motoren als Controller verwenden
 
-How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
+Wie wäre es mit einem Spiel im Stil von Angry Birds, bei dem zwei Controller verwendet werden, um die Startbahn und die Kraft, die auf das Katapult ausgeübt wird, einzustellen?
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
+Wenn du dem Weg [Einführung in LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) folgst, kannst du mit dem [LEGO Roboter Auto](https://projects.raspberrypi.org/en/projects/lego-robot-car) Projekt fortfahren. In diesem Projekt wirst du einen Bluetooth-gesteuerten LEGO Roboter-Buggy bauen!
 
-![Lego Robot Car Project](images/robotcar.png)
+![Lego Roboter-Auto-Projekt](images/robotcar.png)
 
