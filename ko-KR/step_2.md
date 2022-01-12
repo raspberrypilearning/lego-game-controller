@@ -73,21 +73,21 @@ Enter 키를 누르세요. (약간 시간이 걸릴 수 있으니 조금만 기�
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+**절대적** 위치를 보고하도록 지시를 내릴 수도 있습니다. absolute 위치는 항상 `-180` 과 `180` 사이 입니다.
 
 ```python
 motor_left.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+시작 시 모터를 얼마나 잘 배치했는지에 따라 `0`에 가까운 값을 얻어야 합니다.
 
-Move the motor and type the line a second time, and see how the value changes.
+모터를 돌리고, 라인을 두 번째로 입력하고 값이 어떻게 변하는지 확인합니다.
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+**상대적** 위치도 추적할 수 있습니다. 이것은 프로그램이 시작된 이후로 얼마나 회전했는지 보여주므로, `360`도로 바퀴가 회전할 때마다 표시됩니다.
 
 ```python
 motor_left.get_position()
@@ -96,7 +96,7 @@ motor_left.get_position()
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+모터를 이리저리 움직이고 절대 및 상대 위치를 확인하여 값이 어떻게 변하는지 이해해 보세요.
 
 --- /task ---
 
