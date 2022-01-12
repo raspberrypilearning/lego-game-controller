@@ -4,7 +4,7 @@
 
 Add even more randomness to the speed and trajectory of the ball.
 
-Have the ball move faster as the game progresses.
+Make the ball move faster as the game progresses.
 
 Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds.
 
