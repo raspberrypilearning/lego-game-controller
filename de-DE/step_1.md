@@ -3,7 +3,7 @@
 In diesem Projekt verwendest du den Raspberry Pi Build HAT, einen LEGO® Technic™ Motor-Encoder und ein LEGO®-Rad sowie die Python Turtle-Bibliothek, um einen einfachen Gamecontroller zu erstellen, mit dem du Pong spielen kannst.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">[Pong](https://de.wikipedia.org/wiki/Pong)</span> ist eines der frühesten Arcade-Videospiele, das ursprünglich 1972 von Atari veröffentlicht wurde. Es ist ein Tischtennisspiel mit einfacher zweidimensionaler Grafik. Die Spieler steuern Schläger auf jeder Seite des Bildschirms, mit denen sie einen Ball hin und her schlagen.
+<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. Es ist ein Tischtennisspiel mit einfacher zweidimensionaler Grafik. Die Spieler steuern Schläger auf jeder Seite des Bildschirms, mit denen sie einen Ball hin und her schlagen.
 </p>
 
 Du wirst:
@@ -56,7 +56,7 @@ Bevor du beginnst, musst du deinen Raspberry Pi-Computer eingerichtet und deinen
 
 Montiere deinen Raspberry Pi mit M2-Schrauben und Muttern auf der LEGO Maker Plate und stelle sicher, dass sich der Raspberry Pi auf der flachen Seite befindet:
 
- ![Raspberry Pi mit einer magentafarbenen LEGO Bauplatte verschraubt.](images/build_11.jpg)
+ ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
 
 --- /task ---
 
