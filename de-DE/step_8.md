@@ -67,7 +67,7 @@ Wenn du dein Programm jetzt ausführst, sollten die Punktestände und der Pong-T
 
 --- task ---
 
-Finde die beiden Bedingungen für jede der Scoring-Situationen – wenn also der Ball von einem Schläger verfehlt wird und nach links oder rechts verschwindet – und aktualisiere die Punktzahl, indem du den neuen Wert neu schreibst.
+Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
 
 ```python
      stift.clear()
