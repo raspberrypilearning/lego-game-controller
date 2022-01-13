@@ -83,7 +83,7 @@ pos_links = motor_apos
 
 --- task ---
 
-Füge nun eine einzelne Zeile hinzu, die diese Funktion jedes Mal aufruft, wenn der Motor bewegt wird. Das kann kurz vor deiner `while True:` Schleife sein.
+Füge nun eine einzelne Zeile hinzu, die diese Funktion jedes Mal aufruft, wenn der Motor bewegt wird. It can be just before your `while` loop.
 
 --- code ---
 ---
