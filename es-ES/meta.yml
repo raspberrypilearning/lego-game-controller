@@ -1,27 +1,27 @@
 ---
-title: LEGO® game controller
+title: Controlador de juego LEGO®
 hero_image: images/banner.png
-description: Create a game controller using LEGO® and the Build HAT
+description: Crea un mando de juego utilizando LEGO® y Build HAT
 version: 4
 listed: true
 copyedit: true
 last_tested: "2020-10-08"
 steps:
   - 
-    title: Introduction
+    title: Introducción
   - 
-    title: Use LEGO® Spike™ motor encoders
+    title: Utilización de los codificadores de motor LEGO® Spike ™
   - 
-    title: React to motor encoder movement
+    title: Reacción al movimiento del codificador del motor
   - 
-    title: Make your Pong screen
+    title: Haciendo tu pantalla Pong
   - 
-    title: Move the ball
+    title: Moviendo la pelota
   - 
-    title: Control the paddle
+    title: Controlando la paleta
   - 
-    title: Paddle collisions
+    title: Colisiones con la paleta
   - 
     title: Improve your project
   - 
-    title: What next?
+    title: '¿Qué sigue?'
