@@ -1,24 +1,24 @@
-## What next?
+## ¿Qué viene a continuación?
 
-### Improve the Pong game
+### Mejora el juego de Pong
 
-Add even more randomness to the speed and trajectory of the ball.
+Agrega aún más aleatoriedad a la velocidad y trayectoria de la pelota.
 
-Make the ball move faster as the game progresses.
+Haz que la pelota se mueva más rápido a medida que avanza el juego.
 
-Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds.
+En este momento, el juego continúa para siempre: crea un puntaje objetivo que un jugador debe lograr para ganar y luego comenzar una nueva partida.
 
-Change the scoring method to count how many times the players return the ball to one another, and reset when someone misses.
+Cambia el método de puntuación para contar cuántas veces los jugadores devuelven el balón entre sí y reinicia cuando alguien falla.
 
-Introduce some haptic feedback, so that the motors turn a small amount when a point is lost.
+Introduce alguna retroalimentación táctil, de modo que los motores giren un poco cuando se pierde un punto.
 
-At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle.
+Por el momento, no importa qué parte de la paleta conecta con la pelota, siempre rebotará en el mismo ángulo en el que golpeó. Modifia el código de colisión para que el ángulo se vuelva más obtuso si la pelota hace contacto cerca del extremo de la paleta.
 
-### Create more games that use the LEGO® Technic™ motors as controllers
+### Crea más juegos que utilicen los motores LEGO® Technic ™ como controladores
 
-How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
+¿Qué tal un juego al estilo de Angry Birds donde se usan dos controladores para establecer la trayectoria de lanzamiento y la cantidad de fuerza aplicada a la catapulta?
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
+Si estás siguiendo el [Introducción a LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro), puedes pasar al proyecto [Carro Robot LEGO ](https://projects.raspberrypi.org/en/projects/lego-robot-car). ¡En este proyecto, harás un buggy LEGO Robot controlado por Bluetooth!
 
-![Lego Robot Car Project](images/robotcar.png)
+![Proyecto de carro robot Lego](images/robotcar.png)
 
