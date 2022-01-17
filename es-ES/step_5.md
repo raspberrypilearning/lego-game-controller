@@ -1,10 +1,10 @@
-## Move the ball
+## Moviendo la pelota
 
-The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
+La pelota va a rebotar en la pantalla, por lo que se necesitan dos variables para realizar un seguimiento de su velocidad en las direcciones `x` e `y`. Estos números pueden ser más grandes para hacer el juego más difícil o más pequeños para que el juego sea más fácil.
 
 --- task ---
 
-Add the following code to your program:
+Añade este código a tu programa:
 
 --- code ---
 ---
@@ -15,20 +15,20 @@ line_number_start: 23
 line_highlights:
 ---
 
-ball.speed_x = 1   
-ball.speed_y = 1
+pelota.speed_x = 1   
+pelota.speed_y = 1
 
 --- /code ---
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+Puedes verificar dónde se encuentra una tortuga usando `turtle.xcor()` y `turtle.ycor()` para encontrar `x` e `y`, respectivamente.
 
-So to make the ball move, you can combine the position and speed.
+Entonces, para hacer que la pelota se mueva, puedes combinar la posición y la velocidad.
 
 --- task ---
 
-Add the lines below to your program:
+Añade estas líneas a tu programa:
 
 --- code ---
 ---
@@ -40,25 +40,25 @@ line_highlights: 30, 31
 ---
 
 while True:   
-game_area.update()   
-ball.setx(ball.xcor() + ball.speed_x)   
-ball.sety(ball.ycor() + ball.speed_y)
+juego_area.update()   
+pelota.setx(pelota.xcor() + pelota.speed_x)   
+pelota.sety(pelota.ycor() + pelota.speed_y)
 
 --- /code ---
 
 --- /task ---
 
-Run the program and see what happens!
+¡Ejecuta el programa y ve qué sucede!
 
-![Pong screen with the ball travelling off to the top right corner.](images/ball_diagonal.gif)
+![Pantalla de Pong con la pelota viajando hacia la esquina superior derecha.](images/ball_diagonal.gif)
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly.
+La pelota debe moverse en diagonal hacia arriba hacia la esquina superior derecha del área de juego... ¡y luego continuar! Si quieres que tu juego sea rápido y desafiante, puede aumentar los valores `speed_x` y `speed_y` para que la pelota se mueva más rápido.
 
-The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160.
+La pelota debería rebotar en la pared superior en lugar de desaparecer de la pantalla. Para hacerlo, se puede invertir la velocidad haciendo que la bola viaje en sentido contrario, si su posición `y` es mayor que 160.
 
 --- task ---
 
-Add the following code into your game loop and run it.
+Agrega el siguiente código a tu bucle de juego y ejecútalo.
 
 --- code ---
 ---
@@ -70,10 +70,10 @@ line_highlights: 32, 33
 ---
 
 while True:   
-game_area.update()   
-ball.setx(ball.xcor() + ball.speed_x)   
-ball.sety(ball.ycor() + ball.speed_y)   
-if ball.ycor() > 160: ball.speed_y *= -1
+juego_area.update()   
+pelota.setx(pelota.xcor() + pelota.speed_x)   
+pelota.sety(pelota.ycor() + pelota.speed_y)   
+if pelota.ycor() > 160: pelota.speed_y *= -1
 
 --- /code ---
 
@@ -81,15 +81,15 @@ if ball.ycor() > 160: ball.speed_y *= -1
 
 --- task ---
 
-Run your code again, and the ball should bounce off the top of the screen, but disappear off the right of the screen.
+Ejecuta tu programa nuevamente, y la pelota debería rebotar en la parte superior de la pantalla, pero desaparecer por la parte derecha de la pantalla.
 
 --- /task ---
 
-In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, in your game loop.
+De la misma manera que el código verifica la posición superior `y` de la pelota, para hacerla rebotar, puedes verificar la posición derecha `x` y la posición inferior `y`, en tu bucle de juego.
 
 --- task ---
 
-Add these checks on the ball's position.
+Agrega estas verificaciones de la posición de la pelota.
 
 --- code ---
 ---
@@ -100,17 +100,17 @@ line_number_start: 32
 line_highlights:
 ---
 
-    if ball.ycor() > 160:   
-        ball.speed_y *= -1   
-    if ball.xcor() > 195:   
-        ball.speed_x *= -1   
-    if ball.ycor() < -160:   
-        ball.speed_y *= -1
+    if pelota.ycor() > 160:   
+        pelota.speed_y *= -1   
+    if pelota.xcor() > 195:   
+        pelota.speed_x *= -1   
+    if pelota.ycor() < -160:   
+        pelota.speed_y *= -1
 
 --- /code ---
 
 --- /task ---
 
-The ball should now bounce around the screen, and fly off the left edge. Next, you will control your paddle to reflect the ball back from the left edge.
+La pelota ahora debería rebotar alrededor de la pantalla y salirse por el borde izquierdo. A continuación, controlarás tu paleta para hacer rebotar la pelota desde el borde izquierdo.
 
 --- save ---
