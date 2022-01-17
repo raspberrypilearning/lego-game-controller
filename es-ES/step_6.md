@@ -1,22 +1,22 @@
-## Control the paddle
+## Controlando la paleta
 
-### Designing the controls
+### Diseñando los controles
 
-The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns.
+Utilizaremos el motor LEGO® Spike ™ para controlar la posición de la paleta, pero no querrás poder hacer giros completos.
 
-A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
+Una forma sencilla de limitar el movimiento de la rueda es agregar un ladrillo LEGO® para evitar que la rueda gire por completo.
 
 --- task ---
 
-Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+Alinea las marcas del codificador en su motor usando la rueda, como antes. Inserte una clavija o eje lo más cerca posible del nivel de los marcadores.
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![Una animación que muestra una combinación de motor y rueda girando a mano. Hay un cilindro LEGO® unido a la rueda para que no pueda girar por completo.](images/motor_block.gif)
 
 --- print-only ---
 
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![Dos fotos de una combinación de motor y rueda girando a mano. Hay un cilindro LEGO® unido a la rueda para que no pueda girar por completo.](images/sidebyside.png)
 
 --- /print-only ---
 
@@ -36,13 +36,13 @@ line_highlights: 5
 
 from buildhat import Motor
 
-motor_left = Motor('A')
+motor_izquierda = Motor ('A')
 
 --- /code ---
 
 --- /task ---
 
-Now a new variable is needed to keep track of the location of the paddle. This will be called `pos_left` and set to `0`.
+Ahora se necesita una nueva variable para realizar un seguimiento de la ubicación de la paleta. Se llamará `pos_izquierda` y tendrá valor `0`.
 
 --- code ---
 ---
@@ -53,16 +53,16 @@ line_number_start: 26
 line_highlights: 29
 ---
 
-ball.speed_x = 0.4   
-ball.speed_y = 0.4
+pelota.speed_x = 0.4   
+pelota.speed_y = 0.4
 
-pos_left = 0
+pos_izquierda = 0
 
 --- /code ---
 
 --- task ---
 
-Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+Crea una función para la paleta que se ejecutará cuando se mueva el codificador del motor. Ten en cuenta que utiliza una variable `global` para que pueda cambiar el valor de la variable `pos_izquierda`.
 
 --- code ---
 ---
@@ -73,9 +73,9 @@ line_number_start: 31
 line_highlights:
 ---
 
-def moved_left(motor_speed, motor_rpos, motor_apos):   
-global pos_left   
-pos_left = motor_apos
+def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
+global pos_izquierda   
+pos_izquierda = motor_apos
 
 --- /code ---
 
@@ -83,7 +83,7 @@ pos_left = motor_apos
 
 --- task ---
 
-Now add a single line that will use that function each time the motor is moved. It can be just before your `while` loop.
+Ahora agrega una sola línea que usará esa función cada vez que se mueva el motor. Puede ser justo antes del bucle `while`.
 
 --- code ---
 ---
@@ -94,7 +94,7 @@ line_number_start: 35
 line_highlights:
 ---
 
-motor_left.when_rotated = moved_left
+motor_izquierda.when_rotated = movido_izquierda
 
 --- /code ---
 
@@ -102,7 +102,7 @@ motor_left.when_rotated = moved_left
 
 --- task ---
 
-Then, add a line to the `while True` loop to update the paddle object on the screen to the new position.
+Luego, agrega una línea al bucle `while True` para actualizar el objeto paleta en la pantalla a la nueva posición.
 
 --- code ---
 ---
@@ -113,9 +113,9 @@ line_number_start: 45
 line_highlights: 47
 ---
 
-    if ball.ycor() < -160:   
-        ball.speed_y *= -1   
-    paddle_left.sety(pos_left)
+    if pelota.ycor() < -160:   
+        pelota.speed_y *= -1   
+    paleta_izquierda.sety(pos_izquierda)
 
 --- /code ---
 
@@ -123,13 +123,13 @@ line_highlights: 47
 
 --- task ---
 
-Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
+Ejecuta tu código y luego gira la rueda en tu codificador de motor. Deberías ver tu paleta moviéndose hacia arriba y hacia abajo en la pantalla.
 
 --- /task ---
 
-![A view of the game window showing the bouncing ball and moving paddle.](images/moving_paddle.gif)
+![Una vista de la ventana del juego que muestra la pelota que rebota y la paleta en movimiento.](images/moving_paddle.gif)
 
-In case there are errors, your code should currently look like this:
+En caso de que haya errores, tu código debería verse así:
 
 --- code ---
 ---
@@ -144,49 +144,49 @@ from turtle import *
 from time import sleep   
 from buildhat import Motor
 
-motor_left = Motor('A')
+motor_izquierda = Motor ('A')
 
-game_area = Screen()   
-game_area.title('PONG')   
-game_area.bgcolor('black')   
-game_area.tracer(0)   
-game_area.setworldcoordinates(-200,-170,200,170)
+juego_area = Screen()   
+juego_area.title('PONG')   
+juego_area.bgcolor('black')   
+juego_area.tracer(0)   
+juego_area.setworldcoordinates(-200,-170,200,170)
 
-ball = Turtle()   
-ball.color('white')   
-ball.shape('circle')   
-ball.penup()   
-ball.setpos(0,0)
+pelota = Turtle()   
+pelota.color('white')   
+pelota.shape('circle')   
+pelota.penup()   
+pelota.setpos(0,0)
 
-paddle_left = Turtle()   
-paddle_left.color('green')   
-paddle_left.shape("square")   
-paddle_left.shapesize(4,1,1)   
-paddle_left.penup()   
-paddle_left.setpos(-190,0)
+paleta_izquierda = Turtle()   
+paleta_izquierda.color('green')   
+paleta_izquierda.shape('square')   
+paleta_izquierda.shapesize(4, 1, 1)   
+paleta_izquierda.penup()   
+paleta_izquierda.setpos(-190, 0)
 
-ball.speed_x = 0.4   
-ball.speed_y = 0.4
+pelota.speed_x = 0.4   
+pelota.speed_y = 0.4
 
-pos_left = 0
-
-
-def moved_left(motor_speed, motor_rpos, motor_apos):   
-global pos_left   
-pos_left = motor_apos
+pos_izquierda = 0
 
 
-motor_left.when_rotated = moved_left
+def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
+global pos_izquierda   
+pos_izquierda = motor_apos
+
+
+motor_izquierda.when_rotated = movido_izquierda
 
 while True:   
-game_area.update()   
-ball.setx(ball.xcor() + ball.speed_x)   
-ball.sety(ball.ycor() + ball.speed_y)   
-if ball.ycor() > 160: ball.speed_y *= -1   
-if ball.xcor() > 195: ball.speed_x *= -1   
-if ball.ycor() < -160:   
-ball.speed_y *= -1   
-paddle_left.sety(pos_left)
+juego_area.update()   
+pelota.setx(pelota.xcor() + pelota.speed_x)   
+pelota.sety(pelota.ycor() + pelota.speed_y)   
+if pelota.ycor() > 160: pelota.speed_y *= -1   
+if pelota.xcor() > 195: pelota.speed_x *= -1   
+if pelota.ycor() < -160:   
+pelota.speed_y *= -1   
+paleta_izquierda.sety(pos_izquierda)
 
 --- /code ---
 
