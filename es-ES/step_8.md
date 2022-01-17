@@ -1,25 +1,25 @@
 ## Improve your project
 
-There are few additional features you can add to finish off your game.
+Hay algunas características adicionales que puedes agregar para terminar el juego.
 
-### Adding a score
+### Añadir una puntuación
 
 --- task ---
 
-Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
+Seguir la puntuación mediante el uso de dos variables (una para cada jugador) y actualizarlas cada vez que alguien pierde.
 
 --- hints --- --- hint ---
 
-First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
+En primer lugar, declara las nuevas variables en algún lugar hacia el principio del programa y fija la puntuación inicial en cero.
 
 ```python   
-score_r = 0   
-score_l = 0   
+puntos_d = 0
+puntos_i = 0   
 ```
 
 --- /hint --- --- hint ---
 
-Whenever a ball is missed, increment the appropriate score variable by one. There are two conditional tests you'll need to modify.
+Cada vez que se pierda una pelota, aumenta en uno la variable de puntuación apropiada. Hay dos pruebas condicionales que deberás modificar.
 
 
 --- /hint ---
@@ -27,27 +27,27 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- hint ---
 
 ```python
-    if ball.xcor() > 195: #Right
-        ball.hideturtle()
-        ball.goto(0,0)
-        ball.showturtle()
-        score_r+=1
-    if ball.xcor() < -195: #Left
-        ball.hideturtle()
-        ball.goto(0,0)
-        ball.showturtle()
-        score_l+=1
+    if pelota.xcor() > 195: #Derecha
+        pelota.hideturtle()
+        pelota.goto(0,0)
+        pelota.showturtle()
+        puntos_d+=1
+    if pelota.xcor() < -195: #Izquierda
+        pelota.hideturtle()
+        pelota.goto(0,0)
+        pelota.showturtle()
+        puntos_i+=1
 ```
 
 --- /hint ---
 
 --- /hints --- --- /task ---
 
-Now you need to display the score on the game area. You can use a fourth Turtle to do this.
+Ahora necesitas mostrar el puntaje en el área de juego. Puedes usar una cuarta tortuga para hacerlo.
 
 --- task ---
 
-Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
+Agrega lo que sigue a tu programa, después de la creación de las tortugas de las paletas y la pelota, pero antes del bucle `while True`.
 
 ```python
 writer = Turtle()
@@ -59,15 +59,15 @@ writer.setposition(0,150)
 writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
-You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed.
+Puedes consultar la documentación de la biblioteca Turtle para ver qué otras opciones hay para mostrar texto.
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+Si ejecutas el programa, la puntuación y la leyenda de Pong deberían aparecer, pero los puntajes no se actualizarán.
 
 --- task ---
 
-Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
+Encuentra los dos condicionales para cada una de las situaciones de puntuación, cuando una paleta falla la pelota y desaparece hacia la izquierda o la derecha, y actualiza la puntuación volviendo a escribir el nuevo valor.
 
 ```python
      writer.clear()
@@ -76,47 +76,47 @@ Find the two conditionals for each of the scoring situations — when ball is mi
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![Una vista de la ventana del juego con mostrando el puntaje en la parte superior.](images/score.png)
 
-### Adding a buzzer
+### Agregar una bocina
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+Para incluir algunos efectos de sonido simples, conecta una bocina a los pines GPIO en la Raspberry Pi.
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+En lugar de usar una placa de pruebas, puedes usar cables de puente con enchufes hembra en ambos extremos y meter las patas del zumbador en el enchufe. Luego, usa algunos elementos LEGO® para montar el timbre para que no se caiga y se desconecte durante las frenéticas sesiones de juego.
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![Una foto de una Raspberry Pi montada en una placa LEGO® Maker, con una bocina montada con elementos LEGO.](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+Ahora agrega la biblioteca `gpiozero` a la lista de importaciones al inicio de tu programa:
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+Luego, haz que el timbre esté disponible para que lo use el programa configurando a qué pin has conectado la pata positiva (+). En este ejemplo, usamos el Pin 17.
 
 ```python
-buzz = Buzzer(17)
+bocina = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+Si no usaste el pin 17, cambia el valor para reflejar el pin al que está conectado tu zumbador.
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+Ahora, siempre que la paleta y la pelota entren en contacto, querrás que el juego haga un sonido corto.
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+Agrega esta línea a cada parte de las condicionales para la detección de colisión `if` para la pelota y la paleta:
 
 ```python
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+Luego agrega una línea para reproducir un tono más largo cada vez que el jugador falla la pelota
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+Puedes leer más sobre las opciones disponibles con zumbadores en la [documentación de GPIO Zero](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
 
-### Customising your controllers
+### Personalizando tus controladores
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+En tu programa Turtle Python, has utilizado diferentes colores para las paletas. Puedes personalizar tus controladores LEGO® agregando ladrillos y otros elementos LEGO® del mismo color.
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![Una foto de bloques de colores en una rueda LEGO®.](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+También puedes diseñar un asa para el motor para que sea más cómodo de sostener.
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![Una foto de un mango de LEGO® agregado al controlador del motor.](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+Tu juego ahora debería ser jugable. Diviértete con él antes de ver qué más puedes hacer a continuación.
 
 --- save ---
