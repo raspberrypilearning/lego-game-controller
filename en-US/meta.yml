@@ -1,0 +1,27 @@
+---
+title: LEGO® game controller
+hero_image: images/banner.png
+description: Create a game controller using LEGO® and the Build HAT
+version: 4
+listed: true
+copyedit: true
+last_tested: "2020-10-08"
+steps:
+  - 
+    title: Introduction
+  - 
+    title: Use LEGO® Spike™ motor encoders
+  - 
+    title: React to motor encoder movement
+  - 
+    title: Make your Pong screen
+  - 
+    title: Move the ball
+  - 
+    title: Control the paddle
+  - 
+    title: Paddle collisions
+  - 
+    title: Improve your project
+  - 
+    title: What next?
