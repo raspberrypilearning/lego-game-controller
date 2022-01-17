@@ -1,102 +1,102 @@
-## Use LEGO® Spike™ motor encoders
+## Utilización de los codificadores de motor LEGO® Spike ™
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+Los codificadores de motor no solo pueden girar, también pueden detectar con precisión cuántos grados han girado.
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![Motor con la marca en forma de chupetín en línea con un círculo.](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+Todos los motores LEGO® Spike ™ tienen codificadores. Si observas la parte del disco giratorio del motor, verá una marca con forma de chupetín que se puede alinear con la marca 0 en el cuerpo blanco del motor. Este es el codificador ajustado a cero grados y cualquier movimiento angular del eje del motor puede medirse en relación con este punto.
 
 --- collapse ---
 ---
-title: How motor encoders work
+title: Cómo funcionan los codificadores de motor
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+Un codificador de motor, también llamado codificador rotativo o de eje, es un dispositivo electromecánico que le permite registrar la posición angular o el movimiento del eje. Normalmente lo hace convirtiendo la posición angular en una salida analógica o digital.
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+Si un motor tiene un codificador, eso significa que puedes establecer con mucha precisión la posición del eje. También te permite usar el motor como un dispositivo de entrada de manera que si algo cambia la posición del eje, se pueda detectar y usar para activar otras acciones en un programa de computadora.
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+Conecta un monitor, teclado y mouse a tu Raspberry Pi.
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+Conecta tu Build HAT a tu Raspberry Pi con el logotipo impreso hacia arriba, asegurándote de cubrir correctamente todos los pines.
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
-
---- /task ---
-
---- task ---
-
-Connect a motor to port A on the Build HAT.
-
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+Por último, conecta la energía; ya sea a través del conector de barril Build HAT o el puerto USB-C en la Raspberry Pi.
 
 --- /task ---
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+Conecta un motor al puerto A del Build HAT.
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
-
---- /task ---
-
---- task ---
-
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+![Motor conectado mediante un cable plano al puerto A en el build HAT.](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-First, import the Build HAT library.
+Conecta una rueda grande al motor con cuatro clavijas de conexión. Gira la rueda para que la marca con forma de chupetín esté alineada con el cero.
+
+![Motor con clavijas de conexión instaladas.](images/motor_with_pegs.jpg) ![Motor con rueda grande instalada.](images/motor_with_wheel.jpg)
+
+--- /task ---
+
+--- task ---
+
+Abre Thonny desde el menú **Programación** de Raspberry Pi y haz clic en el **Shell** en la parte inferior de la ventana.
+
+--- /task ---
+
+--- task ---
+
+Primero, importa la biblioteca Build HAT.
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+Presiona Entrar.
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+Luego, crea un objeto motor que le diga a Python que el motor está conectado al puerto `A`. Escribe:
 
 ```python
-motor_left = Motor('A')
+motor_izquierda = Motor ('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
+Presiona Entrar. (Habrá un ligero retraso, ¡ten paciencia!)
 
 --- /task ---
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+Ahora, puedes pedirle al motor que informe su posición **absoluta**. Esta siempre estará entre `-180` y `180`.
 
 ```python
-motor_left.get_aposition()
+motor_izquierda.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+Dependiendo de qué tan bien colocaste el motor al inicio, deberías obtener un valor cercano a `0`.
 
-Move the motor and type the line a second time, and see how the value changes.
+Mueve el motor y escribe la línea por segunda vez, y observa cómo cambia el valor.
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+También puedes seguir la posición **relativa**. Esto es lo lejos que se ha movido desde el momento en que se inicia el programa, por lo que aumentará o disminuirá en `360` por cada giro de la rueda.
 
 ```python
-motor_left.get_position()
+motor_izquierda.get_position()
 ```
 --- /task ---
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+Mueve el motor y verifica las posiciones absolutas y relativas, para comprender cómo cambian los valores.
 
 --- /task ---
 
