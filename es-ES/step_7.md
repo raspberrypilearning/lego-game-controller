@@ -1,6 +1,6 @@
-## Paddle collisions
+## Colisiones con la paleta
 
-The game is nearly complete — but first you need to add some extra collision detection that covers the ball hitting the paddle.
+El juego está casi completo, pero primero debes agregar detección de colisión adicional que cubra la pelota que golpea la paleta.
 
 --- task ---
 
@@ -14,23 +14,23 @@ line_number_start: 47
 line_highlights: 48
 ---
 
-paddle_left.sety(pos_left)   
-if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20): ball.setx(-180)  
-ball.speed_x *= -1
+paleta_izquierda.sety(pos_izquierda)   
+if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20): pelota.setx(-180)  
+pelota.speed_x *= -1
 
 --- /code ---
 
 --- /task ---
 
-Try the program out. You should be able to bounce the ball off your paddle and play a solo game of 'squash'!
+Prueba el programa. ¡Deberías poder hacer rebotar la pelota en tu paleta y jugar un juego de 'squash' a solas!
 
-Now you have a way of preventing the ball from disappearing off-screen, it's time to think about what happens if you fail to make a save.
+Ahora que tienes una forma de evitar que la pelota desaparezca de la pantalla, es hora de pensar en lo que sucede si no logras atajarla.
 
-For now, let's just reset the ball back to the start.
+Por ahora, reiniciemos la pelota al principio.
 
 --- task ---
 
-Add this code within the `while True` loop:
+Agrega este código dentro del bucle `while True`:
 
 --- code ---
 ---
@@ -41,23 +41,23 @@ line_number_start: 52
 line_highlights: 53-56
 ---
 
-        ball.speed_x *= -1   
-    if ball.xcor() < -195: #Left   
-        ball.hideturtle()   
-        ball.goto(0,0)   
-        ball.showturtle()
+        pelota.speed_x *= -1   
+    if pelota.xcor() < -195: #Izquierda
+        pelota.hideturtle()   
+        pelota.goto(0,0)   
+        pelota.showturtle()
 
 --- /code ---
 
 --- /task ---
 
-Once you're happy with the various settings, it's time to add in the second paddle.
+Una vez que estés satisfecho con las distintas configuraciones, es hora de agregar la segunda paleta.
 
-Using what you've created for the left-hand paddle as a starting point, add a second paddle on the right-hand side of the game area.
+Usando lo que has creado para la paleta de la izquierda como punto de partida, agrega una segunda paleta en el lado derecho del área de juego.
 
 --- task ---
 
-First of all, connect a second LEGO® Technic™ motor to the Build HAT (port B) and set it up in the program.
+En primer lugar, conecta un segundo motor LEGO® Technic ™ al Build HAT (puerto B) y configúralo en el programa.
 
 --- code ---
 ---
@@ -68,8 +68,8 @@ line_number_start: 5
 line_highlights: 6
 ---
 
-motor_left = Motor('A')   
-motor_right = Motor('B')
+motor_izquierda = Motor('A')   
+motor_derecha = Motor('B')
 
 --- /code ---
 
@@ -77,13 +77,13 @@ motor_right = Motor('B')
 
 --- task ---
 
-You can copy and paste your code for setting up your left paddle, and change the name and values for your right paddle.
+Puedes copiar y pegar tu código para configurar tu paleta izquierda y cambiar el nombre y los valores de tu paleta derecha.
 
 --- /task ---
 
 --- task ---
 
-Create your right paddle.
+Crea tu paleta derecha.
 
 --- code ---
 ---
@@ -94,19 +94,19 @@ line_number_start: 20
 line_highlights: 27-32
 ---
 
-paddle_left = Turtle()   
-paddle_left.color('green')   
-paddle_left.shape("square")   
-paddle_left.shapesize(4,1,1)   
-paddle_left.penup()   
-paddle_left.setpos(-190,0)
+paleta_izquierda = Turtle()   
+paleta_izquierda.color('green')   
+paleta_izquierda.shape('square')   
+paleta_izquierda.shapesize(4, 1, 1)   
+paleta_izquierda.penup()   
+paleta_izquierda.setpos(-190, 0)
 
-paddle_right = Turtle()   
-paddle_right.color('blue')   
-paddle_right.shape("square")   
-paddle_right.shapesize(4,1,1)   
-paddle_right.penup()   
-paddle_right.setpos(190,0)
+paleta_derecha = Turtle()   
+paleta_derecha.color('blue')   
+paleta_derecha.shape('square')   
+paleta_derecha.shapesize(4, 1, 1)   
+paleta_derecha.penup()   
+paleta_derecha.setpos(190, 0)
 
 --- /code ---
 
@@ -114,7 +114,7 @@ paddle_right.setpos(190,0)
 
 --- task ---
 
-Add a variable for the right paddle position, a function for the paddle, and the line to call the function when the right motor is moved.
+Agrega una variable para la posición de la paleta derecha, una función para la paleta y la línea para llamar a la función cuando se mueve el motor derecho.
 
 --- code ---
 ---
@@ -125,22 +125,22 @@ line_number_start: 37
 line_highlights: 38, 46-48, 52
 ---
 
-pos_left = 0   
-pos_right = 0
+pos_izquierda = 0   
+pos_derecha = 0
 
 
-def moved_left(motor_speed, motor_rpos, motor_apos):   
-global pos_left   
-pos_left = motor_apos
+def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
+global pos_izquierda   
+pos_izquierda = motor_apos
 
 
-def moved_right(motor_speed, motor_rpos, motor_apos):   
-global pos_right   
-pos_right = motor_apos
+def movido_derecha(motor_speed, motor_rpos, motor_apos):   
+global pos_derecha   
+pos_derecha = motor_apos
 
 
-motor_left.when_rotated = moved_left   
-motor_right.when_rotated = moved_right
+motor_izquierda.when_rotated = movido_izquierda   
+motor_derecha.when_rotated = movido_derecha
 
 --- /code ---
 
@@ -148,7 +148,7 @@ motor_right.when_rotated = moved_right
 
 --- task ---
 
-Add a line to update the paddle on screen to the `while True` loop:
+Agrega una línea para actualizar la paleta en la pantalla al bucle`while True`:
 
 --- code ---
 ---
@@ -159,19 +159,19 @@ line_number_start: 64
 line_highlights: 65
 ---
 
-    paddle_left.sety(pos_left)   
-    paddle_right.sety(pos_right)
+    paleta_izquierda.sety(pos_izquierda)   
+    paleta_derecha.sety(pos_derecha)
 
 --- /code ---
 
 --- /task ---
 
 
-Currently, the ball will bounce off the right-hand wall. Modify the lines of your program that make that happen so that the ball is instead reset to the centre.
+En este momento, la pelota rebota en la pared de la derecha. Modifica las líneas de tu programa que hacen que eso suceda para que la pelota se reinicie en el centro.
 
 --- task ---
 
-Change the condition for the ball's `xcor` so that it resets.
+Cambia la condición de la`xcor` de la pelota para que se reinicie.
 
 --- code ---
 ---
@@ -182,10 +182,10 @@ line_number_start: 60
 line_highlights:
 ---
 
-    if ball.xcor() > 195:   
-        ball.hideturtle()   
-        ball.goto(0,0)   
-        ball.showturtle()
+    if pelota.xcor() > 195:
+        pelota.hideturtle()   
+        pelota.goto(0,0)   
+        pelota.showturtle()
 
 --- /code ---
 
@@ -193,7 +193,7 @@ line_highlights:
 
 --- task ---
 
-Now add a similar condition for the right paddle as you did with the left, to handle collisions.
+Ahora agrega una condición para la paleta derecha similar a la que utilizaste en la izquierda, para manejar las colisiones.
 
 --- code ---
 ---
@@ -204,19 +204,19 @@ line_number_start: 68
 line_highlights: 71-73
 ---
 
-    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):   
-        ball.setx(-180)   
-        ball.speed_x *= -1   
-    if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):   
-        ball.setx(180)   
-        ball.speed_x *= -1
+    if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20):   
+        pelota.setx(-180)   
+        pelota.speed_x *= -1   
+    if (pelota.xcor() > 180 and pelota.xcor() < 190) and (pelota.ycor() < paleta_derecha.ycor() + 20 and pelota.ycor() > paleta_derecha.ycor() - 20):   
+        pelota.setx(180)   
+        pelota.speed_x *= -1
 
 --- /code ---
 
 --- /task ---
 
-You should now be able to enjoy a basic two-player game of Pong.
+Ahora debería poder disfrutar de un juego básico de Pong para dos jugadores.
 
-![A view of the game window showing a two-player game. There is a green paddle on the left and a blue one on the right and the ball bouncing between them.](images/2_player_pong.gif)
+![Una vista de la ventana del juego que muestra un juego de dos jugadores. Hay una paleta verde a la izquierda y una azul a la derecha y la pelota rebota entre ellas.](images/2_player_pong.gif)
 
 --- save ---
