@@ -1,4 +1,4 @@
-## Improve your project
+## Verbessere dein Projekt
 
 Es gibt einige zusätzliche Funktionen, die du hinzufügen kannst, um dein Spiel fertig zu stellen.
 
@@ -67,7 +67,7 @@ Wenn du dein Programm jetzt ausführst, sollten die Punktestände und der Pong-T
 
 --- task ---
 
-Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
+Finde die beiden Bedingungen für jede der Scoring-Situationen – wenn also der Ball von einem Schläger verfehlt wird und nach links oder rechts verschwindet – und aktualisiere die Punktzahl, indem du den neuen Wert schreibst.
 
 ```python
      stift.clear()
