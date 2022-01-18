@@ -8,7 +8,7 @@ copyedit: true
 last_tested: "2020-10-08"
 steps:
   - title: Einleitung
-  - title: Verwendung von LEGO® Spike™ Motor-Encodern
+  - title: Verwendung der LEGO® Spike™ Motor-Encoder
   - title: Reaktion auf Bewegungen des Motorgebers
   - title: Erstelle deinen Pong-Bildschirm
   - title: Den Ball bewegen
