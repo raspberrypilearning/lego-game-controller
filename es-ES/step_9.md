@@ -1,4 +1,4 @@
-## ¿Qué viene a continuación?
+## ¿Qué hacer a continuación?
 
 ### Mejora el juego de Pong
 
