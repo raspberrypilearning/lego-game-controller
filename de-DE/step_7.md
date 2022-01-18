@@ -4,7 +4,7 @@ Das Spiel ist fast fertig – aber zuerst musst du eine Kollisionserkennung hinz
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves
+Überprüfe innerhalb der `while True` Schleife, ob sich die `x` Position des Balls im horizontalen Bereich befindet, der vom Schläger verwendet wird. Verbinde mit einem `and` Eine Prüfung ob die `y` Position des Balls im vertikalen Bereich des Schlägers liegt
 
 --- code ---
 ---
