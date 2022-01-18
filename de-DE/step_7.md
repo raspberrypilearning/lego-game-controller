@@ -8,15 +8,16 @@ Das Spiel ist fast fertig – aber zuerst musst du eine Kollisionserkennung hinz
 
 --- code ---
 ---
-language: python filename: pong.py   
+language: python 
+filename: pong.py   
 line_numbers: true   
 line_number_start: 47
 line_highlights: 48
 ---
 
 schlaeger_linkst.sety(pos_left)   
-if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < schlaeger_links.ycor() + 20 and ball.ycor() > schlaeger_links.ycor() - 20): 
-    ball.setx(-180)  
+if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < schlaeger_links.ycor() + 20 and ball.ycor() > schlaeger_links.ycor() - 20):
+    ball.setx(-180)
     ball.speed_x *= -1
 
 --- /code ---
@@ -209,7 +210,7 @@ line_highlights: 71-73
         ball.setx(-180)
         ball.speed_x *= -1   
     if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < schlaeger_rechts.ycor() + 20 and ball.ycor() > schlaeger_rechts.ycor() - 20):
-        ball.setx(180)   
+        ball.setx(180)
         ball.speed_x *= -1
 
 --- /code ---
