@@ -23,7 +23,7 @@ Richte, wie zuvor, die Encodermarkierungen an deinem Motor mit dem Rad aus. Setz
 
 --- task ---
 
-Add a line to create the `motor_left` object after the import line.
+Füge nach der Importzeile eine Zeile hinzu, um das `motor_links` Objekt zu erstellen.
 
 --- code ---
 ---
@@ -83,7 +83,7 @@ pos_links = motor_apos
 
 --- task ---
 
-Füge nun eine einzelne Zeile hinzu, die diese Funktion jedes Mal aufruft, wenn der Motor bewegt wird. It can be just before your `while` loop.
+Füge nun eine einzelne Zeile hinzu, die diese Funktion jedes Mal aufruft, wenn der Motor bewegt wird. Das kann knapp vor deiner `while` Schleife sein.
 
 --- code ---
 ---
