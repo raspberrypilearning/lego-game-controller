@@ -3,7 +3,7 @@
 In diesem Projekt verwendest du den Raspberry Pi Build HAT, einen LEGO® Technic™ Motor-Encoder und ein LEGO®-Rad sowie die Python Turtle-Bibliothek, um einen einfachen Gamecontroller zu erstellen, mit dem du Pong spielen kannst.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. Es ist ein Tischtennisspiel mit einfacher zweidimensionaler Grafik. Die Spieler steuern Schläger auf jeder Seite des Bildschirms, mit denen sie einen Ball hin und her schlagen.
+<span style="color: #0faeb0">[Pong](https://de.wikipedia.org/wiki/Pong)</span> ist eines der ersten Arcade-Videospiele, das ursprünglich 1972 von Atari veröffentlicht wurde. Es ist ein Tischtennisspiel mit einfacher zweidimensionaler Grafik. Die Spieler steuern Schläger auf jeder Seite des Bildschirms, mit denen sie einen Ball hin und her schlagen.
 </p>
 
 Du wirst:
@@ -54,13 +54,13 @@ Bevor du beginnst, musst du deinen Raspberry Pi-Computer eingerichtet und deinen
 
 --- task ---
 
-Montiere deinen Raspberry Pi mit M2-Schrauben und Muttern auf der LEGO Maker Plate und stelle sicher, dass sich der Raspberry Pi auf der flachen Seite befindet:
+Montiere deinen Raspberry Pi mit M2-Schrauben und Muttern auf der LEGO Maker Platte und stelle sicher, dass sich der Raspberry Pi auf der flachen Seite befindet:
 
- ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
+ ![Raspberry Pi mit einer magentafarbenen LEGO Bau-Platte verschraubt.](images/build_11.jpg)
 
 --- /task ---
 
-Die Montage des Raspberry Pi auf diese Weise ermöglicht einen einfachen Zugriff auf die Anschlüsse und den SD-Kartensteckplatz. The Maker Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+Die Montage des Raspberry Pi auf diese Weise ermöglicht einen einfachen Zugriff auf die Anschlüsse und den SD-Kartensteckplatz. Mit der Maker Platte kannst du den Raspberry Pi einfacher mit der Hauptstruktur deines Dashboards verbinden.
 
 --- task ---
 
