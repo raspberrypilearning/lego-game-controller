@@ -1,4 +1,4 @@
-## Use LEGO® Spike™ motor encoders
+## Verwendung der LEGO® Spike™ Motor-Encoder
 
 Motor-Encoder können sich nicht nur drehen, sondern auch genau erkennen, um wie viel Grad sie gedreht wurden.
 
