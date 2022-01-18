@@ -205,10 +205,10 @@ line_number_start: 68
 line_highlights: 71-73
 ---
 
-    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < schlaeger_links.ycor() + 20 and ball.ycor() > schlaeger_links.ycor() - 20):   
-        ball.setx(-180)   
+    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < schlaeger_links.ycor() + 20 and ball.ycor() > schlaeger_links.ycor() - 20):
+        ball.setx(-180)
         ball.speed_x *= -1   
-    if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < schlaeger_rechts.ycor() + 20 and ball.ycor() > schlaeger_rechts.ycor() - 20):   
+    if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < schlaeger_rechts.ycor() + 20 and ball.ycor() > schlaeger_rechts.ycor() - 20):
         ball.setx(180)   
         ball.speed_x *= -1
 
