@@ -1,4 +1,4 @@
-## Improve your project
+## Mejora tu proyecto
 
 Hay algunas características adicionales que puedes agregar para terminar el juego.
 
@@ -50,13 +50,13 @@ Ahora necesitas mostrar el puntaje en el área de juego. Puedes usar una cuarta 
 Agrega lo que sigue a tu programa, después de la creación de las tortugas de las paletas y la pelota, pero antes del bucle `while True`.
 
 ```python
-writer = Turtle()
-writer.hideturtle()
-writer.color('grey')
-writer.penup()
-style = ("Courier",30,'bold')
-writer.setposition(0,150)
-writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
+escritor = Turtle()
+escritor.hideturtle()
+escritor.color('grey')
+escritor.penup()
+style = ("Courier", 30, 'bold')
+escritor.setposition(0,150)
+escritor. write(f '{puntos_i} PONG {puntos_d}', font = style, align= 'center')
 ```
 
 Puedes consultar la documentación de la biblioteca Turtle para ver qué otras opciones hay para mostrar texto.
@@ -70,8 +70,8 @@ Si ejecutas el programa, la puntuación y la leyenda de Pong deberían aparecer,
 Encuentra los dos condicionales para cada una de las situaciones de puntuación, cuando una paleta falla la pelota y desaparece hacia la izquierda o la derecha, y actualiza la puntuación volviendo a escribir el nuevo valor.
 
 ```python
-     writer.clear()
-     writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
+     escritor.clear()
+     escritor.write(f '{puntos_i} PONG {puntos_d}', font= style, align= 'center')
 ```
 
 --- /task ---
