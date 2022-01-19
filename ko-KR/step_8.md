@@ -1,4 +1,4 @@
-## Improve your project
+## 프로젝트 저장하기
 
 게임을 마무리하기 위해 추가할 수 있는 몇 가지 부가 기능이 있습니다.
 
@@ -27,12 +27,12 @@ score_l = 0
 --- hint ---
 
 ```python
-    if ball.xcor() > 195: #Right
+    if ball.xcor() > 195: #오른쪽
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
         score_r+=1
-    if ball.xcor() < -195: #Left
+    if ball.xcor() < -195: #왼쪽
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
