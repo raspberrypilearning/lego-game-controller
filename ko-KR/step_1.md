@@ -37,7 +37,7 @@
 ### 소프트웨어
 
 + Python 3
-+ Build HAT Python library
++ Build HAT Python 라이브러리 빌드
 
 --- collapse ---
 ---
@@ -60,7 +60,7 @@ M2 볼트와 너트를 사용하여 LEGO Maker Plate에 Raspberry Pi를 장착�
 
 --- /task ---
 
-Mounting the Raspberry Pi this way round enables easy access to the ports as well as the SD card slot. Maker Plate를 사용하면 Raspberry Pi를 대시보드에 더 쉽게 연결할 수 있습니다.
+이런 식으로 Raspberry Pi를 장착하면 향후 포트와 SD 카드 슬롯에 쉽게 액세스할 수 있습니다. Maker Plate를 사용하면 Raspberry Pi를 대시보드에 더 쉽게 연결할 수 있습니다.
 
 --- task ---
 
@@ -76,7 +76,7 @@ Build HAT를 Raspberry Pi와 정렬하여 `This way up` 레이블이 보이도�
 
 아직 설정하지 않았다면 다음 지침에 따라 Raspberry Pi를 설정하세요.
 
-[Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
+[Raspberry Pi 설정하기](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
 
 --- /task ---
 
@@ -84,7 +84,7 @@ Build HAT를 Raspberry Pi와 정렬하여 `This way up` 레이블이 보이도�
 
 Raspberry Pi가 부팅되면 Raspberry 메뉴 버튼을 클릭하고 "기본 설정(Preferences)"를 선택한 다음 "Raspberry Pi Configuration"을 선택하여 Raspberry Pi Configuration 도구를 엽니다.
 
-Click on the “interfaces” tab and adjust the Serial settings as shown below:
+"interfaces" 탭을 클릭하고 아래와 같이 시리얼 설정을 조정합니다.
 
 ![직렬 포트가 활성화되고 직렬 콘솔이 비활성화된 Raspberry Pi 구성 화면을 보여주는 이미지](images/configshot.jpg)
 
