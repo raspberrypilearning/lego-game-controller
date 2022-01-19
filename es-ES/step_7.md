@@ -15,8 +15,9 @@ line_highlights: 48
 ---
 
 paleta_izquierda.sety(pos_izquierda)   
-if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20): pelota.setx(-180)  
-pelota.speed_x *= -1
+if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20): 
+    pelota.setx(-180)  
+    pelota.speed_x *= -1
 
 --- /code ---
 
@@ -130,13 +131,13 @@ pos_derecha = 0
 
 
 def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
-global pos_izquierda   
-pos_izquierda = motor_apos
+    global pos_izquierda   
+    pos_izquierda = motor_apos
 
 
 def movido_derecha(motor_speed, motor_rpos, motor_apos):   
-global pos_derecha   
-pos_derecha = motor_apos
+    global pos_derecha   
+    pos_derecha = motor_apos
 
 
 motor_izquierda.when_rotated = movido_izquierda   
@@ -204,11 +205,11 @@ line_number_start: 68
 line_highlights: 71-73
 ---
 
-    if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20):   
-        pelota.setx(-180)   
+    if (pelota.xcor() < -180 and pelota.xcor() > -190) and (pelota.ycor() < paleta_izquierda.ycor() + 20 and pelota.ycor() > paleta_izquierda.ycor() - 20):
+        pelota.setx(-180)
         pelota.speed_x *= -1   
-    if (pelota.xcor() > 180 and pelota.xcor() < 190) and (pelota.ycor() < paleta_derecha.ycor() + 20 and pelota.ycor() > paleta_derecha.ycor() - 20):   
-        pelota.setx(180)   
+    if (pelota.xcor() > 180 and pelota.xcor() < 190) and (pelota.ycor() < paleta_derecha.ycor() + 20 and pelota.ycor() > paleta_derecha.ycor() - 20):
+        pelota.setx(180)
         pelota.speed_x *= -1
 
 --- /code ---
