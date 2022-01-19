@@ -54,13 +54,13 @@ Antes de comenzar, deberás configurar tu computadora Raspberry Pi e instalar el
 
 --- task ---
 
-Mount your Raspberry Pi on to the LEGO Maker Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
+Monta tu Raspberry Pi en la placa de construcción LEGO usando pernos y tuercas M2, asegurándote de que la Raspberry Pi esté en el lado sin el 'borde':
 
  ![Raspberry Pi atornillada a una placa de construcción LEGO magenta.](images/build_11.jpg)
 
 --- /task ---
 
-Montar la Raspberry Pi de esta manera permite un fácil acceso a los puertos, así como a la ranura de la tarjeta SD. The Maker Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+Montar la Raspberry Pi de esta manera permite un fácil acceso a los puertos, así como a la ranura de la tarjeta SD. La placa de construcción te permitirá conectar la Raspberry Pi a la estructura principal de tu tablero más fácilmente.
 
 --- task ---
 
