@@ -4,7 +4,7 @@ El juego está casi completo, pero primero debes agregar detección de colisión
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves
+Dentro del bucle `while True`, comprueba si la posición `x` de la pelota está en la línea horizontal cubierta por la paleta. También usa un `and` para verificar que la posición `y` de la pelota esté dentro del área horizontal en la que se mueve la paleta
 
 --- code ---
 ---
