@@ -18,7 +18,7 @@
 
 두 개의 컨트롤러를 사용하여 발사 궤적과 투석기에 가해지는 힘의 양을 설정하는 Angry Birds 스타일의 게임 제작은 어떨까요?
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
+[LEGO Build HAT](https://projects.raspberrypi.org/en/pathways/lego-intro) 프로젝트를 따르는 경우 [LEGO 로봇 자동차](https://projects.raspberrypi.org/en/projects/lego-robot-car) 프로젝트로 이동할 수 있습니다. 이 프로젝트에서는 Bluetooth로 제어되는 LEGO 로봇 버기차를 만들 것입니다!
 
-![Lego Robot Car Project](images/robotcar.png)
+![레고 로봇자동차 프로젝트](images/robotcar.png)
 
