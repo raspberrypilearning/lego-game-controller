@@ -8,7 +8,8 @@ Dentro del bucle `while True`, comprueba si la posición `x` de la pelota está 
 
 --- code ---
 ---
-language: python filename: pong.py   
+language: python 
+filename: pong.py   
 line_numbers: true   
 line_number_start: 47
 line_highlights: 48
