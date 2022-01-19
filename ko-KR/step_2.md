@@ -1,4 +1,4 @@
-## Use LEGO® Spike™ motor encoders
+## LEGO® Spike™ 모터 인코더 사용하기
 
 모터 인코더는 회전할 수 있을 뿐만 아니라 회전이 이루어진 각도를 정확하게 감지할 수도 있습니다.
 
@@ -31,7 +31,7 @@ Build HAT 내 인쇄된 로고가 위를 향하도록 하여 Raspberry Pi에 연
 
 Build HAT의 포트 A에 모터를 연결하세요.
 
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+![리본 케이블을 통해 Build HAT의 포트 A에 연결된 모터](images/motor_attached.jpg)
 
 --- /task ---
 
@@ -45,7 +45,7 @@ Build HAT의 포트 A에 모터를 연결하세요.
 
 --- task ---
 
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+Raspberry Pi 내 **Programming** 메뉴에서 Thonny를 열고, 창 하단의 **Shell** 상자를 클릭합니다.
 
 --- /task ---
 
