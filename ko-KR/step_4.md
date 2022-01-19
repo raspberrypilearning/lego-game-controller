@@ -1,4 +1,4 @@
-## Make your Pong screen
+## Pong 화면 만들기
 
 Turtle은 그림 및 애니메이션 라이브러리이며 이 [우수한 프로젝트](https://projects.raspberrypi.org/en/projects/turtle-race)를 통해 더 자세히 알아볼 수 있습니다.
 
@@ -77,7 +77,7 @@ game_area.update()
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. 공은 화면 중앙에서 시작해야 하며 움직일 때 선을 그리지 않도록 설정해야 합니다.
+다음으로, 흰색 원으로 설정된 Turtle을 사용하여 공을 만들 수 있습니다. 공은 화면 중앙에서 시작해야 하며 움직일 때 선을 그리지 않도록 설정해야 합니다.
 
 `while True` 루프 **위**에 다음 코드를 추가하세요:
 
