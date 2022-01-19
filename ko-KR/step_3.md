@@ -1,4 +1,4 @@
-## React to motor encoder movement
+## 모터 인코더 움직임에 반응하도록 만들기
 
 LEGO® Technic™ 모터를 게임용 컨트롤러로 사용하려면 절대적 위치를 지속적으로 읽을 수 있어야 합니다.
 
