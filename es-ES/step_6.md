@@ -74,8 +74,8 @@ line_highlights:
 ---
 
 def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
-global pos_izquierda   
-pos_izquierda = motor_apos
+    global pos_izquierda   
+    pos_izquierda = motor_apos
 
 --- /code ---
 
@@ -172,21 +172,23 @@ pos_izquierda = 0
 
 
 def movido_izquierda(motor_speed, motor_rpos, motor_apos):   
-global pos_izquierda   
-pos_izquierda = motor_apos
+    global pos_izquierda   
+    pos_izquierda = motor_apos
 
 
 motor_izquierda.when_rotated = movido_izquierda
 
 while True:   
-juego_area.update()   
-pelota.setx(pelota.xcor() + pelota.speed_x)   
-pelota.sety(pelota.ycor() + pelota.speed_y)   
-if pelota.ycor() > 160: pelota.speed_y *= -1   
-if pelota.xcor() > 195: pelota.speed_x *= -1   
-if pelota.ycor() < -160:   
-pelota.speed_y *= -1   
-paleta_izquierda.sety(pos_izquierda)
+    juego_area.update()   
+    pelota.setx(pelota.xcor() + pelota.speed_x)   
+    pelota.sety(pelota.ycor() + pelota.speed_y)   
+    if pelota.ycor() > 160: 
+        pelota.speed_y *= -1   
+    if pelota.xcor() > 195: 
+        pelota.speed_x *= -1   
+    if pelota.ycor() < -160:   
+        pelota.speed_y *= -1   
+    paleta_izquierda.sety(pos_izquierda)
 
 --- /code ---
 

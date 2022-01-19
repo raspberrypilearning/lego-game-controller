@@ -40,9 +40,9 @@ line_highlights: 30, 31
 ---
 
 while True:   
-juego_area.update()   
-pelota.setx(pelota.xcor() + pelota.speed_x)   
-pelota.sety(pelota.ycor() + pelota.speed_y)
+    juego_area.update()   
+    pelota.setx(pelota.xcor() + pelota.speed_x)   
+    pelota.sety(pelota.ycor() + pelota.speed_y)
 
 --- /code ---
 
@@ -70,10 +70,11 @@ line_highlights: 32, 33
 ---
 
 while True:   
-juego_area.update()   
-pelota.setx(pelota.xcor() + pelota.speed_x)   
-pelota.sety(pelota.ycor() + pelota.speed_y)   
-if pelota.ycor() > 160: pelota.speed_y *= -1
+    juego_area.update()   
+    pelota.setx(pelota.xcor() + pelota.speed_x)   
+    pelota.sety(pelota.ycor() + pelota.speed_y)   
+    if pelota.ycor() > 160: 
+        pelota.speed_y *= -1
 
 --- /code ---
 

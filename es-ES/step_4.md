@@ -18,7 +18,9 @@ line_number_start: 1
 line_highlights:
 ---
 
-from turtle import Screen, Turtle from time import sleep from buildhat import Motor
+from turtle import Screen, Turtle 
+from time import sleep 
+from buildhat import Motor
 
 juego_area = Screen() #Cread una pantalla   
 juego_area.title("PONG") #Da un título a la pantalla   
@@ -67,7 +69,7 @@ line_highlights:
 ---
 
 while True:   
-juego_area.update ()
+    juego_area.update ()
 
 --- /code ---
 

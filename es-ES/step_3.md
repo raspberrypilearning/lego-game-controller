@@ -19,7 +19,7 @@ from buildhat import Motor
 motor_izquierda = Motor('A')
 
 while True:   
-print(motor_izquierda.get_aposition())
+    print(motor_izquierda.get_aposition())
 
 --- /code ---
 
@@ -43,11 +43,12 @@ line_highlights: 2,6,7
 ---
 
 from buildhat import Motor  
-from signal import pause motor_izquierda = Motor('A')
+from signal import pause 
+motor_izquierda = Motor('A')
 
 
 def movido_izquierda (motor_speed, motor_pos, motor_apos):   
-print (motor_apos)
+    print (motor_apos)
 
 --- /code ---
 
@@ -67,13 +68,15 @@ line_highlights: 9,10
 ---
 
 from buildhat import Motor  
-from signal import pause motor_izquierda = Motor('A')
+from signal import pause 
+motor_izquierda = Motor('A')
 
 
 def movido_izquierda(motor_speed, motor_pos, motor_apos):   
-print(motor_apos)
+    print(motor_apos)
 
-motor_izquierda.when_rotated = movido_izquierda pause()
+motor_izquierda.when_rotated = movido_izquierda 
+pause()
 
 --- /code ---
 
