@@ -23,7 +23,7 @@ Alinea las marcas del codificador en su motor usando la rueda, como antes. Inser
 
 --- task ---
 
-Add a line to create the `motor_left` object after the import line.
+Agrega una línea para crear el objeto `motor_izquierda` después de la línea de importación.
 
 --- code ---
 ---
