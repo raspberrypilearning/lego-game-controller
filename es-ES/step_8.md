@@ -44,7 +44,7 @@ Cada vez que se pierda una pelota, aumenta en uno la variable de puntuación apr
 
 --- /hints --- --- /task ---
 
-Ahora necesitas mostrar el puntaje en el área de juego. Puedes usar una cuarta tortuga para hacerlo.
+Ahora necesitas mostrar la puntuación en el área de juego. Puedes usar una cuarta tortuga para hacerlo.
 
 --- task ---
 
@@ -64,7 +64,7 @@ Puedes consultar la documentación de la biblioteca Turtle para ver qué otras o
 
 --- /task ---
 
-Si ejecutas el programa, la puntuación y la leyenda de Pong deberían aparecer, pero los puntajes no se actualizarán.
+Si ejecutas el programa, la puntuación y la leyenda de Pong deberían aparecer, pero la puntuación no se actualizará.
 
 --- task ---
 
@@ -81,11 +81,11 @@ Encuentra los dos condicionales para cada una de las situaciones de puntuación,
 
 ### Agregar una bocina
 
-Para incluir algunos efectos de sonido simples, conecta una bocina a los pines GPIO en la Raspberry Pi.
+Para incluir algunos efectos de sonido simples, conecta un altavoz a los pines GPIO en la Raspberry Pi.
 
 [[[rpi-connect-buzzer]]]
 
-En lugar de usar una placa de pruebas, puedes usar cables de puente con enchufes hembra en ambos extremos y meter las patas del zumbador en el enchufe. Luego, usa algunos elementos LEGO® para montar el timbre para que no se caiga y se desconecte durante las frenéticas sesiones de juego.
+En lugar de usar una placa de pruebas, puedes usar cables de puente con enchufes hembra en ambos extremos y meter las patas del altavoz en el enchufe. Luego, usa algunos elementos LEGO® para montar el altavoz para que no se caiga y se desconecte durante las frenéticas sesiones de juego.
 
 ![Una foto de una Raspberry Pi montada en una placa LEGO® Maker, con una bocina montada con elementos LEGO.](images/buzzer.JPG)
 
@@ -103,7 +103,7 @@ Luego, haz que el timbre esté disponible para que lo use el programa configuran
 bocina = Buzzer(17)
 ```
 
-Si no usaste el pin 17, cambia el valor para reflejar el pin al que está conectado tu zumbador.
+Si no usaste el pin 17, cambia el valor para reflejar el pin al que está conectado tu altavoz.
 
 --- /task ---
 
@@ -114,18 +114,18 @@ Ahora, siempre que la paleta y la pelota entren en contacto, querrás que el jue
 Agrega esta línea a cada parte de las condicionales para la detección de colisión `if` para la pelota y la paleta:
 
 ```python
-buzz.beep(0.1,0.1,background=True)
+bocina.beep(0.1,0.1,background=True)
 ```
 
 Luego agrega una línea para reproducir un tono más largo cada vez que el jugador falla la pelota
 
 ```python
-buzz.beep(0.5,0.5,background=True)
+bocina.beep(0.5,0.5,background=True)
 ```
 
 --- /task ---
 
-Puedes leer más sobre las opciones disponibles con zumbadores en la [documentación de GPIO Zero](https://gpiozero.readthedocs.io/es-ES/stable/api_output.html#buzzer).
+Puedes leer más sobre las opciones disponibles con altavoces en la [documentación de GPIO Zero](https://gpiozero.readthedocs.io/es-ES/stable/api_output.html#buzzer).
 
 ### Personalizando tus controladores
 

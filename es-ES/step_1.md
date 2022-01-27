@@ -25,7 +25,7 @@ Vas a:
 
 ### Necesitarás
 
-+ Una computadora Raspberry Pi
++ Un ordenador Raspberry Pi
 + Un Build HAT Raspberry Pi
 + Al menos un motor LEGO® Technic ™
 + Variedad de LEGO®, incluidas las ruedas (utilizamos una selección del kit [LEGO® Education SPIKE ™ Prime](https://education.lego.com/en-gb/product/spike-prime))
@@ -50,7 +50,7 @@ Si necesitas imprimir este proyecto, usa la [versión para imprimir](https://pro
 
 --- /collapse ---
 
-Antes de comenzar, deberás configurar tu computadora Raspberry Pi e instalar el Build HAT:
+Antes de comenzar, deberás configurar tu ordenador Raspberry Pi e instalar el Build HAT:
 
 --- task ---
 

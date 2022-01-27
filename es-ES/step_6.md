@@ -8,7 +8,7 @@ Una forma sencilla de limitar el movimiento de la rueda es agregar un ladrillo L
 
 --- task ---
 
-Alinea las marcas del codificador en su motor usando la rueda, como antes. Inserte una clavija o eje lo más cerca posible del nivel de los marcadores.
+Alinea las marcas del codificador en su motor usando la rueda, como antes. Inserta una clavija o eje lo más cerca posible del nivel de los marcadores.
 
 --- /task ---
 
