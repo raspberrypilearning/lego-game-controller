@@ -7,7 +7,7 @@ Primero, crea una ventana donde se jugará el juego.
 
 --- task ---
 
-Abre un nuevo archivo en Thonny y agrega el siguiente código para importar las bibliotecas Turtle, time y Build HAT, y luego configura una ventana. Ejecuta el archivo y deberías ver una ventana negra con el título "PONG". No es necesario incluir los comentarios `#`.
+Abre un nuevo archivo en Thonny y agrega el siguiente programa para importar las bibliotecas Turtle, time y Build HAT, y luego configura una ventana. Ejecuta el archivo y deberías ver una ventana negra con el título "PONG". No es necesario incluir los comentarios `#`.
 
 --- code ---
 ---
@@ -73,15 +73,15 @@ while True:
 
 --- /code ---
 
-Ejecuta su programa y verás aparecer una ventana negra.
+Ejecuta tu programa y verás aparecer una ventana negra.
 
 --- /task ---
 
 --- task ---
 
-A continuación, puede hacer una pelota usando una tortuga que está configurada para ser un círculo blanco. La pelota debe comenzar en el medio de la pantalla y no debe trazar una línea cuando se mueve.
+A continuación, puedes hacer una pelota usando una tortuga que está configurada para ser un círculo blanco. La pelota debe comenzar en el medio de la pantalla y no debe trazar una línea cuando se mueve.
 
-**Por encima de** tu `while True`, agrega el siguiente código:
+**Por encima de** tu `while True`, agrega las siguientes líneas:
 
 --- code ---
 ---
