@@ -4,7 +4,7 @@
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves
+`while True` 루프 내에서 공의 `x` 위치가, 패들이 움직이는 수평선에 있는지 확인합니다. 또한 `and` 를 사용하여 공의 `y` 위치가 패들로 덮인 수직 영역 내에 있는지 확인합니다.
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ line_highlights: 53-56
 ---
 
         ball.speed_x *= -1   
-    if ball.xcor() < -195: #Left   
+    if ball.xcor() < -195: #왼쪽   
         ball.hideturtle()   
         ball.goto(0,0)   
         ball.showturtle()
