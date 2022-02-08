@@ -23,7 +23,7 @@ LEGO® Spike™ 모터는 패들의 위치를 제어하는 데 사용되지만 �
 
 --- task ---
 
-Add a line to create the `motor_left` object after the import line.
+import 라인 뒤에 `motor_left` 객체를 생성하는 라인을 추가합니다.
 
 --- code ---
 ---
