@@ -2,9 +2,9 @@
 
 Los codificadores de motor no solo pueden girar, también pueden detectar con precisión cuántos grados han girado.
 
-![Motor con la marca en forma de chupetín en línea con un círculo.](images/aligned_symbols.jpg)
+![Motor con la marca en forma de chupachup en línea con un círculo.](images/aligned_symbols.jpg)
 
-Todos los motores LEGO® Spike ™ tienen codificadores. Si observas la parte del disco giratorio del motor, verá una marca con forma de chupetín que se puede alinear con la marca 0 en el cuerpo blanco del motor. Este es el codificador ajustado a cero grados y cualquier movimiento angular del eje del motor puede medirse en relación con este punto.
+Todos los motores LEGO® Spike ™ tienen codificadores. Si observas la parte del disco giratorio del motor, verá una marca con forma de chupachup que se puede alinear con la marca 0 en el cuerpo blanco del motor. Este es el codificador ajustado a cero grados y cualquier movimiento angular del eje del motor puede medirse en relación con este punto.
 
 --- collapse ---
 ---
@@ -13,13 +13,13 @@ title: Cómo funcionan los codificadores de motor
 
 Un codificador de motor, también llamado codificador rotativo o de eje, es un dispositivo electromecánico que le permite registrar la posición angular o el movimiento del eje. Normalmente lo hace convirtiendo la posición angular en una salida analógica o digital.
 
-Si un motor tiene un codificador, eso significa que puedes establecer con mucha precisión la posición del eje. También te permite usar el motor como un dispositivo de entrada de manera que si algo cambia la posición del eje, se pueda detectar y usar para activar otras acciones en un programa de computadora.
+Si un motor tiene un codificador, eso significa que puedes establecer con mucha precisión la posición del eje. También te permite usar el motor como un dispositivo de entrada de manera que si algo cambia la posición del eje, se pueda detectar y usar para activar otras acciones en un programa de ordenador.
 
 --- /collapse ---
 
 --- task ---
 
-Conecta un monitor, teclado y mouse a tu Raspberry Pi.
+Conecta un monitor, teclado y ratón a tu Raspberry Pi.
 
 Conecta tu Build HAT a tu Raspberry Pi con el logotipo impreso hacia arriba, asegurándote de cubrir correctamente todos los pines.
 
@@ -37,7 +37,7 @@ Conecta un motor al puerto A del Build HAT.
 
 --- task ---
 
-Conecta una rueda grande al motor con cuatro clavijas de conexión. Gira la rueda para que la marca con forma de chupetín esté alineada con el cero.
+Conecta una rueda grande al motor con cuatro clavijas de conexión. Gira la rueda para que la marca con forma de chupachup esté alineada con el cero.
 
 ![Motor con clavijas de conexión instaladas.](images/motor_with_pegs.jpg) ![Motor con rueda grande instalada.](images/motor_with_wheel.jpg)
 
