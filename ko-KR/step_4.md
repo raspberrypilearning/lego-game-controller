@@ -20,10 +20,10 @@ line_highlights:
 
 from turtle import Screen, Turtle from time import sleep from buildhat import Motor
 
-game_area = Screen() #Create a screen   
-game_area.title("PONG") #Give the screen a title   
-game_area.bgcolor('black') #Set the background colour   
-game_area.tracer(0) #Give smoother animations
+game_area = Screen() #스크린 만들기   
+game_area.title("PONG") #스크린 제목 만들기   
+game_area.bgcolor('black') #배경 색상 설명   
+game_area.tracer(0) #부드러운 애니메이션 설정
 
 --- /code ---
 
