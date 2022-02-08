@@ -77,7 +77,7 @@ motor_izquierda.when_rotated = movido_izquierda pause()
 
 --- /code ---
 
-Ejecuta tu código y deberías ver que los valores impresos en el shell cambian cuando se mueve el motor.
+Ejecuta tu programa y deberías ver que los valores impresos en el shell cambian cuando se mueve el motor.
 
 --- /task ---
 
