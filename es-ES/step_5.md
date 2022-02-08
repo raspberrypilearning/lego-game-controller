@@ -4,7 +4,7 @@ La pelota va a rebotar en la pantalla, por lo que se necesitan dos variables par
 
 --- task ---
 
-Añade este código a tu programa:
+Añade estas líneas a tu programa:
 
 --- code ---
 ---
