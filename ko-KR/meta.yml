@@ -1,0 +1,18 @@
+---
+title: LEGO® 게임 컨트롤러
+hero_image: images/banner.png
+description: LEGO®와 Build HAT로 게임 컨트롤러를 만드세요
+version: 4
+listed: true
+copyedit: true
+last_tested: "2020-10-08"
+steps:
+  - title: 들어가며
+  - title: LEGO® Spike™ 모터 인코더 사용하기
+  - title: 모터 인코더 움직임에 반응하도록 만들기
+  - title: Pong 화면 만들기
+  - title: 공 움직이기
+  - title: 패들 제어하기
+  - title: 패들 충돌
+  - title: 프로젝트 저장하기
+  - title: 더 나아가기
