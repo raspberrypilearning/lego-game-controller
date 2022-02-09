@@ -8,20 +8,20 @@ copyedit: true
 last_tested: "2020-10-08"
 steps:
   - 
-    title: Introduction
+    title: はじめに
   - 
-    title: Use LEGO® Spike™ motor encoders
+    title: LEGO® Spike™ モーターエンコーダーを使う
   - 
     title: React to motor encoder movement
   - 
-    title: Make your Pong screen
+    title: Pongの画面を作る
   - 
-    title: Move the ball
+    title: ボールを動かす
   - 
-    title: Control the paddle
+    title: パドルを制御する
   - 
-    title: Paddle collisions
+    title: パドルの衝突
   - 
-    title: Improve your project
+    title: 作品を改善する
   - 
     title: What next?
