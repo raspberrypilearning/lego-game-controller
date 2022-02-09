@@ -1,4 +1,4 @@
-## Introduction
+## はじめに
 
 In this project, you will use the Raspberry Pi Build HAT, a LEGO® Technic™ motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play Pong.
 
