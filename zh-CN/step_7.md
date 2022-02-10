@@ -8,7 +8,8 @@ Pong游戏几乎做好了——但首先您需要添加一些额外的撞击检�
 
 --- code ---
 ---
-language: python filename: pong.py   
+language: python 
+filename: pong.py   
 line_numbers: true   
 line_number_start: 47
 line_highlights: 48
@@ -205,7 +206,7 @@ line_number_start: 68
 line_highlights: 71-73
 ---
 
-    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):   
+    if (ball.xcor() < -180 and ball.xcor() > -190) and (ball.ycor() < paddle_left.ycor() + 20 and ball.ycor() > paddle_left.ycor() - 20):
         ball.setx(-180)   
         ball.speed_x *= -1   
     if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):   
