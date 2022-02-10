@@ -1,10 +1,10 @@
-## React to motor encoder movement
+## 针对编码马达的移动的回应
 
-To use the LEGO® Technic™ motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
+如果想要利用乐高（LEGO®）Technic™ 马达作为游戏控制器，您需要能够不断读取马达的绝对位置。
 
 --- task ---
 
-In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then, in a `while True:` loop you can print the value of the position.
+在shell上方的主 Thonny 窗口中，您可以使用已知的命令来查询马达的绝对位置。 然后，利用`while True:` 循环，您可以打印（马达）位置的值。
 
 --- code ---
 ---
@@ -25,13 +25,13 @@ print(motor_left.get_aposition())
 
 --- /task ---
 
-You should see that your program continually prints the position of the motor. If you rotate the motor, these values should change.
+您会看到您的程序不断地打印马达的当前位置。 如果您旋转马达，这些值就会改变。
 
-There is a better way of doing this though. You only need to read the motor position if it is moved.
+不过，有一种更好的方法可以做到这一点。 您只需在马达移动的时候读取指数位置。
 
 --- task ---
 
-Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor. You will also need to add another import line to use the `pause()` function.
+在程序中删除 `while True` 循环并创建下面这个简单的函数来打印马达的绝对位置。 您还需要添加另一个导入行以使用 `pause()` 函数。
 
 --- code ---
 ---
@@ -55,7 +55,7 @@ print(motor_apos)
 
 --- task ---
 
-Now set this function to run when the motor's encoder is moved:
+现在将此函数设置为在编码马达移动时触发：
 
 --- code ---
 ---
@@ -77,7 +77,7 @@ motor_left.when_rotated = moved_left pause()
 
 --- /code ---
 
-Run your code and you should see the values printed out in the shell change when the motor is moved.
+运行您的代码，当马达移动时，您应该看到shell窗口中的打印值发生了变化。
 
 --- /task ---
 
