@@ -1,13 +1,13 @@
-## Make your Pong screen
+## 绘制您的Pong屏幕
 
-Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
+Turtle 是一个绘图和动画的库，您可以通过这个 [优秀的项目](https://projects.raspberrypi.org/en/projects/turtle-race)了解更多信息。
 
 
-First, create a window where the game will be played.
+首先，创建一个游戏窗口。
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+在 Thonny 中打开一个新文件并添加以下代码以导入 Turtle、time 和 Build HAT 库，然后设置一个屏幕。 运行该文件，您应该会看到一个新的标题为“PONG”的黑色窗口。 您不需要包含 `#` 后面的评论。
 
 --- code ---
 ---
@@ -20,16 +20,16 @@ line_highlights:
 
 from turtle import Screen, Turtle from time import sleep from buildhat import Motor
 
-game_area = Screen() #Create a screen   
-game_area.title("PONG") #Give the screen a title   
-game_area.bgcolor('black') #Set the background colour   
-game_area.tracer(0) #Give smoother animations
+game_area = Screen() #创建一个屏幕   
+game_area.title("PONG") #给屏幕一个标题   
+game_area.bgcolor('black') #设置背景颜色   
+game_area.tracer(0) #给更流畅的动画
 
 --- /code ---
 
 --- /task ---
 
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program:
+Turtle 库也有一种有效的方法来设置屏幕区域的坐标。 将这行添加到您的代码中：
 
 --- task ---
 
@@ -49,13 +49,13 @@ game_area.setworldcoordinates(-200, -170, 200, 170)
 
 --- /task ---
 
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre.
+这将创建一个 400 像素宽和 340 像素高的矩形窗口，中间点坐标为 0。
 
-![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,170, top right is 200,170, bottom left is -200,-170, and bottom right is 200,-170. The centre is 0,0.](images/coords.png)
+![游戏窗口的屏幕截图，显示了每个角和中心的坐标。 左上角是-200,170，右上角是200,170，左下角是-200,-170，右下角是200,-170。 中心为 0,0。](images/coords.png)
 
 --- task ---
 
-Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
+现在，您需要不断更新您的游戏区域以查看球拍和球。 在代码底部添加一个 **游戏循环** ，调用`update()` 函数。
 
 --- code ---
 ---
@@ -71,15 +71,15 @@ game_area.update()
 
 --- /code ---
 
-Run your code and you should see a black window appear.
+运行您的代码，您应该会看到一个黑色窗口。
 
 --- /task ---
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+接下来，您可以用Turtle 来制作球，一个被设置为白色的圆圈。 球应该从屏幕中间开始移动，并且在移动时不会画线。
 
-**Above** your `while True` loop, add the following code:
+将下面的代码添加到您的 **while True** 循环`之前`：
 
 --- code ---
 ---
@@ -104,13 +104,13 @@ while True:
 
 --- task ---
 
-Run your code again. You should see a white ball appear in your window.
+再次运行您的代码。 您会看到一个白球出现在您的窗口中。
 
 --- /task ---
 
 --- task ---
 
-Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
+接下来，您可以用相同的方式设置球拍。 它将是一个绿色矩形，位于屏幕的最左侧。
 
 --- code ---
 ---
@@ -134,8 +134,8 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Run your code and you should see your ball and paddle.
+运行您的代码，您应该会看到您的球和球拍。
 
-![A white ball in the centre of a black window, with a green paddle on the far left.](images/pong_static.png)
+![黑色窗口的中央有一个白色球，最左边有一个绿色球拍。](images/pong_static.png)
 
 --- /task ---
