@@ -1,10 +1,10 @@
-## Move the ball
+## 移动(Pong) 球
 
-The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
+球将在屏幕上跳动，因此需要两个变量来跟踪它在 `x` 和 `y` 方向上的速度。 调大速度可以使游戏更难，调小速度可以使游戏更容易。
 
 --- task ---
 
-Add the following code to your program:
+将以下代码添加到程序中：
 
 --- code ---
 ---
@@ -22,13 +22,13 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+您可以通过`turtle.xcor()` 和 `turtle.ycor()` 来找到某个Turtle所在位置的 `x` 和 `y` 坐标。
 
-So to make the ball move, you can combine the position and speed.
+您可以结合位置和速度的设置来移动球。
 
 --- task ---
 
-Add the lines below to your program:
+将以下代码添加到您的程序中：
 
 --- code ---
 ---
@@ -48,17 +48,17 @@ ball.sety(ball.ycor() + ball.speed_y)
 
 --- /task ---
 
-Run the program and see what happens!
+运行程序，看看会发生什么！
 
-![Pong screen with the ball travelling off to the top right corner.](images/ball_diagonal.gif)
+![球从Pong屏幕右上角飞出的图片。](images/ball_diagonal.gif)
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly.
+球应该会沿着对角向上移动到游戏区域的右上角……然后继续前进！ 如果您希望您的游戏更快且更有挑战性，您可以增大 `speed_x` 和 `speed_y` 的值，以使球移动得更快。
 
-The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160.
+球应该从顶墙上反弹而不是从屏幕上消失。 为了实现这个功能，可以在球的`y` 位置大于 160的时候，反转速度，使球沿相反方向行进。
 
 --- task ---
 
-Add the following code into your game loop and run it.
+将以下代码添加到您的游戏循环中并运行。
 
 --- code ---
 ---
@@ -81,15 +81,15 @@ if ball.ycor() > 160: ball.speed_y *= -1
 
 --- task ---
 
-Run your code again, and the ball should bounce off the top of the screen, but disappear off the right of the screen.
+再次运行您的代码，球应该会在屏幕顶部弹回，但会从屏幕右侧消失。
 
 --- /task ---
 
-In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, in your game loop.
+与检查球的 `y` 位置上边界相同，为了让球反弹，可以在你的游戏循环中检查球的 `x` 位置的右边界和 `y`位置的下边界。
 
 --- task ---
 
-Add these checks on the ball's position.
+添加这些对球的位置的检查。
 
 --- code ---
 ---
@@ -111,6 +111,6 @@ line_highlights:
 
 --- /task ---
 
-The ball should now bounce around the screen, and fly off the left edge. Next, you will control your paddle to reflect the ball back from the left edge.
+球现在应该在屏幕的各边缘反弹，但会从左边缘飞出。 接下来，您将控制您的球拍将球从左边缘反弹回去。
 
 --- save ---
