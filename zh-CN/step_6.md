@@ -1,29 +1,29 @@
-## Control the paddle
+## 控制球拍
 
-### Designing the controls
+### 设计控制器
 
-The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns.
+乐高（LEGO®）Spike™ 马达将被用于控制划桨的位置，但您希望能控制它不要全轴转动。
 
-A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
+限制车轮运动的一种简单方法是通过添加一个乐高（LEGO®）组件来防止车轮转动一整圈。
 
 --- task ---
 
-Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+像以前一样，将轮子和马达上的编码标记对齐。 在尽可能接近标记的水平位置插入一个钉子或轴。
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![手动转动连接了马达的车轮的动图。 车轮上连接有一个乐高（LEGO®）圆柱体，因此它不能完成360度旋转。](images/motor_block.gif)
 
 --- print-only ---
 
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![两张关于连接了马达的车轮的照片。 车轮上连接有一个乐高（LEGO®）圆柱体，因此它不能完成360度旋转。](images/sidebyside.png)
 
 --- /print-only ---
 
 
 --- task ---
 
-Add a line to create the `motor_left` object after the import line.
+在导入行之后添加一行以创建 `motor_left`。
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ motor_left = Motor('A')
 
 --- /task ---
 
-Now a new variable is needed to keep track of the location of the paddle. This will be called `pos_left` and set to `0`.
+现在需要一个新的变量来跟踪球拍的位置。 将变量命名为 `pos_left` 并初始化为 `0`。
 
 --- code ---
 ---
@@ -62,7 +62,7 @@ pos_left = 0
 
 --- task ---
 
-Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+为球拍创建一个函数并在编码马达移动时运行。 注意它使用了 `全局` 变量，以便更改 `pos_left` 变量的值。
 
 --- code ---
 ---
@@ -83,7 +83,7 @@ pos_left = motor_apos
 
 --- task ---
 
-Now add a single line that will use that function each time the motor is moved. It can be just before your `while` loop.
+现在添加一行代码，使得每次马达移动时都将触发该函数。 它可以放在您的 `while` 循环之前。
 
 --- code ---
 ---
@@ -102,7 +102,7 @@ motor_left.when_rotated = moved_left
 
 --- task ---
 
-Then, add a line to the `while True` loop to update the paddle object on the screen to the new position.
+然后在`while True` 循环中添加一行，及时更新球拍在屏幕上位置。
 
 --- code ---
 ---
@@ -123,13 +123,13 @@ line_highlights: 47
 
 --- task ---
 
-Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
+运行您的代码，然后转动连接到编码马达上的轮子。 您应该会看到屏幕上的球拍在上下移动。
 
 --- /task ---
 
-![A view of the game window showing the bouncing ball and moving paddle.](images/moving_paddle.gif)
+![包含弹跳球和移动球拍的游戏窗口的视图。](images/moving_paddle.gif)
 
-In case there are errors, your code should currently look like this:
+如果出现错误，您当前的代码应该类似这样：
 
 --- code ---
 ---
