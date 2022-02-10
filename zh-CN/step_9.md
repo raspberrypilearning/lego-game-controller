@@ -1,24 +1,24 @@
-## What next?
+## 接下来还有什么？
 
-### Improve the Pong game
+### 改进Pong游戏
 
-Add even more randomness to the speed and trajectory of the ball.
+为球的速度和轨迹添加更多的随机性。
 
-Make the ball move faster as the game progresses.
+随着比赛的进行，让球移动得越来越快。
 
-Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds.
+目前游戏会一直进行— 设置一个目标分数，玩家必须达到该分数才能获胜，然后开始新一轮的比赛。
 
-Change the scoring method to count how many times the players return the ball to one another, and reset when someone misses.
+改变计分方法，计算球员互相回球的次数，并在一方失误时重置。
 
-Introduce some haptic feedback, so that the motors turn a small amount when a point is lost.
+加入一些触觉反馈，让马达在每次丢分时都微小转动一下。
 
-At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle.
+目前，无论球击中球拍的哪个部分，它总是被以与击球相同的角度反弹。 修改处理撞击的代码，使得球在接触球拍末端时，反弹的角度会变钝。
 
-### Create more games that use the LEGO® Technic™ motors as controllers
+### 创建更多使用乐高（LEGO®）Technic™ 马达作为控制器的游戏
 
-How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
+一个类似 Angry Birds 风格的游戏怎么样？使用两个控制器来设置发射轨迹和施加在弹射器上的力的大小？
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
+如果您依照 [乐高（LEGO®）BuildHAT 简介](https://projects.raspberrypi.org/en/pathways/lego-intro)路径学习，您可以继续学习 [乐高（LEGO®）机器车](https://projects.raspberrypi.org/en/projects/lego-robot-car) 项目。 在这个项目中，您将制作一个由蓝牙控制的乐高（LEGO®）机器人汽车！
 
-![Lego Robot Car Project](images/robotcar.png)
+![乐高（LEGO®）机器人汽车项目](images/robotcar.png)
 
