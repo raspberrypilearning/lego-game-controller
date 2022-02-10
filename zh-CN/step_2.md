@@ -1,93 +1,93 @@
-## Use LEGO® Spike™ motor encoders
+## 使用乐高（LEGO®）Spike™ 编码马达
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+编码马达不仅可以旋转，还可以准确检测自己旋转了多少度。
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![带有棒棒糖标记（与圆圈对齐）的马达。](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+乐高（LEGO®）Spike™ 马达都有编码器。 如果你查看马达的旋转盘，会看到一个形状像棒棒糖的标记。该标记可以与马达白色机身上的0标记对齐。 此时马达编码设置为零度，马达的电机轴的任何角运动都可以相对于该点进行测量。
 
 --- collapse ---
 ---
-title: How motor encoders work
+title：编码马达的工作原理
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+编码马达，也称为旋转或轴编码器，是一种机电设备，可让您记录电机轴的角位置或运动。 通常它通过将角位置转换为模拟或数字输出来实现这一点。
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+如果马达带有编码器，意味着您可以非常准确地设置电机轴的位置。 带有编码器的马达还可以用作输入设备，在轴的位置发生变化时，可以被注册并用于触发计算机程序中的其他操作。
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+将显示器、键盘和鼠标连接到您的 Raspberry Pi。
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+将Build HAT 连接到您的 Raspberry Pi，注意要确保徽标朝上，并正确覆盖了所有的引脚。
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
-
---- /task ---
-
---- task ---
-
-Connect a motor to port A on the Build HAT.
-
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+最后，通过 Build HAT 的桶形插孔或 Raspberry Pi 上的 USB-C 端口接通电源。
 
 --- /task ---
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+将马达连接到 Build HAT 上的端口 A。
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
-
---- /task ---
-
---- task ---
-
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+![通过带状电缆连接到Build HAT 端口 A的马达。](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-First, import the Build HAT library.
+使用四个连接销将一个大轮子连接到马达上。 转动轮子，使棒棒糖标记与零对齐。
+
+![接上了连接销钉的马达。](images/motor_with_pegs.jpg) ![接上了大滚轮的马达。](images/motor_with_wheel.jpg)
+
+--- /task ---
+
+--- task ---
+
+从 Raspberry Pi的 **Programming** 菜单中打开 Thonny，然后单击窗口底部的 **Shell**
+
+--- /task ---
+
+--- task ---
+
+首先，导入 Build HAT 库。
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+按回车。
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+然后，创建一个马达对象，并告诉 Python 马达已连接到端口 `A`。 输入：
 
 ```python
 motor_left = Motor('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
+按回车 （此时会有轻微延迟，请耐心等待！）
 
 --- /task ---
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+现在，您就可以要求马达报告电机轴的 **绝对** 位置。 这将始终介于 `-180` 和 `180`之间。
 
 ```python
 motor_left.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+根据您开始时对马达电机轴的定位程度，您应该得到一个接近 `0`的值。
 
-Move the motor and type the line a second time, and see how the value changes.
+移动马达电机轴并再次键入上一行指令，观察输出值的变化。
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+您也可以跟踪马达电机轴的 **相对** 位置。 这将记录马达从程序开始至今一共移动了多远，所以轮子每转动一圈，计数都会增加或者减少 `360`
 
 ```python
 motor_left.get_position()
@@ -96,7 +96,7 @@ motor_left.get_position()
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+移动马达电机轴并（运行上述指令）检查电机轴的绝对和相对位置，以便您了解读数是如何变化的。
 
 --- /task ---
 
