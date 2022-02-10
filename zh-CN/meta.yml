@@ -1,0 +1,18 @@
+---
+title: 乐高（LEGO®） 游戏控制器
+hero_image: images/banner.png
+description: 使用乐高（LEGO®）和 Build HAT 创建游戏控制器
+version: 4
+listed: true
+copyedit: true
+last_tested: "2020-10-08"
+steps:
+  - title: 介绍
+  - title: 使用乐高（LEGO®）Spike™ 编码马达
+  - title: 针对编码马达的移动的回应
+  - title: 绘制您的Pong屏幕
+  - title: 移动(Pong)球
+  - title: 控制球拍
+  - title: 撞击球拍
+  - title: 改进您的项目
+  - title: 接下来呢？
