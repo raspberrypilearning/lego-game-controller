@@ -1,10 +1,10 @@
-## Paddle collisions
+## 撞击球拍
 
-The game is nearly complete — but first you need to add some extra collision detection that covers the ball hitting the paddle.
+Pong游戏几乎做好了——但首先您需要添加一些额外的撞击检测来发现球击中球拍的情景。
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves
+在 `while True` 循环内，检测球的 `x` 位置是否在球拍覆盖的水平区域内。 同时使用 `and` 来检测球的 `y` 位置是否在球拍移动的垂直线上
 
 --- code ---
 ---
@@ -22,15 +22,15 @@ ball.speed_x *= -1
 
 --- /task ---
 
-Try the program out. You should be able to bounce the ball off your paddle and play a solo game of 'squash'!
+试试这个程序。 您应该能够将球从您的球拍上弹回，开启单人”壁球”的游戏！
 
-Now you have a way of preventing the ball from disappearing off-screen, it's time to think about what happens if you fail to make a save.
+现在您有办法补救并防止球消失在屏幕内，是时候考虑如果您未能及时补救会发生什么。
 
-For now, let's just reset the ball back to the start.
+现在，让我们将球重置到起点。
 
 --- task ---
 
-Add this code within the `while True` loop:
+在`while True` 循环中添加此代码：
 
 --- code ---
 ---
@@ -51,13 +51,13 @@ line_highlights: 53-56
 
 --- /task ---
 
-Once you're happy with the various settings, it's time to add in the second paddle.
+在您对各种设置都感到满意时，就可以添加第二个球拍了。
 
-Using what you've created for the left-hand paddle as a starting point, add a second paddle on the right-hand side of the game area.
+仿照您为左侧球拍创建的内容，在游戏区域的右侧添加第二个球拍。
 
 --- task ---
 
-First of all, connect a second LEGO® Technic™ motor to the Build HAT (port B) and set it up in the program.
+首先，将第二个乐高（LEGO®）Technic™ 马达连接到 Build HAT（端口 B）并在程序中进行设置。
 
 --- code ---
 ---
@@ -77,13 +77,13 @@ motor_right = Motor('B')
 
 --- task ---
 
-You can copy and paste your code for setting up your left paddle, and change the name and values for your right paddle.
+您可以复制并粘贴设置左侧球拍的代码，更改为右侧球拍的名称和值。
 
 --- /task ---
 
 --- task ---
 
-Create your right paddle.
+创建你的右侧球拍。
 
 --- code ---
 ---
@@ -114,7 +114,7 @@ paddle_right.setpos(190,0)
 
 --- task ---
 
-Add a variable for the right paddle position, a function for the paddle, and the line to call the function when the right motor is moved.
+为右侧球拍添加一个函数，一个代表位置的变量，以及在右侧马达移动时调用该函数的代码。
 
 --- code ---
 ---
@@ -148,7 +148,7 @@ motor_right.when_rotated = moved_right
 
 --- task ---
 
-Add a line to update the paddle on screen to the `while True` loop:
+在 `while True` 循环内添加一行代码以更新右侧球拍在屏幕上位置：
 
 --- code ---
 ---
@@ -167,11 +167,11 @@ line_highlights: 65
 --- /task ---
 
 
-Currently, the ball will bounce off the right-hand wall. Modify the lines of your program that make that happen so that the ball is instead reset to the centre.
+目前，球会从右侧的墙上反弹。 修改程序的相关行，使得球不是反弹，而是复位并回到中心点。
 
 --- task ---
 
-Change the condition for the ball's `xcor` so that it resets.
+更改球在 `xcor` 的条件反应，重置球的位置。
 
 --- code ---
 ---
@@ -193,7 +193,7 @@ line_highlights:
 
 --- task ---
 
-Now add a similar condition for the right paddle as you did with the left, to handle collisions.
+现在依照左侧球拍的设置，为右侧球拍添加一个撞击处理情景。
 
 --- code ---
 ---
@@ -215,8 +215,8 @@ line_highlights: 71-73
 
 --- /task ---
 
-You should now be able to enjoy a basic two-player game of Pong.
+您现在应该有一个简单的双人乒乓球Pong游戏了。
 
-![A view of the game window showing a two-player game. There is a green paddle on the left and a blue one on the right and the ball bouncing between them.](images/2_player_pong.gif)
+![双人游戏的游戏界面视图。 一个球在左侧的绿色球拍和右侧的蓝色球拍之间弹跳的动图。](images/2_player_pong.gif)
 
 --- save ---
