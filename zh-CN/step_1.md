@@ -1,4 +1,4 @@
-## 简介
+## 介绍
 
 在本项目中，您将使用 Raspberry Pi Build HAT、乐高（LEGO®）Technic™ 编码马达，车轮以及 Python Turtle 库来制作可用于玩 Pong 的简单游戏控制器。
 
@@ -96,7 +96,7 @@ Raspberry Pi 启动后，单击 Raspberry 菜单按钮，然后选择“首选�
 
 --- collapse ---
 ---
-title：安装 buildhat Python 库
+title: 安装 buildhat Python 库
 ---
 
 按下<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>，在 Raspberry Pi 上打开一个终端窗口。
