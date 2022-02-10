@@ -1,4 +1,4 @@
-## 简介
+## 介绍
 
 在本项目中，您将使用 Raspberry Pi Build HAT、乐高（LEGO®）Technic™ 编码马达，车轮以及 Python Turtle 库来制作可用于玩 Pong 的简单游戏控制器。
 
