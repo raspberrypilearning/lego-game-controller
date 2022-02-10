@@ -1,16 +1,16 @@
-## Improve your project
+## 改进您的项目
 
-There are few additional features you can add to finish off your game.
+您可以添加一些额外的功能来完成您的游戏。
 
-### Adding a score
+### 计分
 
 --- task ---
 
-Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
+利用两个变量（每个玩家一个）来跟踪分数，并在其中一方输掉一轮时更新它们。
 
 --- hints --- --- hint ---
 
-First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
+首先，在程序顶部的声明用于计分的新变量，并初始化为零。
 
 ```python   
 score_r = 0   
@@ -19,7 +19,7 @@ score_l = 0
 
 --- /hint --- --- hint ---
 
-Whenever a ball is missed, increment the appropriate score variable by one. There are two conditional tests you'll need to modify.
+每当一方失球时，将对方的得分变量加一。 您需要修改两个条件测试的代码。
 
 
 --- /hint ---
@@ -27,12 +27,12 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- hint ---
 
 ```python
-    if ball.xcor() > 195: #Right
+        if ball.xcor() > 195: #右侧
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
         score_r+=1
-    if ball.xcor() < -195: #Left
+    if ball.xcor() < -195: #左侧
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
@@ -43,11 +43,11 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 
 --- /hints --- --- /task ---
 
-Now you need to display the score on the game area. You can use a fourth Turtle to do this.
+现在您需要在游戏区域显示分数。 您可以使用第4个Turtle来完成这个任务。
 
 --- task ---
 
-Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
+将下面的代码添加到球拍和球的Turtles之后，但是放在您的`while True` 循环之前。
 
 ```python
 writer = Turtle()
@@ -59,64 +59,64 @@ writer.setposition(0,150)
 writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
-You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed.
+您可以查看 Turtle 库的文档，以了解有关文本显示的其他选项。
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+如果您现在运行您的程序，应该会看到分数和 Pong 的界面，但分数不会实时更新。
 
 --- task ---
 
-Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
+找到得分的两个条件 - 当球没有被球拍拦下并向左或向右消失时 - 用新的得分更新计分的变量。
 
 ```python
      writer.clear()
-     writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
+writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![顶部显示了分数的游戏窗口的视图。](images/score.png)
 
-### Adding a buzzer
+### 添加蜂鸣器
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+为了添加一些简单的音效，请将蜂鸣器连接到 Raspberry Pi 上的 GPIO 引脚。
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+您可以不使用面包板，而是使用两端都是母插座的跳线，并将蜂鸣器的腿插入插座。 然后使用一些乐高（LEGO®）组件来固定蜂鸣器，这样它就不会在疯狂的游戏过程中翻来覆去乃至断开连接。
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![安装了Raspberry Pi和一个使用乐高（LEGO®）组件连接的蜂鸣器的乐高（LEGO®）Maker Plate 的图片。](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+现在将 `gpiozero` 库添加到程序开始时的导入列表中：
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+然后，依据蜂鸣器正极 (+) 连接的引脚号配置程序，以便使用。 在这个例子中，我们使用了引脚17。
 
 ```python
 buzz = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+如果您没有使用引脚 17，请依据您的蜂鸣器连接到的引脚号更改这个值。
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+现在，您希望每当球拍和球接触时，游戏都能播放短音。
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+将此行添加到碰撞检测 `if`条件的执行部分
 
 ```python
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+然后添加一行代码使得在玩家失球时播放一段更长的音调
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+您可以在[GPIO Zero 文档](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)中阅读更多有关蜂鸣器可用选项的信息。
 
-### Customising your controllers
+### 定制您的控制器
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+在您的 Python Turtle 程序中，您为球拍选用了不同的颜色。 您可以通过利用相同颜色的积木和其他乐高（LEGO®）组件来定制您的乐高（LEGO®）控制器。
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![有彩色积木的乐高（LEGO®）车轮的图片。](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+您也可以为马达设计一个手柄，使其握起来更舒适。
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![添加了乐高（LEGO®）手柄的马达控制器的图片。](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+您的游戏现在应该可以玩了。 在了解您接下来还能做什么之前，开心玩会您做的游戏吧。
 
 --- save ---
