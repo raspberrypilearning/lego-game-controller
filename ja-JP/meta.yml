@@ -1,7 +1,7 @@
 ---
 title: LEGO®ゲームコントローラー
 hero_image: images/banner.png
-description: Create a game controller using LEGO® and the Build HAT
+description: LEGO®とBuildHATを使用してゲームのコントローラーを作る
 version: 4
 listed: true
 copyedit: true
@@ -12,7 +12,7 @@ steps:
   - 
     title: LEGO® Spike™ モーターエンコーダーを使う
   - 
-    title: React to motor encoder movement
+    title: モーターエンコーダーの動きに対応する
   - 
     title: Pongの画面を作る
   - 
@@ -24,4 +24,4 @@ steps:
   - 
     title: 作品を改善する
   - 
-    title: What next?
+    title: 次は何をしますか？
