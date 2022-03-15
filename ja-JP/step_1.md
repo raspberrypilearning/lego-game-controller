@@ -1,80 +1,80 @@
 ## はじめに
 
-In this project, you will use the Raspberry Pi Build HAT, a LEGO® Technic™ motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play Pong.
+このプロジェクトでは、Raspberry Pi Build HAT、LEGO® Technic™モーターエンコーダーとホイール、Python Turtle ライブラリを使って、Pongをプレイできるシンプルなゲームコントローラーを作ります。
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. It is a table tennis game featuring simple two-dimensional graphics. Players control paddles on each side of the screen, which they use to hit a ball back and forth.
+<span style="color: #0faeb0">[Pong](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%B3_(%E3%82%B2%E3%83%BC%E3%83%A0))</span> は、1972年にアタリが発表した最古のアーケードビデオゲームで、 シンプルな二次元の映像で表現された卓球ゲームです。 プレイヤーは両側のパドルを操作して、ボールを前後に打ちます。 プレイヤーは両側のパドルを操作して、ボールを前後に打ちます。
 </p>
 
-You will:
-- Learn how to read the degrees of rotation from LEGO® Technic™ motors
-- Learn to draw and move Turtle graphics using LEGO® Technic™ motors
-- Learn to detect collisions between graphics using `x` and `y` coordinates
+本項で学ぶこと:
+- LEGO® Technic™ モーターから回転の度数を読み取る方法を学びます
+- LEGO® Technic™ モーターを使ってTurtleグラフィックを描画したり移動する方法を学びます
+- XとYの座標を使ってグラフィック同士の衝突を検出する方法を学びます
 
 --- no-print ---
 
-![A movie showing a pong game being controlled by two LEGO® Technic™ motors with large blue wheels.](images/pong_gif.gif)
+![大きな青いホイールがついたLEGO® Technic™モーターでPongゲームのコントロールをしている様子の動画](images/pong_gif.gif)
 
 --- /no-print ---
 
 --- print-only ---
 
-![Complete project.](images/finished.JPG)
+![プロジェクトの完成形](images/finished.JPG)
 
 --- /print-only ---
 
-### You will need
+### 必要なもの
 
-+ A Raspberry Pi computer
-+ A Raspberry Pi Build HAT
-+ At least one LEGO® Technic™ motor
-+ Assortment of LEGO®, including wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
-+ A small breadboard (optional)
-+ A buzzer (optional)
-+ Some breadboard jumper leads (optional)
-+ A 7.5V power supply with a barrel jack (optional). You can use an official Raspberry Pi power supply for this project, as the motor encoders will not be using any power
++ A Raspberry Pi 本体
++ Raspberry Pi Build HAT
++ LEGO® Technic™ モーター 少なくとも1つ
++ ホイールを含む LEGO® 製品 (本項では [LEGO® エデュケーション SPIKE™ プライムセット](https://education.lego.com/en-gb/product/spike-prime) を使用することを前提とします)
++ 小さいブレッドボード (任意)
++ ブザー (任意)
++ いくつかブレッドボード用のジャンパー線 (任意)
++ バレルジャックの7.5Vの電源アダプター (任意)。 モーターエンコーダーは電力を使わないので、このプロジェクトではRaspberry Piの公式電源サプライが使用できます。
 
-### Software
+### ソフトウェア
 
 + Python 3
-+ Build HAT Python library
++ Build HAT Python ライブラリ
 
 --- collapse ---
 ---
-title: Additional information for educators
+title: 教育者向けの追加情報
 ---
 
-You can download the completed project [here](https://rpf.io/p/en/lego-game-controller-get){:target="_blank"}.
+完全なプロジェクトは [こちら](https://rpf.io/p/en/lego-game-controller-get){:target="_blank"} からダウンロードできます。
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/lego-game-controller/print){:target="_blank"}.
+このプロジェクトの印刷版が必要なときは、 [印刷用のバージョン](https://projects.raspberrypi.org/en/projects/lego-game-controller/print){:target="_blank"} を使用してください。
 
 --- /collapse ---
 
-Before you begin, you'll need to have set up your Raspberry Pi computer and attached your Build HAT:
+開始する前に、Raspberry Piのセットアップと、Build HATの装着をしてください:
 
 --- task ---
 
-Mount your Raspberry Pi on to the LEGO Maker Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
+M2のボルトとナットを使用して、 LEGO メイカープレートの上にRaspberry Piを取り付けます。 Raspberry Piはふちがない方の面に載せます:
 
- ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
+ ![Raspberry Pi が赤い LEGO メイカープレートに固定された様子](images/build_11.jpg)
 
 --- /task ---
 
-Mounting the Raspberry Pi this way round enables easy access to the ports as well as the SD card slot. The Maker Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+写真のとおりにRaspberry Piを固定することで、SDカードスロットが扱いやすくなります。 メイカープレートを使うことで、ダッシュボードのおもな構造により簡単に接続できます。
 
 --- task ---
 
-Line up the Build HAT with the Raspberry Pi, ensuring you can see the `This way up` label. Make sure all the GPIO pins are covered by the HAT, and press down firmly. (The example uses a [stacking header](https://www.adafruit.com/product/2223){:target="_blank"}, which makes the pins longer.)
+`This way up` の文字が見えるようにBuild HATをRaspberry Piと並べます。 全部のGPIOピンがHATにかぶるよう合わせて、しっかり押し下げてください。 (例ではピンが長くなる [スタッキングヘッダー](https://www.adafruit.com/product/2223){:target="_blank"}, を使用しています。 )
 
-![Image of GPIO pins poking through the top of the Build HAT.](images/build_15.jpg) ![Animation showing Buildhat fitting to Raspberry Pi](images/haton.gif)
+![GPIOピンがBuild HATから突き抜けている画像](images/build_15.jpg) ![Raspberry PiにBuildhatを搭載するアニメーション](images/haton.gif)
 
 --- /task ---
 
-You should now power your Raspberry Pi using the 7.5V barrel jack on the Build HAT, which will allow you to use the motors.
+モーターを使用するためには、Build HAT上のバレルジャックに7.5Vの電源を接続してRaspberry Piに電源を供給する必要があります。
 
 --- task ---
 
-If you have not already done so, set up your Raspberry Pi by following these instructions:
+まだRaspberry Piのセットアップが済んでいない場合は、次の手順に従ってセットアップしてください:
 
 [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
 
@@ -82,28 +82,28 @@ If you have not already done so, set up your Raspberry Pi by following these ins
 
 --- task ---
 
-Once the Raspberry Pi has booted, open the Raspberry Pi Configuration tool by clicking on the Raspberry Menu button and then selecting “Preferences” and then “Raspberry Pi Configuration”.
+Raspberry Piが起動したら、Raspberry Piメニューをクリックして“Preferences”と “Raspberry Pi Configuration”の順に選択して、Raspberry Pi Configuration toolを起動します。
 
-Click on the “interfaces” tab and adjust the Serial settings as shown below:
+“interfaces”タブをクリックして、シリアルの設定を以下のとおりに設定します:
 
-![Image showing Raspberry Pi OS config screen with serial port enabled and serial console disabled](images/configshot.jpg)
+![Raspberry Pi OS設定画面で、シリアルポートを有効にして、シリアルコンソールを無効にしている様子](images/configshot.jpg)
 
 --- /task ---
 
 --- task ---
 
-You will also need to install the buildhat python library by following these instructions:
+また、以下の手順に従って、buildhat pythonのインストールも必要になります。
 
 --- collapse ---
 ---
-title: Install the buildhat Python library
+title: buildhat Python ライブラリーのインストール
 ---
 
-Open a terminal window on your Raspberry Pi by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> を押して、Raspberry Pi上にターミナルウィンドウを開きます。
 
-At the prompt type: `sudo pip3 install buildhat`
+プロンプトに次の通り入力します: `sudo pip3 install buildhat`
 
-Press <kbd>Enter</kbd> and wait for the "installation completed" message.
+<kbd>Enter</kbd> キーを入力して "installation completed" のメッセージが表示されるまで待ちます。
 
 --- /collapse ---
 
