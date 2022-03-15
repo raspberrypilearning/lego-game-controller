@@ -1,29 +1,29 @@
-## Control the paddle
+## パドルを制御する
 
-### Designing the controls
+### コントロールの設計
 
-The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns.
+LEGO® Spike™ モーターはパドルの位置を制御擦るために使用していきますが、完全に一周できるようにはしたくありません。
 
-A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
+ホイールの動きを制限するには、LEGO® の要素を使ってホイールが一回転するのを防ぐのが簡単です。
 
 --- task ---
 
-Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+以前と同じく、ホイールを回してモーターのエンコーダーマークを並べます。 ペグまたは車軸をマーカーとできるだけ同じ高さに差し込みます。
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![モーターとホイールを組み合わせたものが手で回されている様子を示すアニメーション。 ホイールにはLEGO®シリンダーが取り付けられているため、一周させることはできません。](images/motor_block.gif)
 
 --- print-only ---
 
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![モーターとホイールを組み合わせたものが手で回されている様子を示す2枚の写真。 ホイールにはLEGO®シリンダーが取り付けられているため、一周させることはできません。](images/sidebyside.png)
 
 --- /print-only ---
 
 
 --- task ---
 
-Add a line to create the `motor_left` object after the import line.
+`motor_left`オブジェクトを作成するために、import行のあとに1行追加します。
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ motor_left = Motor('A')
 
 --- /task ---
 
-Now a new variable is needed to keep track of the location of the paddle. This will be called `pos_left` and set to `0`.
+ここで、パドルの位置を追跡するために新しい変数が必要です。 `pos_left`という変数に`0`をセットします。
 
 --- code ---
 ---
@@ -62,7 +62,7 @@ pos_left = 0
 
 --- task ---
 
-Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+モーターエンコーダーが移動したときに実行されるパドル用の関数を作成します。 `pos_left` 変数の値を変更できるように `グローバル` 変数を使用する点に注意してください。
 
 --- code ---
 ---
@@ -83,7 +83,7 @@ pos_left = motor_apos
 
 --- task ---
 
-Now add a single line that will use that function each time the motor is moved. It can be just before your `while` loop.
+次に、モーターが動いたときに動作する1本の線を追加します。 `while` ループの直前に次のコードを追加します。
 
 --- code ---
 ---
@@ -102,7 +102,7 @@ motor_left.when_rotated = moved_left
 
 --- task ---
 
-Then, add a line to the `while True` loop to update the paddle object on the screen to the new position.
+`while True` ループに行を追加して、画面上のパドルオブジェクトを新しい位置に更新します。
 
 --- code ---
 ---
@@ -123,13 +123,13 @@ line_highlights: 47
 
 --- task ---
 
-Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
+コードを実行して、モーターエンコーダー上のホイールを回します。 パドルが画面を上下に移動しているのが確認できるでしょう。
 
 --- /task ---
 
-![A view of the game window showing the bouncing ball and moving paddle.](images/moving_paddle.gif)
+![ボールの跳ね返りとパドルの移動を示すゲームウィンドウの図。](images/moving_paddle.gif)
 
-In case there are errors, your code should currently look like this:
+念のため、コードは現在次のようになっているはずです:
 
 --- code ---
 ---
