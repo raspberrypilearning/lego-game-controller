@@ -1,13 +1,13 @@
-## Make your Pong screen
+## Pongの画面を作る
 
-Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
+Turtle は描画とアニメーションのためのライブラリーで、詳細はこの[素敵なプロジェクト](https://projects.raspberrypi.org/en/projects/turtle-race)から学ぶことができます。
 
 
-First, create a window where the game will be played.
+はじめに、ゲームをプレイするためのウィンドウを作成します。
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+Thonnyで新しいファイルを開き、Turtle・time・Build HATをインポートして画面をセットアップするためのコードを次のとおりに追加します。 ファイルを実行すると、 "PONG" というタイトルの黒いウィンドウが開かれるはずです。 なお、 `#` コメントは含めなくても大丈夫です。
 
 --- code ---
 ---
@@ -20,16 +20,16 @@ line_highlights:
 
 from turtle import Screen, Turtle from time import sleep from buildhat import Motor
 
-game_area = Screen() #Create a screen   
-game_area.title("PONG") #Give the screen a title   
-game_area.bgcolor('black') #Set the background colour   
-game_area.tracer(0) #Give smoother animations
+game_area = Screen() #画面を作成する   
+game_area.title("PONG") #画面のタイトルを設定する   
+game_area.bgcolor('black') #背景色を設定する   
+game_area.tracer(0) #アニメーションをよりスムーズにするための設定
 
 --- /code ---
 
 --- /task ---
 
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program:
+Turle ライブラリには画面の領域に座標を設定する便利な方法があります。 次の1行をプログラムに追加してください:
 
 --- task ---
 
@@ -49,13 +49,13 @@ game_area.setworldcoordinates(-200, -170, 200, 170)
 
 --- /task ---
 
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre.
+この行によって、中心を0とした、幅400ピクセル、高さ340ピクセルの画面が作成されます。
 
-![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,170, top right is 200,170, bottom left is -200,-170, and bottom right is 200,-170. The centre is 0,0.](images/coords.png)
+![ゲーム画面のスクリーンショットの四隅と中心に座標を示したもの。 左上は-200,170、右上は200,170、左下は-200,-170、右下は200,-170です。 そして中心は0,0です。](images/coords.png)
 
 --- task ---
 
-Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
+次に、パドルとボールを表示するために、ゲーム領域を更新しましょう。 **ゲームループ** をコードの最後に追加して、 `update()` メソッドを呼び出します。
 
 --- code ---
 ---
@@ -71,15 +71,15 @@ game_area.update()
 
 --- /code ---
 
-Run your code and you should see a black window appear.
+コードを実行すると、黒い画面が表示されます。
 
 --- /task ---
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+続けて、白い円を置くためにTurtleを使ってボールを作成しましょう。 ボールは画面の真ん中からスタートし、動く時に線を引かないようにする必要があります。
 
-**Above** your `while True` loop, add the following code:
+`while True` ループの **前** に次のコードを追加します:
 
 --- code ---
 ---
@@ -104,13 +104,13 @@ while True:
 
 --- task ---
 
-Run your code again. You should see a white ball appear in your window.
+もう一度コードを実行しましょう。 白いボールが画面の中央に表示されるのが確認できるでしょう。
 
 --- /task ---
 
 --- task ---
 
-Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
+次に、パドルも同じようにして配置しましょう。 パドルは緑色の四角で、画面の左端に配置します。
 
 --- code ---
 ---
@@ -134,8 +134,8 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Run your code and you should see your ball and paddle.
+コードを実行して、ボールとパドルが表示されることを確認します。
 
-![A white ball in the centre of a black window, with a green paddle on the far left.](images/pong_static.png)
+![白いボールが黒い画面の中央にあり、左端には緑色のパドルがあります。](images/pong_static.png)
 
 --- /task ---
