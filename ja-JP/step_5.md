@@ -1,10 +1,10 @@
-## Move the ball
+## ボールを動かす
 
-The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
+ボールが画面中を跳ね回るので、`x` と `y` 両方の向きのスピードを管理するために2つの変数が必要です。 これらの数字は大きいほどゲームが難しくなり、逆に小さいほどゲームが簡単になります。
 
 --- task ---
 
-Add the following code to your program:
+次のコードをプログラムに追加します:
 
 --- code ---
 ---
@@ -22,13 +22,13 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+位置を確認するには、Turtleでは `turtle.xcor()` と `turtle.ycor()` を使うことで `x` と `y` の座標を求めることができます。
 
-So to make the ball move, you can combine the position and speed.
+ボールを移動するには、位置とスピートを組み合わせます。
 
 --- task ---
 
-Add the lines below to your program:
+以下の行をプログラムに追加します:
 
 --- code ---
 ---
@@ -48,17 +48,17 @@ ball.sety(ball.ycor() + ball.speed_y)
 
 --- /task ---
 
-Run the program and see what happens!
+プログラムを実行して、何が起こるか見てみましょう！
 
-![Pong screen with the ball travelling off to the top right corner.](images/ball_diagonal.gif)
+![Pongの画面でボールが右上に飛び去っていく](images/ball_diagonal.gif)
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly.
+ボールはゲームエリアの右上の角に向かって斜め上に移動していき…そのまま行ってしまいました！ もしゲームを早くチャレンジングにしたいときは、 `speed_x` と `speed_y` の値を増やすとボールの移動をより素早くできます。
 
-The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160.
+ボールは画面の外に去っていくのでなく上部の壁を跳ね返るべきです。 これを実現するには、`y` の位置が160より大きくなったら速度を逆にして、ボールを反対の向きに移動させれば可能です。
 
 --- task ---
 
-Add the following code into your game loop and run it.
+次のコードをゲームループ内に追加して実行します。
 
 --- code ---
 ---
@@ -81,15 +81,15 @@ if ball.ycor() > 160: ball.speed_y *= -1
 
 --- task ---
 
-Run your code again, and the ball should bounce off the top of the screen, but disappear off the right of the screen.
+もう一度コードを実行すると、ボールは画面の上部で跳ね返りますが、画面の右に消えていきます。
 
 --- /task ---
 
-In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, in your game loop.
+ボールの `y` の位置の上側をチェックするようにしたのと同じように、 `x` の位置の右側と `y` の位置の下側でもボールが跳ね返るように、ゲームループでチェックできるようにします。
 
 --- task ---
 
-Add these checks on the ball's position.
+ボールの位置のチェックを追加します。
 
 --- code ---
 ---
@@ -111,6 +111,6 @@ line_highlights:
 
 --- /task ---
 
-The ball should now bounce around the screen, and fly off the left edge. Next, you will control your paddle to reflect the ball back from the left edge.
+ボールは画面中を跳ね回って、左の隅に飛び去っていくようになりました。 次は、パドルをコントロールしてボールを左の隅から跳ね返せるようにしていきましょう。
 
 --- save ---
