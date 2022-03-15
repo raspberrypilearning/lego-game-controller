@@ -1,0 +1,18 @@
+---
+title: LEGO®ゲームコントローラー
+hero_image: images/banner.png
+description: LEGO®とBuildHATを使用してゲームのコントローラーを作る
+version: 4
+listed: true
+copyedit: true
+last_tested: "2020-10-08"
+steps:
+  - title: はじめに
+  - title: LEGO® Spike™ モーターエンコーダーを使う
+  - title: モーターエンコーダーの動きに対応する
+  - title: Pongの画面を作る
+  - title: ボールを動かす
+  - title: パドルを制御する
+  - title: パドルの衝突
+  - title: 作品を改善する
+  - title: 次は何をしますか？
