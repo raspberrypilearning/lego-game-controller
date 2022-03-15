@@ -1,16 +1,16 @@
-## Improve your project
+## 作品を改善する
 
-There are few additional features you can add to finish off your game.
+ゲームづくりを終える前に、もう少しだけ機能を付け足してみましょう。
 
-### Adding a score
+### スコアを追加する
 
 --- task ---
 
-Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
+2つの変数 (各プレイヤーに1つずつ) を使ってスコアを記録して、ラウンドが終わるたびにそれらを更新します。
 
 --- hints --- --- hint ---
 
-First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
+はじめに、プログラムの冒頭で新しい変数を宣言して、初期スコアを0に設定します。
 
 ```python   
 score_r = 0   
@@ -19,7 +19,7 @@ score_l = 0
 
 --- /hint --- --- hint ---
 
-Whenever a ball is missed, increment the appropriate score variable by one. There are two conditional tests you'll need to modify.
+ボールを逃した時には、どちらか適切なスコア変数を1つ加算します。 2つの条件チェックを書き換える必要があります。
 
 
 --- /hint ---
@@ -43,11 +43,11 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 
 --- /hints --- --- /task ---
 
-Now you need to display the score on the game area. You can use a fourth Turtle to do this.
+次に、ゲーム内にスコアを表示する必要があります。 これを実現するには4つめのTurtleを使います。
 
 --- task ---
 
-Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
+パドルとボールのTurtleを作成したあとでかつ`while True`ループの前に、次のプログラムを追記します。
 
 ```python
 writer = Turtle()
@@ -59,15 +59,15 @@ writer.setposition(0,150)
 writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
-You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed.
+他のテキスト表示方法を確認するには、Turtleライブラリのドキュメントを見てください。
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+この時点でプログラムを実行すると、スコアとPongの文字が表示されますが、スコア自体は更新されません。
 
 --- task ---
 
-Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
+ボールがパドルから外れて左または右に消えた時の2つの条件を見つけて、スコアリングの状況に応じて新しい値を書き直してスコアを更新します。
 
 ```python
      writer.clear()
@@ -76,47 +76,47 @@ Find the two conditionals for each of the scoring situations — when ball is mi
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![スコアが上部に表示されたゲーム画面のビュー。](images/score.png)
 
-### Adding a buzzer
+### ブザーを追加する
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+いくつかのかんたんな効果音を含めるために、ブザーをRaspberry PiのGPIOに接続しましょう。
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+ブレッドボードを使用する代わりに、両端がメスソケットのジャンパーリードを使ってブザーの脚をソケットに差し込むこともできます。 その際には、いくつかのLEGO®の要素を使用してブザーを固定して、ゲームセッション中にブザーが外れて切断されないようにします。
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![LEGO®メイカープレートに取り付けられたRaspberry Piと、LEGOエレメントを使用してブザーが取り付けられている写真。](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+それでは、`gpiozero`ライブラリをプログラムの冒頭にあるインポートリストに追加しましょう:
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+次に、プラス (+) の脚を接続したピン番号を設定して、プログラムでブザーを使えるようにします。 次の例では17番のピンを使用しています。
 
 ```python
 buzz = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+17番ではないピンを使ったときは、ブザーが接続されているピンに合わせて値を変更してください。
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+パドルとボールが接触するたびに、短いトーンをゲームで鳴らすようにします。
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+ボールとパドルがそれぞれ衝突したことを検出する`if`文に、次の行を追加します:
 
 ```python
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+次に、プレーヤーがボールを逃したときはトーンを長めに再生するように、次の行を追加します。
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+ブザーが利用可能なオプションの詳細は、[GPIO Zeroのドキュメント](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer)を参照してください。
 
-### Customising your controllers
+### コントローラーをカスタマイズする
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+今回のPython Turtleプログラムでは、パドルにそれぞれ違う色を使いました。 それと同じ色のブロックや他のLEGO®の要素をLEGO®コントローラーに追加してカスタマイズできます。
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![LEGO® ホイールに色付きのブロックをのせた写真。](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+モーターのハンドルを設計して、より持ちやすくすることもできます。
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![LEGO®ハンドルをモーターコントローラーに追加した写真。](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+これで、ゲームをプレイできるようになります。 次に何ができるかを見る前に、ゲームを楽しみましょう。
 
 --- save ---
