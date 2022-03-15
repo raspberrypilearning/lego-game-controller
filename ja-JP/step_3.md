@@ -1,10 +1,10 @@
-## React to motor encoder movement
+## モーターエンコーダーの動きに対応する
 
-To use the LEGO® Technic™ motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
+LEGO® Technic™ モーターをゲームのコントローラーとして使うには、常に絶対位置を読み取れる必要があります。
 
 --- task ---
 
-In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then, in a `while True:` loop you can print the value of the position.
+Thonnyウィンドウのシェルの上にあるメイン部分に、先ほど紹介したコマンドを入力します。 そして、 `while True:` のループの中で位置の値をプリントさせます。
 
 --- code ---
 ---
@@ -25,13 +25,13 @@ print(motor_left.get_aposition())
 
 --- /task ---
 
-You should see that your program continually prints the position of the motor. If you rotate the motor, these values should change.
+プログラムがモーターの位置をプリントし続ける様子が見られるはずです。 モーターを回転させると、値が変化します。
 
-There is a better way of doing this though. You only need to read the motor position if it is moved.
+しかし、もっと良い方法があります。 モーターが動いたときにだけ読み取れば良いのです。
 
 --- task ---
 
-Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor. You will also need to add another import line to use the `pause()` function.
+`while True` ループをプログラムから削除して、モーターの絶対位置をプリントするシンプルな関数を作成します。 また、 `pause()` 関数を使うために、別の import 行を追記します。
 
 --- code ---
 ---
@@ -55,7 +55,7 @@ print(motor_apos)
 
 --- task ---
 
-Now set this function to run when the motor's encoder is moved:
+次に、モーターエンコーダーが動いた時にこの関数を実行するように設定します:
 
 --- code ---
 ---
@@ -77,7 +77,7 @@ motor_left.when_rotated = moved_left pause()
 
 --- /code ---
 
-Run your code and you should see the values printed out in the shell change when the motor is moved.
+コードを実行して、モーターが動いた時に値がシェルにプリントされることを確認します。
 
 --- /task ---
 
