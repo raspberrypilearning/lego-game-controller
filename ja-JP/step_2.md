@@ -1,93 +1,93 @@
-## Use LEGO® Spike™ motor encoders
+## LEGO® Spike™ モーターエンコーダーを使う
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+モーターエンコーダーは回転するだけではなく、何度回転したかを正確に検出することもできます。
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![丸印に合わせたロリポップマーク付きのモーター。](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+LEGO®Spike™モーターにはすべてエンコーダーがついています。 モーターの、回転する円盤部分を見ると、ロリポップ（ペロペロキャンディ）のような模様がモーターの本体側にあるゼロマークと並んでいるのが見えます。 これがエンコーダーが0度に設定されている状態で、この状態を基準としてモーターシャフトが何度動いたかを測定できます。
 
 --- collapse ---
 ---
-title: How motor encoders work
+title: モーターエンコーダーのしくみ
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+モーターエンコーダー（もしくはロータリーエンコーダー、シャフトエンコーダー）は、電気機械式のデバイスで、軸の角度の位置や動きを記録できます。 通常は角度の位置をアナログかデジタルに変換して出力します。
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+モーターがエンコーダーを搭載している場合、軸の位置を非常に正確にセットできるということになります。 また、モーターを入力デバイスとしても使えるため、何かによって軸の位置が変更された時にそれを記録したりトリガーにしてコンピュータープログラムで他の動作をさせたりすることができます。
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+モニター、キーボード、マウスをRaspberry Piに接続します。
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+Build HATにプリントされたロゴを上にした状態で、すべてのGPIOピンにきちんとかぶせるようにしてRaspberry Piに接続します。
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
-
---- /task ---
-
---- task ---
-
-Connect a motor to port A on the Build HAT.
-
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+最後に、Build HATのバレルジャックかRaspberry PiのUSB-Cのどちらかに電源を接続します。
 
 --- /task ---
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+モーターをBuild HATのポートAに接続します。
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
-
---- /task ---
-
---- task ---
-
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+![モーターをリボンケーブルを介してBuild HATのポートAに取り付ける。](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-First, import the Build HAT library.
+4つのコネクターペグを使って、モーターに大きなホイールを取り付けます。 ホイールを回して、ロリポップマークをゼロに並べます。
+
+![コネクターペグをモーターに取り付けた様子](images/motor_with_pegs.jpg) ![ホイールをモーターに取り付けた様子](images/motor_with_wheel.jpg)
+
+--- /task ---
+
+--- task ---
+
+Raspberry Piの **プログラミング** メニューからThonnyを開き、ウィンドウの下にある **Shell** のボックスをクリックします。
+
+--- /task ---
+
+--- task ---
+
+はじめに、Build HATのライブラリーをインポートします。
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+Enterキーを入力します。
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+続けて、モーターがポート `A` に接続されていることをPythonに知らせるモーターオブジェクトを次のように作成します: 最後にまたコマンドを入力してください。
 
 ```python
 motor_left = Motor('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
+Enterキーを入力します。 (実行に少し時間がかかります。 我慢しましょう!)
 
 --- /task ---
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+これで、モーターが返す **絶対** 位置を問い合わせることができます。 これは常に `-180` から `180` の間の数値になります。
 
 ```python
 motor_left.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+最初にモーターの位置合わせがどの程度しっかりできたか次第では `0` に近い値が取得できるはずです。
 
-Move the motor and type the line a second time, and see how the value changes.
+モーターを動かして再びコマンドを入力し、値の変化を確認します。
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+モーターの **相対** 位置も追跡できます。 プログラムがスタートしてからの移動量となるため、たとえばホイールを1周させるたびに `360` ずつ増減します。
 
 ```python
 motor_left.get_position()
@@ -96,7 +96,7 @@ motor_left.get_position()
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+モーターを動かして、絶対位置と相対位置それぞれで値がどのような変化をするか理解しましょう。
 
 --- /task ---
 
