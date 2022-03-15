@@ -1,10 +1,10 @@
-## Paddle collisions
+## パドルの衝突
 
-The game is nearly complete — but first you need to add some extra collision detection that covers the ball hitting the paddle.
+ゲーム完成に近づいてきましたが、パドルにボールを当ててカバーするための衝突検知を追加する必要があります。
 
 --- task ---
 
-Within the `while True` loop, check if the ball's `x` position is within the horizontal area covered by the paddle. Also use an `and` to check the ball's `y` position is in the vertical line in which the paddle moves
+`while True`ループ内で、ボールの`x`の位置がパドルの水平の領域内にかぶる場合をチェックします。 また、`and`を使って、ボールの`y`の位置が移動するパドルの垂直線に入っていることをチェックします。
 
 --- code ---
 ---
@@ -22,15 +22,15 @@ ball.speed_x *= -1
 
 --- /task ---
 
-Try the program out. You should be able to bounce the ball off your paddle and play a solo game of 'squash'!
+プログラムを試してみましょう。 パドルでボールを跳ね返して'スカッシュ'のソロゲームがプレイできるようになったはずです。
 
-Now you have a way of preventing the ball from disappearing off-screen, it's time to think about what happens if you fail to make a save.
+これで、ボールが画面外に消えないようにできました。次に、ボールを打ち返すのに失敗した場合にどうするかを考えてみましょう。
 
-For now, let's just reset the ball back to the start.
+ひとまずはボールを最初の状態にリセットしましょう。
 
 --- task ---
 
-Add this code within the `while True` loop:
+`while True`ループ内にこのコードを追加してください:
 
 --- code ---
 ---
@@ -51,13 +51,13 @@ line_highlights: 53-56
 
 --- /task ---
 
-Once you're happy with the various settings, it's time to add in the second paddle.
+さまざまな設定に満足したら、2番目のパドルを追加します。
 
-Using what you've created for the left-hand paddle as a starting point, add a second paddle on the right-hand side of the game area.
+最初に左側のパドル用に作成したのと同じようにして、ゲーム領域の右側に2つ目のパドルを追加します。
 
 --- task ---
 
-First of all, connect a second LEGO® Technic™ motor to the Build HAT (port B) and set it up in the program.
+まず、2つめの LEGO® Technic™ モーターをBuild HAT (ポートB) に接続して、プログラムで設定します。
 
 --- code ---
 ---
@@ -77,13 +77,13 @@ motor_right = Motor('B')
 
 --- task ---
 
-You can copy and paste your code for setting up your left paddle, and change the name and values for your right paddle.
+左側のパドルを設定するためのコードをコピーアンドペーストして、名前と値を右側のパドル用に変更します。
 
 --- /task ---
 
 --- task ---
 
-Create your right paddle.
+それでは右側のパドルを作成しましょう。
 
 --- code ---
 ---
@@ -114,7 +114,7 @@ paddle_right.setpos(190,0)
 
 --- task ---
 
-Add a variable for the right paddle position, a function for the paddle, and the line to call the function when the right motor is moved.
+右のパドル用に、位置の変数、パドルの関数、そして右のモーターが動かされたときに関数を呼び出す行を追加します。
 
 --- code ---
 ---
@@ -148,7 +148,7 @@ motor_right.when_rotated = moved_right
 
 --- task ---
 
-Add a line to update the paddle on screen to the `while True` loop:
+画面上のパドルを更新するために、`while True`ループに1行を追加します:
 
 --- code ---
 ---
@@ -167,11 +167,11 @@ line_highlights: 65
 --- /task ---
 
 
-Currently, the ball will bounce off the right-hand wall. Modify the lines of your program that make that happen so that the ball is instead reset to the centre.
+現在は、ボールは右側の壁で跳ね返るようになっています。 代わりにボールが中央にリセットされるようするために、プログラムの行を変更します。
 
 --- task ---
 
-Change the condition for the ball's `xcor` so that it resets.
+ボールの`xcor`の条件を変更して、リセットされるようにします。
 
 --- code ---
 ---
@@ -193,7 +193,7 @@ line_highlights:
 
 --- task ---
 
-Now add a similar condition for the right paddle as you did with the left, to handle collisions.
+そして、衝突を検知できるように、左側のパドルと同じような条件を右側のパドル用にも作成します。
 
 --- code ---
 ---
@@ -215,8 +215,8 @@ line_highlights: 71-73
 
 --- /task ---
 
-You should now be able to enjoy a basic two-player game of Pong.
+これで、Pongの基本的な2人用ゲームを楽しむことができるようになりました。
 
-![A view of the game window showing a two-player game. There is a green paddle on the left and a blue one on the right and the ball bouncing between them.](images/2_player_pong.gif)
+![二人用ゲームのウィンドウ画面。 左側に緑色のパドル、右側に青色のパドルがあり、その間をボールがはねています。](images/2_player_pong.gif)
 
 --- save ---
