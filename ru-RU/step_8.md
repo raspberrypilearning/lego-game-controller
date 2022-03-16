@@ -1,16 +1,16 @@
-## Improve your project
+## Улучшение своего проекта
 
-There are few additional features you can add to finish off your game.
+Есть несколько дополнительных функций, которые ты можешь добавить, чтобы завершить игру.
 
-### Adding a score
+### Добавление баллов
 
 --- task ---
 
-Keep track of the score by using two variables (one for each player) and update them whenever a round is lost.
+Следи за счетом, используя две переменные (по одной для каждого игрока), и обновляй их каждый раз, когда раунд проигран.
 
 --- hints --- --- hint ---
 
-First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
+Прежде всего, объяви новые переменные где-нибудь в верхней части программы и установи начальный счет равным нулю.
 
 ```python   
 score_r = 0   
@@ -19,7 +19,7 @@ score_l = 0
 
 --- /hint --- --- hint ---
 
-Whenever a ball is missed, increment the appropriate score variable by one. There are two conditional tests you'll need to modify.
+Каждый раз, когда мяч пропущен, увеличь соответствующую переменную счета на единицу. Тебе нужно изменить два условных теста.
 
 
 --- /hint ---
@@ -27,12 +27,12 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 --- hint ---
 
 ```python
-    if ball.xcor() > 195: #Right
+    if ball.xcor() > 195: #Право
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
         score_r+=1
-    if ball.xcor() < -195: #Left
+    if ball.xcor() < -195: #Лево
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
@@ -43,11 +43,11 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 
 --- /hints --- --- /task ---
 
-Now you need to display the score on the game area. You can use a fourth Turtle to do this.
+Теперь тебе нужно отобразить счет на игровой области. Для этого ты можешь использовать четвертую черепаху.
 
 --- task ---
 
-Add the following to your program after the creation of the paddle and ball Turtles, but before the `while True` loop.
+Добавь следующее в свою программу после создания Черепашкой ракеток и мячей, но до цикла `while True`.
 
 ```python
 writer = Turtle()
@@ -59,15 +59,15 @@ writer.setposition(0,150)
 writer.write(f'{score_l} PONG {score_r}', font=style, align='center')
 ```
 
-You can look at the documentation for the Turtle library to see what other options there are for how the text is displayed.
+Ты можешь посмотреть документацию к библиотеке Черепашка, чтобы узнать, какие еще есть варианты отображения текста.
 
 --- /task ---
 
-If you run your program now, the score and Pong legend should appear, but the scores themselves won't get updated.
+Если ты запустишь свою программу сейчас, то должны появиться счет и легенда Понг, но их значения не будут обновляться.
 
 --- task ---
 
-Find the two conditionals for each of the scoring situations — when ball is missed by a paddle and disappears to the left or right — and update the score by re-writing the new value.
+Найди два условных выражения для каждой из ситуаций подсчета очков: когда мяч пропущен ракеткой и исчезает слева или справа, и обнови счёт, задав новое значение.
 
 ```python
      writer.clear()
@@ -76,47 +76,47 @@ Find the two conditionals for each of the scoring situations — when ball is mi
 
 --- /task ---
 
-![A view of the game window with the score displayed at the top.](images/score.png)
+![Вид окна игры со счетом вверху.](images/score.png)
 
-### Adding a buzzer
+### Добавление зуммера
 
-To include some simple sound effects, connect a buzzer to the GPIO pins on the Raspberry Pi.
+Чтобы включить простые звуковые эффекты, подключи зуммер к контактам GPIO на Raspberry Pi.
 
 [[[rpi-connect-buzzer]]]
 
-Instead of using a breadboard, you could use jumper leads with female sockets at both ends and poke the legs of the buzzer into the socket. Then use some LEGO® elements to mount the buzzer so that it doesn't flop around and become disconnected during frantic gaming sessions.
+Вместо использования макетной платы ты можешь использовать провода с гнездовыми контактами на обоих концах и вставлять ножки зуммера в гнездо. Затем используй некоторые элементы LEGO®, чтобы установить зуммер, чтобы он не упал и не отключился во время безумных игровых сессий.
 
-![A photo of a Raspberry Pi mounted on a LEGO® Maker Plate, with a buzzer attached using LEGO elements.](images/buzzer.JPG)
+![Фотография Raspberry Pi, установленной на Строительной Пластине LEGO®, с зуммером, прикрепленным с помощью элементов LEGO.](images/buzzer.JPG)
 
 --- task ---
 
-Now add the `gpiozero` library to the list of imports at the start of you program:
+Теперь добавь библиотеку `gpiozero` в список импорта в начале твоей программы:
 
 ```python
 from gpiozero import Buzzer
 ```
 
-Then, make the buzzer available for the program to use by setting which pin you have connected the positive (+) leg to. In this example, we used Pin 17.
+Затем сделай зуммер доступным для использования программой, указав, к какому выводу ты подключил его положительную (+) ножку-контакт. В этом примере мы использовали Пин 17.
 
 ```python
 buzz = Buzzer(17)
 ```
 
-If you didn't use Pin 17, change the value to reflect the pin your buzzer is connected to.
+Если ты не использовал Пин 17, измени значение в соответствии с контактом, к которому подключен зуммер.
 
 --- /task ---
 
-Now, whenever the paddle and ball make contact, you want the game to play a short tone.
+Теперь, когда ракетка и мяч соприкасаются, ты хочешь, чтобы игра воспроизводила короткий звуковой сигнал.
 
 --- task ---
 
-Add this line to each action part of the collision detection `if` conditionals for the ball and paddle:
+Добавь эту строку к каждой действующей части обнаружения столкновения условный оператора `if` для мяча и ракетки:
 
 ```python
 buzz.beep(0.1,0.1,background=True)
 ```
 
-Then add a  line to play a longer tone whenever the player misses the ball
+Затем добавь строку, чтобы воспроизводить более длинный тон всякий раз, когда игрок пропускает мяч
 
 ```python
 buzz.beep(0.5,0.5,background=True)
@@ -124,19 +124,19 @@ buzz.beep(0.5,0.5,background=True)
 
 --- /task ---
 
-You can read more about the options available with buzzers in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
+Ты можешь узнать больше о вариантах, доступных с помощью зуммеров, в [Документации GPIO Zero](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer).
 
-### Customising your controllers
+### Кастомизация твоих контроллеров
 
-In your Python Turtle program, you have used different colours for the paddles. You can customise your LEGO® controllers by adding bricks and other LEGO® elements of the same colour.
+В твоей программе с Черепашкой Python ты использовал разные цвета для ракеток. Ты можешь кастомизировать свои контроллеры LEGO®, добавляя кубики и другие элементы LEGO® того же цвета.
 
-![A photo of coloured blocks on a LEGO® wheel.](images/blue_wheel.JPG)
+![Фотография цветных блоков на колесе LEGO®.](images/blue_wheel.JPG)
 
-You could also design a handle for the motor to make it more comfortable to hold.
+Ты также можешь сконструировать ручку для мотора, чтобы было удобнее держать его.
 
-![A photo of a LEGO® handle added to the motor controller.](images/handle.JPG)
+![Фотография ручки LEGO®, добавленной к контроллеру мотора.](images/handle.JPG)
 
 
-Your game should now be playable. Have some fun with it before seeing what else you can do next.
+Теперь в твою игру можно играть. Повеселите, прежде чем посмотреть, что еще ты можешь сделать дальше.
 
 --- save ---
