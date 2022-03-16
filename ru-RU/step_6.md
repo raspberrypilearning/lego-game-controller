@@ -1,22 +1,22 @@
-## Control the paddle
+## Управляем ракеткой
 
-### Designing the controls
+### Разработка элементов управления
 
-The LEGO® Spike™ motor is going to be used to control the position of the paddle but you don't want to be able to make full turns.
+Мотор LEGO® Spike™ будет использоваться для управления положением ракетки, но нам нужно будет запретить делать полные обороты мотора.
 
-A simple way to limit the motion of the wheel is to add a LEGO® element to prevent the wheel turning through a complete rotation.
+Простой способ ограничить движение колеса - добавить элемент LEGO®, чтобы колесо не поворачивалось до конца.
 
 --- task ---
 
-Line up the encoder marks on your motor using the wheel, like before. Insert a peg or axle as close to level with the markers as possible.
+Совмести метки энкодера на твоём моторе с помощью колеса, как и раньше. Вставь колышек или ось как можно ближе к меткам.
 
 --- /task ---
 
-![An animation showing a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/motor_block.gif)
+![Анимация, показывающая, как комбинация двигателя и колеса вращается вручную. К колесу прикреплен цилиндр LEGO®, поэтому его нельзя полностью повернуть.](images/motor_block.gif)
 
 --- print-only ---
 
-![Two photos of a motor and wheel combination being turned by hand. There is a LEGO® cylinder attached to the wheel so that it can't be fully rotated.](images/sidebyside.png)
+![Две фотографии комбинации двигателя и колеса, вращаемой вручную. К колесу прикреплен цилиндр LEGO®, поэтому его нельзя полностью повернуть.](images/sidebyside.png)
 
 --- /print-only ---
 
@@ -42,7 +42,7 @@ motor_left = Motor('A')
 
 --- /task ---
 
-Now a new variable is needed to keep track of the location of the paddle. This will be called `pos_left` and set to `0`.
+Теперь нужна новая переменная, чтобы отслеживать местоположение ракетки. Она будет называться `pos_left` и установим её в `0`.
 
 --- code ---
 ---
@@ -62,7 +62,7 @@ pos_left = 0
 
 --- task ---
 
-Create a function for the paddle that will run when the motor encoder moves. Note that it uses a `global` variable so that it can change the value of the `pos_left` variable.
+Создай функцию для ракетки, которая будет работать при перемещении энкодера двигателя. Обрати внимание, что он использует `глобальную` переменную и так им образом он может изменять значение переменной `pos_left`.
 
 --- code ---
 ---
@@ -83,7 +83,7 @@ pos_left = motor_apos
 
 --- task ---
 
-Now add a single line that will use that function each time the motor is moved. It can be just before your `while` loop.
+Теперь добавь одну строку, которая будет использовать эту функцию при каждом перемещении двигателя. Это может быть непосредственно перед твоим циклом `while`.
 
 --- code ---
 ---
@@ -102,7 +102,7 @@ motor_left.when_rotated = moved_left
 
 --- task ---
 
-Then, add a line to the `while True` loop to update the paddle object on the screen to the new position.
+Затем добавь строку в цикл `while True`, чтобы переместить объект ракетки на экране в новую позицию.
 
 --- code ---
 ---
@@ -123,13 +123,13 @@ line_highlights: 47
 
 --- task ---
 
-Run your code and then turn the wheel on your motor encoder. You should see your paddle moving up and down the screen.
+Запусти свой код, а затем поверни колесо на энкодере двигателя. Ты должен увидеть, как твоя ракетка движется вверх и вниз по экрану.
 
 --- /task ---
 
-![A view of the game window showing the bouncing ball and moving paddle.](images/moving_paddle.gif)
+![Вид игрового окна, показывающий прыгающий мяч и движущуюся ракетку.](images/moving_paddle.gif)
 
-In case there are errors, your code should currently look like this:
+Если есть неразрешимые ошибки, твой код должен выглядеть так:
 
 --- code ---
 ---
@@ -147,7 +147,7 @@ from buildhat import Motor
 motor_left = Motor('A')
 
 game_area = Screen()   
-game_area.title('PONG')   
+game_area.title('ПОНГ')   
 game_area.bgcolor('black')   
 game_area.tracer(0)   
 game_area.setworldcoordinates(-200,-170,200,170)
