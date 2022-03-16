@@ -1,10 +1,10 @@
-## React to motor encoder movement
+## Реагирование на движение двигателя энкодера
 
-To use the LEGO® Technic™ motors as a controller for a game, you'll need to be able to constantly read their absolute positions.
+Чтобы использовать моторы LEGO® Technic™ в качестве контроллера для игры, тебе необходимо иметь возможность постоянно считывать их абсолютные положения.
 
 --- task ---
 
-In the main Thonny window above the shell you can use the commands you already know to find the absolute position of the motor. Then, in a `while True:` loop you can print the value of the position.
+В главном окне Thonny над панелью Оболочки ты можешь использовать уже известные тебе команды, чтобы найти абсолютное положение двигателя. Затем в цикле `while True:` ты сможешь вывести на экранзначение этой позиции.
 
 --- code ---
 ---
@@ -25,13 +25,13 @@ print(motor_left.get_aposition())
 
 --- /task ---
 
-You should see that your program continually prints the position of the motor. If you rotate the motor, these values should change.
+Ты должен увидеть, что твоя программа постоянно выводит на экран положение двигателя. Если ты вращаешь мотор, эти значения должны измениться.
 
-There is a better way of doing this though. You only need to read the motor position if it is moved.
+Однако есть способ сделать это лучше. Тебе нужно считывать положение двигателя, только если он перемещается.
 
 --- task ---
 
-Delete the `while True` loop from your program and create this simple function that prints the absolute position of the motor. You will also need to add another import line to use the `pause()` function.
+Удали цикл `while True` из твоей программы и создай эту простую функцию, которая печатает абсолютное положение мотора. Тебе также потребуется добавить еще одну строку импорта, чтобы использовать функцию `pause()`.
 
 --- code ---
 ---
@@ -55,7 +55,7 @@ print(motor_apos)
 
 --- task ---
 
-Now set this function to run when the motor's encoder is moved:
+Теперь сделаем так, чтобы эта функция работала при перемещении энкодера двигателя:
 
 --- code ---
 ---
@@ -77,7 +77,7 @@ motor_left.when_rotated = moved_left pause()
 
 --- /code ---
 
-Run your code and you should see the values printed out in the shell change when the motor is moved.
+Запусти свой код, и ты должен увидеть, как значения, печатаемые в окне Оболочки, меняются при перемещении двигателя.
 
 --- /task ---
 
