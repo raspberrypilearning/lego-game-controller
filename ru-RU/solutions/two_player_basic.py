@@ -6,7 +6,7 @@ motor_left = Motor('A')
 motor_right = Motor('B')
 
 game_area = Screen()
-game_area.title('PONG')
+game_area.title('ПОНГ')
 game_area.bgcolor('black')
 game_area.tracer(0)
 game_area.setworldcoordinates(-200,-170,200,170)
@@ -70,7 +70,7 @@ while True:
     if (ball.xcor() > 180 and ball.xcor() < 190) and (ball.ycor() < paddle_right.ycor() + 20 and ball.ycor() > paddle_right.ycor() - 20):
         ball.setx(180)
         ball.speed_x *= -1
-    if ball.xcor() < -195: # left
+    if ball.xcor() < -195: # осталось
         ball.hideturtle()
         ball.goto(0,0)
         ball.showturtle()
