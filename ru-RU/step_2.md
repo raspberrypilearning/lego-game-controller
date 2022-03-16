@@ -1,93 +1,93 @@
-## Use LEGO® Spike™ motor encoders
+## Использование двигателей энкодеров LEGO® Spike™
 
-Motor encoders can not only rotate, they can also accurately detect how many degrees they have been rotated.
+Энкодеры двигателей могут не только вращаться, но и точно определять, на сколько градусов они были повернуты.
 
-![Motor with the lollipop mark in line with a circle.](images/aligned_symbols.jpg)
+![Мотор с отметкой леденца на палочке в круге.](images/aligned_symbols.jpg)
 
-The LEGO® Spike™ motors all have encoders. If you look at the rotating disk part of the motor, you will see a mark shaped like a lollipop that can be lined up with the 0 mark on the white body of the motor itself. This is the encoder set to zero degrees and any angular movement of the motor shaft can be measured relative to this point.
+У всех двигателей LEGO® Spike™ есть энкодеры. Если ты посмотришь на вращающуюся дисковую часть двигателя, ты увидишь отметку в форме леденца на палочке, которую можно совместить с отметкой 0 на белом корпусе самого двигателя. Это кодировщик, установленный на ноль градусов, и любое угловое перемещение вала двигателя может быть измерено относительно этой точки.
 
 --- collapse ---
 ---
-title: How motor encoders work
+title: Как работают энкодеры двигателя
 ---
 
-A motor encoder, also called a rotary or shaft encoder, is an electro-mechanical device that allows you to record the angular position or motion of the axle. It normally does this by converting the angular position to an analogue or digital output.
+Энкодер двигателя, также называемый датчиком вращения или положения вала, представляет собой электромеханическое устройство, которое позволяет фиксировать угловое положение или движение оси. Обычно это делается путем преобразования углового положения в аналоговый или цифровой выход.
 
-If a motor has an encoder, that means you can very accurately set the position of the axle. It also allows you to use the motor as an input device so that if something changes the position of the axle, this can be registered and used to trigger other actions in a computer program.
+Если у двигателя есть энкодер, это означает, что ты можешь очень точно установить положение оси. Это также позволяет тебе использовать двигатель в качестве устройства ввода, так, что если что-то меняет положение оси, это можно зарегистрировать и использовать для запуска других действий в компьютерной программе.
 
 --- /collapse ---
 
 --- task ---
 
-Connect a monitor, keyboard, and mouse to your Raspberry Pi device.
+Подключите к компьютеру Raspberry Pi монитор, клавиатуру и мышь.
 
-Connect your Build HAT to your Raspberry Pi with the printed logo facing up, making sure that you have properly covered all the pins.
+Подключи свою плату Build HAT к Raspberry Pi напечатанным логотипом вверх, убедившись, что ты правильно накрыл все контакты.
 
-Lastly, connect the power; either though the Build HAT barrel jack or the USB-C port on the Raspberry Pi.
-
---- /task ---
-
---- task ---
-
-Connect a motor to port A on the Build HAT.
-
-![Motor attached via a ribbon cable to port A on the build HAT.](images/motor_attached.jpg)
+Наконец, подключи питание: либо через цилиндрический разъем платы Build HAT, либо через порт USB-C на Raspberry Pi.
 
 --- /task ---
 
 --- task ---
 
-Attach a large wheel to the motor using four connector pegs. Turn the wheel so that the lollipop mark is in line with the zero.
+Подключи двигатель к порту A на плате Build HAT.
 
-![Motor with connector pegs attached.](images/motor_with_pegs.jpg) ![Motor with a large wheel attached.](images/motor_with_wheel.jpg)
-
---- /task ---
-
---- task ---
-
-Open Thonny from the Raspberry Pi **Programming** menu and click on the **Shell** box at the bottom of the window.
+![Мотор подключен через ленточный кабель к порту A на плате Build HAT.](images/motor_attached.jpg)
 
 --- /task ---
 
 --- task ---
 
-First, import the Build HAT library.
+Прикрепи к двигателю большое колесо с помощью четырех соединительных штифтов. Поверни колесо так, чтобы отметка леденца на палочке совпала с нулем.
+
+![Двигатель с прикрепленными соединительными штифтами.](images/motor_with_pegs.jpg) ![Мотор с прикрепленным большим колесом.](images/motor_with_wheel.jpg)
+
+--- /task ---
+
+--- task ---
+
+Открой приложение Thonny из меню **Програмирование** и щелкните в поле **Оболочка** в нижней части окна Thonny.
+
+--- /task ---
+
+--- task ---
+
+Сначала импортируй библиотеку Build HAT.
 
 ```python
 from buildhat import Motor
 ```
-Press Enter.
+Нажми Ввод.
 
 --- /task ---
 
 --- task ---
 
-Then, create a motor object that tells Python the motor is connected to port `A`. Type:
+Затем создай объект двигателя, который сообщает Python-у, что двигатель подключен к порту `A`. Введи:
 
 ```python
 motor_left = Motor('A')
 ```
-Press Enter. (There will be a slight delay, be patient!)
+Нажми Ввод. (Будет небольшая задержка, наберись терпения!)
 
 --- /task ---
 
 --- task ---
 
-Now, you can ask the motor to report its **absolute** position. This will always be between `-180` and `180`.
+Теперь ты можешь попросить двигатель сообщить о своем **абсолютном** положении. Оно всегда будет находиться в диапазоне от `-180` и `180`.
 
 ```python
 motor_left.get_aposition()
 ```
 
-Depending on how well you positioned the motor at the start, you should get a value close to `0`.
+В зависимости от того, насколько хорошо ты расположил двигатель в начале, ты должен получить значение, близкое к `0`.
 
-Move the motor and type the line a second time, and see how the value changes.
+Покрути двигатель и введи строку во второй раз и посмотри, как изменится значение.
 
 --- /task ---
 
 --- task ---
 
-You can also keep track of the motor's **relative** position. This is how far it has moved from the time the program starts, so it will increase or decrease by `360` for every turn of the wheel.
+Ты также можете отслеживать положение двигателя **относительно**. Это то, как далеко он ушел с момента запуска программы, таким образом оно будет увеличиваться или уменьшаться на `360` за каждый поворот колеса.
 
 ```python
 motor_left.get_position()
@@ -96,7 +96,7 @@ motor_left.get_position()
 
 --- task ---
 
-Move the motor around and check its absolute and relative positions, so that you understand how the values change.
+Покрути двигатель и проверь его абсолютное и относительное положения, чтобы понять, как меняются значения.
 
 --- /task ---
 
