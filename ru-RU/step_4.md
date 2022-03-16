@@ -1,13 +1,13 @@
-## Make your Pong screen
+## Делаем экран Понга
 
-Turtle is a drawing and animation library and you can learn more about it with this [excellent project](https://projects.raspberrypi.org/en/projects/turtle-race).
+Черепашка - это библиотека для рисования и анимации. Ты можешь узнать больше о ней с этим [отличным проектом](https://projects.raspberrypi.org/en/projects/turtle-race).
 
 
-First, create a window where the game will be played.
+Сначала создай окно, в котором будет проходить игра.
 
 --- task ---
 
-Open a new file in Thonny and add the following code to import the Turtle, time, and Build HAT libraries, and then set up a screen. Run the file and you should see a black window with the title "PONG" open. You don't need to include the `#` comments.
+Создай новый файл в Thonny и добавь следующий код для импорта библиотек Turtle (Черепашка), time и Build HAT, а затем настрой экран. Запусти файл, и ты должен увидеть чёрное окно с открытым заголовком «ПОНГ». Тебе не обязательно включать комментарии `#` в твою программу.
 
 --- code ---
 ---
@@ -20,16 +20,16 @@ line_highlights:
 
 from turtle import Screen, Turtle from time import sleep from buildhat import Motor
 
-game_area = Screen() #Create a screen   
-game_area.title("PONG") #Give the screen a title   
-game_area.bgcolor('black') #Set the background colour   
-game_area.tracer(0) #Give smoother animations
+game_area = Screen() #Создаём экран   
+game_area.title("ПОНГ") #Даём экрану название   
+game_area.bgcolor('black') #Устанавливаем цвет фона   
+game_area.tracer(0) #Делаем анимации плавными
 
 --- /code ---
 
 --- /task ---
 
-The Turtle library also has a useful way of setting the coordinates for a screen area. Add this line to your program:
+Библиотека Черепашка имеет также удобный способ задания кординат области экрана. Добавь эту строку в свою программу:
 
 --- task ---
 
@@ -49,13 +49,13 @@ game_area.setworldcoordinates(-200, -170, 200, 170)
 
 --- /task ---
 
-This creates a rectangular window 400 pixels wide and 340 high, with 0 being in the centre.
+Это создаст прямоугольное окно шириной 400 пикселей и высотой 340 пикселей, где 0 находится в центре.
 
-![A screenshot of the game window, showing the co-ordinates of each corner and the centre. Top left is -200,170, top right is 200,170, bottom left is -200,-170, and bottom right is 200,-170. The centre is 0,0.](images/coords.png)
+![Снимок экрана игрового окна, показывающий координаты каждого угла и центра. Верхний левый -200,170, верхний правый 200,170, нижний левый -200,-170 и нижний правый 200,-170. Центр 0,0.](images/coords.png)
 
 --- task ---
 
-Now, you need to update your game area, to see the paddle and ball. Add a **game loop** to the bottom of your code, and call the `update()` method.
+Теперь тебе нужно обновить игровую зону, чтобы увидеть ракетку и мяч. Добавь **игровой цикл** в конец твоего кода и вызови метод `update()`.
 
 --- code ---
 ---
@@ -71,15 +71,15 @@ game_area.update()
 
 --- /code ---
 
-Run your code and you should see a black window appear.
+Запусти свой код, и ты увидишь черное окно.
 
 --- /task ---
 
 --- task ---
 
-Next, you can make a ball by using a Turtle that is set to be a white circle. The ball should start in the middle of the screen, and shouldn't draw a line when it moves.
+Затем, используя черепаху, ты можешь сделать шар, который представляет собой белый круг. Мяч должен начинаться в середине экрана и не оставлять за собой линию при движении.
 
-**Above** your `while True` loop, add the following code:
+**Над** твоим циклом `while True` добавь следующий код:
 
 --- code ---
 ---
@@ -104,13 +104,13 @@ while True:
 
 --- task ---
 
-Run your code again. You should see a white ball appear in your window.
+Запусти свой код снова. В твоем окне должен появиться белый шар.
 
 --- /task ---
 
 --- task ---
 
-Next, you can set up a paddle in the same way. It will be a green rectangle, and positioned on the far left of the screen.
+Далее ты можешь настроить ракетку таким же образом. Это будет зеленый прямоугольник, расположенный в самой левой части экрана.
 
 --- code ---
 ---
@@ -134,8 +134,8 @@ paddle_left.setpos(-190, 0)
 
 --- task ---
 
-Run your code and you should see your ball and paddle.
+Запустите свой код, и ты должен увидеть свой мяч и ракетку.
 
-![A white ball in the centre of a black window, with a green paddle on the far left.](images/pong_static.png)
+![Белый шар в центре черного окна с зеленой ракеткой слева.](images/pong_static.png)
 
 --- /task ---
