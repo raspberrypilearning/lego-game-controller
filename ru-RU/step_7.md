@@ -1,6 +1,6 @@
-## Paddle collisions
+## Столкновение с ракеткой
 
-The game is nearly complete — but first you need to add some extra collision detection that covers the ball hitting the paddle.
+Игра почти завершена, но сначала тебе нужно добавить дополнительное обнаружение столкновения, которое закроет вопрос удара мяча по ракетке.
 
 --- task ---
 
@@ -22,15 +22,15 @@ ball.speed_x *= -1
 
 --- /task ---
 
-Try the program out. You should be able to bounce the ball off your paddle and play a solo game of 'squash'!
+Попробуй, как работает программа. Ты должен иметь возможность отбивать мяч от ракетки и играть в одиночную игру в «сквош»!
 
-Now you have a way of preventing the ball from disappearing off-screen, it's time to think about what happens if you fail to make a save.
+Теперь, когда у тебя есть способ предотвратить исчезновение мяча за границами экрана, пора подумать о том, что произойдет, если тебе не удастся сохранить игру.
 
-For now, let's just reset the ball back to the start.
+А пока давай просто вернём мяч в исходное положение.
 
 --- task ---
 
-Add this code within the `while True` loop:
+Добавьте этот код в цикл `while True`:
 
 --- code ---
 ---
@@ -42,7 +42,7 @@ line_highlights: 53-56
 ---
 
         ball.speed_x *= -1   
-    if ball.xcor() < -195: #Left   
+    if ball.xcor() < -195: #Лево   
         ball.hideturtle()   
         ball.goto(0,0)   
         ball.showturtle()
@@ -51,13 +51,13 @@ line_highlights: 53-56
 
 --- /task ---
 
-Once you're happy with the various settings, it's time to add in the second paddle.
+Как только ты будешь доволен различными настройками, приступай к добавлению второй ракетки.
 
-Using what you've created for the left-hand paddle as a starting point, add a second paddle on the right-hand side of the game area.
+Используя то, что ты создал для левой ракетки в качестве отправной точки, добавь вторую ракетку с правой стороны игровой области.
 
 --- task ---
 
-First of all, connect a second LEGO® Technic™ motor to the Build HAT (port B) and set it up in the program.
+Прежде всего, подключи второй мотор LEGO® Technic™ к плате Build HAT (порт B) и настрой его в программе.
 
 --- code ---
 ---
@@ -77,13 +77,13 @@ motor_right = Motor('B')
 
 --- task ---
 
-You can copy and paste your code for setting up your left paddle, and change the name and values for your right paddle.
+Ты можешь скопировать и вставить свой код для настройки левой ракетки и изменить имя и значения для своей правой ракетки.
 
 --- /task ---
 
 --- task ---
 
-Create your right paddle.
+Создай свою правую ракетку.
 
 --- code ---
 ---
@@ -114,7 +114,7 @@ paddle_right.setpos(190,0)
 
 --- task ---
 
-Add a variable for the right paddle position, a function for the paddle, and the line to call the function when the right motor is moved.
+Добавь переменную для положения правой ракетки, функцию для ракетки и строку для вызова функции при перемещении правого двигателя.
 
 --- code ---
 ---
@@ -148,7 +148,7 @@ motor_right.when_rotated = moved_right
 
 --- task ---
 
-Add a line to update the paddle on screen to the `while True` loop:
+Добавь строку для обновления ракетки на экране в цикл `while True`:
 
 --- code ---
 ---
@@ -167,11 +167,11 @@ line_highlights: 65
 --- /task ---
 
 
-Currently, the ball will bounce off the right-hand wall. Modify the lines of your program that make that happen so that the ball is instead reset to the centre.
+В настоящее время мяч отскакивает от правой стены. Измени строки твоей программы таким образом, что как только это произошло, мяч вместо этого был перемещен в центр.
 
 --- task ---
 
-Change the condition for the ball's `xcor` so that it resets.
+Измените условие для свойства `xcor` мяча, чтобы он возвращался в центр.
 
 --- code ---
 ---
@@ -193,7 +193,7 @@ line_highlights:
 
 --- task ---
 
-Now add a similar condition for the right paddle as you did with the left, to handle collisions.
+Теперь добавь такое же условие для правой ракетки, как ты сделал и для левой для обработаки столкновений.
 
 --- code ---
 ---
@@ -215,8 +215,8 @@ line_highlights: 71-73
 
 --- /task ---
 
-You should now be able to enjoy a basic two-player game of Pong.
+Теперь у тебя должна быть возможность насладиться базовой игрой в Понг для двух игроков.
 
-![A view of the game window showing a two-player game. There is a green paddle on the left and a blue one on the right and the ball bouncing between them.](images/2_player_pong.gif)
+![Вид окна игры, в котором показана игра с двумя игроками. Слева есть зеленая ракетка, а справа синяя, и мяч прыгает между ними.](images/2_player_pong.gif)
 
 --- save ---
