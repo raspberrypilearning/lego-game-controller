@@ -1,10 +1,10 @@
-## Move the ball
+## Перемещаем мяч
 
-The ball is going to bounce around the screen, so two variables are needed to keep track of its speed in both the `x` and `y` dirctions. These numbers can be larger to make the game harder, or smaller to make the game easier.
+Мяч будет отскакивать от экрана, поэтому необходимы две переменные, чтобы отслеживать его скорость в направлениях `x` и `y`. Эти числа могут быть больше, чтобы усложнить игру, или меньше, чтобы ее упростить.
 
 --- task ---
 
-Add the following code to your program:
+Добавь следующий код в свою программу:
 
 --- code ---
 ---
@@ -22,13 +22,13 @@ ball.speed_y = 1
 
 --- /task ---
 
-You can check where a Turtle is by using `turtle.xcor()` and `turtle.ycor()` to find the `x` and `y` coordinates, respectively.
+Ты можешь проверить, где находится Черепашка, используя `turtle.xcor()` и `turtle.ycor()` чтобы найти `x` и `y` координаты соответственно.
 
-So to make the ball move, you can combine the position and speed.
+Итак, чтобы мяч двигался, ты можешь комбинировать положение и скорость.
 
 --- task ---
 
-Add the lines below to your program:
+Добавь эти строку ниже в свою программу:
 
 --- code ---
 ---
@@ -48,17 +48,17 @@ ball.sety(ball.ycor() + ball.speed_y)
 
 --- /task ---
 
-Run the program and see what happens!
+Запусти программу и посмотрите, что получится!
 
-![Pong screen with the ball travelling off to the top right corner.](images/ball_diagonal.gif)
+![Экран Понг с мячом, летящим в правый верхний угол.](images/ball_diagonal.gif)
 
-The ball should move diagonally upwards towards the top right corner of the game area... and then keep on going! If you want your game to be fast and challenging, you can increase the `speed_x` and `speed_y` values to make the ball move more quickly.
+Мяч должен двигаться по диагонали вверх по направлению к правому верхнему углу игровой зоны... и дальше за экран! Если ты хочешь, чтобы твоя игра была быстрой и сложной, ты можешь увеличить значения `speed_x` и `speed_y`, чтобы мяч двигался быстрее.
 
-The ball should bounce off the top wall rather than disappear off the screen. To do this, the speed can be reversed, making the ball travel in the opposite direction, if its `y` position is greater than 160.
+Мяч должен отскочить от верхней стены, а не исчезнуть с экрана. Для этого можно изменить скорость, заставив мяч двигаться в противоположном направлении, если его положение `y` больше 160.
 
 --- task ---
 
-Add the following code into your game loop and run it.
+Добавь следующий код в игровой цикл и запустите его.
 
 --- code ---
 ---
@@ -81,15 +81,15 @@ if ball.ycor() > 160: ball.speed_y *= -1
 
 --- task ---
 
-Run your code again, and the ball should bounce off the top of the screen, but disappear off the right of the screen.
+Запусти свой код еще раз, и мяч должен отскочить от верхней части экрана, но исчезнуть в правой части экрана.
 
 --- /task ---
 
-In the same way that the code checks the upper `y` position of the ball, to make it bounce, it can check the right `x` position and the lower `y` position, in your game loop.
+Таким же образом, как код проверяет верхнюю позицию `y`, чтобы заставить его отскочить, он может проверить правую `x` и нижнюю `y` позиции в твоём игровом цикле.
 
 --- task ---
 
-Add these checks on the ball's position.
+Добавьте эти проверки для позиции мяча.
 
 --- code ---
 ---
@@ -111,6 +111,6 @@ line_highlights:
 
 --- /task ---
 
-The ball should now bounce around the screen, and fly off the left edge. Next, you will control your paddle to reflect the ball back from the left edge.
+Теперь мяч должен отскочить от экрана и отлететь от левого края. Затем ты будешь управлять ракеткой, чтобы мяч отражался от левого края.
 
 --- save ---
