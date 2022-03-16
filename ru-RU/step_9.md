@@ -1,24 +1,24 @@
-## What next?
+## Что дальше?
 
-### Improve the Pong game
+### Улучшение игры Понг
 
-Add even more randomness to the speed and trajectory of the ball.
+Добавь еще больше случайности для скорости и траектории полета мяча.
 
-Make the ball move faster as the game progresses.
+По ходу игры заставляй мяч двигаться быстрее.
 
-Right now the game carries on forever — have a target score that a player must achieve in order to win and then start a new set of rounds.
+Прямо сейчас игра продолжается вечно - имей финальный счет, который игрок должен набрать, чтобы выиграть, а затем начинай новый набор раундов.
 
-Change the scoring method to count how many times the players return the ball to one another, and reset when someone misses.
+Измени метод подсчета очков, чтобы подсчитать, сколько раз игроки возвращали мяч друг другу, и сбрось, когда кто-то промахивается.
 
-Introduce some haptic feedback, so that the motors turn a small amount when a point is lost.
+Внеси некоторую тактильную обратную связь, чтобы двигатели немного вращались, когда точка потеряна.
 
-At the moment it doesn't matter what part of the paddle connects with the ball, it will always bounce off at the same angle as it hit. Modify the collision code so that the angle becomes more obtuse if the ball makes contact close to the end of the paddle.
+В настоящий момент не имеет значения, какая часть ракетки касается с мячом, он всегда будет отскакивать под тем же углом, что и при касании. Измени код столкновения так, чтобы угол становился более тупым, если мяч соприкасается с краем ракетки.
 
-### Create more games that use the LEGO® Technic™ motors as controllers
+### Создавай больше игр, в которых моторы LEGO® Technic™ используются в качестве контроллеров
 
-How about a game in the style of Angry Birds where two controllers are used to set the launch trajectory and the amount of force applied to the catapult?
+Как насчет игры в стиле Angry Birds, где два контроллера используются для задания траектории запуска и количества силы, прикладываемой к катапульте?
 
-If you are following the [Introduction to LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro) pathway, you can move on to the [LEGO Robot Car](https://projects.raspberrypi.org/en/projects/lego-robot-car) project. In this project, you will make a LEGO Robot buggy controlled by Bluetooth!
+Если ты следуешь по программе [Введение в LEGO BuildHAT](https://projects.raspberrypi.org/en/pathways/lego-intro), ты можешь перейти к проекту [Машина-Робот LEGO](https://projects.raspberrypi.org/en/projects/lego-robot-car). В этом проекте ты создашь Робота-багги LEGO, управляемого по Bluetooth!
 
-![Lego Robot Car Project](images/robotcar.png)
+![Проект Машина-Робот LEGO](images/robotcar.png)
 
