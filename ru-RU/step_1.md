@@ -1,109 +1,109 @@
-## Introduction
+## Введение
 
-In this project, you will use the Raspberry Pi Build HAT, a LEGO® Technic™ motor encoder and wheel, and the Python Turtle library to make a simple game controller that you can use to play Pong.
+В этом проекте ты будешь использовать Raspberry Pi Build HAT, двигатель энкодер и колесо LEGO® Technic™, а также библиотеку Черепашку из Python, чтобы создать простой игровой контроллер, который можно использовать для игры в Понг.
 
 <p style="border-left: solid; border-width:10px; border-color: #0faeb0; background-color: aliceblue; padding: 10px;">
-<span style="color: #0faeb0">[Pong](https://en.wikipedia.org/wiki/Pong)</span> is one of the earliest arcade video games, originally released in 1972 by Atari. It is a table tennis game featuring simple two-dimensional graphics. Players control paddles on each side of the screen, which they use to hit a ball back and forth.
+<span style="color: #0faeb0">[Понг](https://ru.wikipedia.org/wiki/Pong_(%D0%B8%D0%B3%D1%80%D0%B0))</span> - одна из самых ранних аркадных видеоигр, первоначально выпущенная в 1972 году компанией Atari. Это игра в настольный теннис с простой двухмерной графикой. Игроки управляют ракетками на каждой стороне экрана, с помощью которых они отбивают мяч то в одну сторону, то в другую.
 </p>
 
-You will:
-- Learn how to read the degrees of rotation from LEGO® Technic™ motors
-- Learn to draw and move Turtle graphics using LEGO® Technic™ motors
-- Learn to detect collisions between graphics using `x` and `y` coordinates
+Ты:
+- Узнаешь, как считывать градусы вращения двигателей LEGO® Technic™
+- Научишься рисовать и перемещать изображения Черепашки с помощью двигателей LEGO® Technic™
+- Научишься обнаруживать коллизии между объектами, используя координаты `x` и `y`
 
 --- no-print ---
 
-![A movie showing a pong game being controlled by two LEGO® Technic™ motors with large blue wheels.](images/pong_gif.gif)
+![Видео, в котором показана игра в Понг, управляемая двумя моторами LEGO® Technic™ с большими синими колесами.](images/pong_gif.gif)
 
 --- /no-print ---
 
 --- print-only ---
 
-![Complete project.](images/finished.JPG)
+![Завершенный проект.](images/finished.JPG)
 
 --- /print-only ---
 
-### You will need
+### Тебе понадобится
 
-+ A Raspberry Pi computer
-+ A Raspberry Pi Build HAT
-+ At least one LEGO® Technic™ motor
-+ Assortment of LEGO®, including wheels (we used a selection from the [LEGO® Education SPIKE™ Prime kit](https://education.lego.com/en-gb/product/spike-prime))
-+ A small breadboard (optional)
-+ A buzzer (optional)
-+ Some breadboard jumper leads (optional)
-+ A 7.5V power supply with a barrel jack (optional). You can use an official Raspberry Pi power supply for this project, as the motor encoders will not be using any power
++ Компьютер Raspberry Pi
++ Raspberry Pi Build HAT
++ Как минимум один мотор LEGO® Technic™
++ Детали LEGO®, включая колеса (мы использовали детали из [набора LEGO® Education SPIKE™ Prime](https://education.lego.com/en-gb/product/spike-prime))
++ Небольшая макетная плата (необязательно)
++ Зуммер (необязательно)
++ Несколько соединительных проводов для макетной платы (необязательно)
++ Блок питания 7,5 В с цилиндрическим гнездом (необязательно). Ты можешь использовать официальный источник питания Raspberry Pi для этого проекта, так как двигатели энкодеры не будут потреблять питание
 
-### Software
+### Программное обеспечение
 
 + Python 3
-+ Build HAT Python library
++ Библиотека Python Build HAT
 
 --- collapse ---
 ---
-title: Additional information for educators
+title: Дополнительная информация для преподавателей
 ---
 
-You can download the completed project [here](https://rpf.io/p/en/lego-game-controller-get){:target="_blank"}.
+Ты можешь скачать завершенный проект [здесь](https://rpf.io/p/en/lego-game-controller-get){:target="_blank"}.
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/lego-game-controller/print){:target="_blank"}.
+Если ты хочешь распечатать этот проект, то воспользуйся [версией для печати](https://projects.raspberrypi.org/en/projects/lego-game-controller/print){:target="_blank"}.
 
 --- /collapse ---
 
-Before you begin, you'll need to have set up your Raspberry Pi computer and attached your Build HAT:
+Прежде чем ты начнешь, тебе необходимо настроить твой компьютер Raspberry Pi и подключить свою плату Build HAT:
 
 --- task ---
 
 Mount your Raspberry Pi on to the LEGO Maker Plate using M2 bolts and nuts, making sure the Raspberry Pi is on the side without the 'edge':
 
- ![Raspberry Pi bolted to a magenta LEGO Build Plate.](images/build_11.jpg)
+ ![Raspberry Pi прикрученный к пурпурной Строительной Панели LEGO.](images/build_11.jpg)
 
 --- /task ---
 
-Mounting the Raspberry Pi this way round enables easy access to the ports as well as the SD card slot. The Maker Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
+Установка Raspberry Pi таким образом обеспечивает легкий доступ к портам, а также к слоту для SD-карты. The Maker Plate will allow you to connect the Raspberry Pi to the main structure of your dashboard more easily.
 
 --- task ---
 
-Line up the Build HAT with the Raspberry Pi, ensuring you can see the `This way up` label. Make sure all the GPIO pins are covered by the HAT, and press down firmly. (The example uses a [stacking header](https://www.adafruit.com/product/2223){:target="_blank"}, which makes the pins longer.)
+Совмести плату Build HAT с Raspberry Pi, убедившись, что ты видишь надпись на английском `This way up`. Убедись, что все контакты GPIO закрыты платой HAT, и с усилием надави на плату. (В примере используется [проводные клеммы](https://www.adafruit.com/product/2223){:target="_blank"}, которые делают выводы длиннее)
 
-![Image of GPIO pins poking through the top of the Build HAT.](images/build_15.jpg) ![Animation showing Buildhat fitting to Raspberry Pi](images/haton.gif)
+![Изображение контактов GPIO, торчащих из верхней части платы Build HAT.](images/build_15.jpg) ![Анимация, показывающая установку платы Buildhat подходит для Raspberry Pi](images/haton.gif)
 
 --- /task ---
 
-You should now power your Raspberry Pi using the 7.5V barrel jack on the Build HAT, which will allow you to use the motors.
+Теперь ты должен подать питание на Raspberry Pi с помощью цилиндрического разъема 7,5 В на плате Build HAT, что позволит тебе использовать двигатели.
 
 --- task ---
 
-If you have not already done so, set up your Raspberry Pi by following these instructions:
+Если ты еще этого не сделал, настрой Raspberry Pi, следуя этим инструкциям:
 
-[Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
-
---- /task ---
-
---- task ---
-
-Once the Raspberry Pi has booted, open the Raspberry Pi Configuration tool by clicking on the Raspberry Menu button and then selecting “Preferences” and then “Raspberry Pi Configuration”.
-
-Click on the “interfaces” tab and adjust the Serial settings as shown below:
-
-![Image showing Raspberry Pi OS config screen with serial port enabled and serial console disabled](images/configshot.jpg)
+[Настройка твоей Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up){:target="_blank"}
 
 --- /task ---
 
 --- task ---
 
-You will also need to install the buildhat python library by following these instructions:
+После загрузки Raspberry Pi открой Инструмент Настройки Raspberry Pi, нажав кнопку Меню Raspberry и выбрав «Настройки», а затем «Конфигурация Raspberry Pi».
+
+Выбери вкладку «Интерфейсы» и настрой параметры последовательного порта, как показано ниже:
+
+![Изображение, показывающее экран конфигурации ОС Raspberry Pi с включенным последовательным портом и отключенной последовательной консолью](images/configshot.jpg)
+
+--- /task ---
+
+--- task ---
+
+Тебе также понадобится установить библиотеку Python buildhat, следуя этим инструкциям:
 
 --- collapse ---
 ---
-title: Install the buildhat Python library
+title: Установка библиотеки Python buildhat
 ---
 
-Open a terminal window on your Raspberry Pi by pressing <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
+Откройте окно терминала на Raspberry Pi, нажав <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
 
-At the prompt type: `sudo pip3 install buildhat`
+В командной строке введи: `sudo pip3 install buildhat`
 
-Press <kbd>Enter</kbd> and wait for the "installation completed" message.
+Нажми <kbd>Ввод</kbd> и дождись сообщения «установка завершена» (или «installation completed» на английском).
 
 --- /collapse ---
 
