@@ -5,14 +5,18 @@ description: LEGO®とBuildHATを使用してゲームのコントローラー�
 version: 4
 listed: true
 copyedit: true
-last_tested: "2020-10-08"
+last_tested: '2020-10-08'
 steps:
-  - title: はじめに
-  - title: LEGO® Spike™ モーターエンコーダーを使う
-  - title: モーターエンコーダーの動きに対応する
-  - title: Pongの画面を作る
-  - title: ボールを動かす
-  - title: パドルを制御する
-  - title: パドルの衝突
-  - title: 作品を改善する
-  - title: 次は何をしますか？
+- title: はじめに
+- title: LEGO® Spike™ モーターエンコーダーを使う
+- title: モーターエンコーダーの動きに対応する
+  completion:
+  - engaged
+- title: Pongの画面を作る
+- title: ボールを動かす
+- title: パドルを制御する
+- title: パドルの衝突
+  completion:
+  - internal
+- title: 作品を改善する
+- title: 次は何をしますか？
