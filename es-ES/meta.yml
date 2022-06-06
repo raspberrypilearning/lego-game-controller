@@ -5,14 +5,18 @@ description: Crea un mando de juego utilizando LEGO® y Build HAT
 version: 4
 listed: true
 copyedit: true
-last_tested: "2020-10-08"
+last_tested: '2020-10-08'
 steps:
-  - title: Introducción
-  - title: Utilización de los codificadores de motor LEGO® Spike ™
-  - title: Reacción al movimiento del codificador del motor
-  - title: Haciendo tu pantalla Pong
-  - title: Moviendo la pelota
-  - title: Controlando la paleta
-  - title: Colisiones con la paleta
-  - title: Mejora tu proyecto
-  - title: '¿Qué sigue?'
+- title: Introducción
+- title: Utilización de los codificadores de motor LEGO® Spike ™
+- title: Reacción al movimiento del codificador del motor
+  completion:
+  - engaged
+- title: Haciendo tu pantalla Pong
+- title: Moviendo la pelota
+- title: Controlando la paleta
+- title: Colisiones con la paleta
+  completion:
+  - internal
+- title: Mejora tu proyecto
+- title: "¿Qué sigue?"

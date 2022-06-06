@@ -5,14 +5,18 @@ description: Erstelle einen Gamecontroller mit LEGO® und dem Build HAT
 version: 4
 listed: true
 copyedit: true
-last_tested: "2020-10-08"
+last_tested: '2020-10-08'
 steps:
-  - title: Einleitung
-  - title: Verwendung der LEGO® Spike™ Motor-Encoder
-  - title: Reaktion auf Bewegungen des Motorgebers
-  - title: Erstelle deinen Pong-Bildschirm
-  - title: Den Ball bewegen
-  - title: Steuere den Schläger
-  - title: Schlägerberührungen
-  - title: Verbessere dein Projekt
-  - title: Wie geht es weiter?
+- title: Einleitung
+- title: Verwendung der LEGO® Spike™ Motor-Encoder
+- title: Reaktion auf Bewegungen des Motorgebers
+  completion:
+  - engaged
+- title: Erstelle deinen Pong-Bildschirm
+- title: Den Ball bewegen
+- title: Steuere den Schläger
+- title: Schlägerberührungen
+  completion:
+  - internal
+- title: Verbessere dein Projekt
+- title: Wie geht es weiter?
