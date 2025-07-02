@@ -19,6 +19,5 @@ steps:
   completion:
   - internal
 - title: Improve your project
-- title: What next?
   completion:
   - external
