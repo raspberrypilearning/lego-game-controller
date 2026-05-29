@@ -11,23 +11,6 @@ Keep track of the score by using two variables (one for each player) and update 
 --- hints ---
 --- hint ---
 
-First of all, declare the new variables somewhere towards the top of the program and set the starting score to zero.
-
-```python   
-score_r = 0   
-score_l = 0   
-```
-
---- /hint ---
---- hint ---
-
-Whenever a ball is missed, increment the appropriate score variable by one. There are two conditional tests you'll need to modify.
-
-
---- /hint ---
-
---- hint ---
-
 ```python
     if ball.xcor() > 195: #Right
         ball.hideturtle()
@@ -42,8 +25,8 @@ Whenever a ball is missed, increment the appropriate score variable by one. Ther
 ```
 
 --- /hint ---
-
 --- /hints ---
+
 --- /task ---
 
 Now you need to display the score on the game area. You can use a fourth Turtle to do this.
